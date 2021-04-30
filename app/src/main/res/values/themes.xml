@@ -1,0 +1,60 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Zest" parent="Theme.MaterialComponents.Light">
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:windowBackground">#FFFFFF</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#43A047</item>
+        <item name="colorPrimaryDark">#388E3C</item>
+        <item name="colorPrimaryVariant">#00701A</item>
+        <item name="colorOnPrimary">@color/OnPrimary</item>
+
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/Secondary</item>
+        <item name="colorSecondaryVariant">@color/SecondaryVariant</item>
+        <item name="colorOnSecondary">@color/OnSecondary</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+
+        <!-- options are: explode, slide, fade -->
+        <item name="android:windowEnterTransition">@transition/change_image_transform</item>
+        <item name="android:windowExitTransition">@transition/change_image_transform</item>
+
+        <!-- specify shared element transitions -->
+        <item name="android:windowSharedElementEnterTransition">
+            @transition/change_image_transform</item>
+        <item name="android:windowSharedElementExitTransition">
+            @transition/change_image_transform</item>
+
+        <item name="fontFamily">@font/lato</item>
+    </style>
+
+    <style name="Theme.Zest.NoActionBar" parent="Theme.Zest">
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:fitsSystemWindows">true</item>
+    </style>
+
+
+    <style name="TextViewGreenBackground" parent="TextAppearance.AppCompat.Display1">
+        <item name="android:textSize">15sp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">0dp</item>
+        <item name="android:layout_marginStart">0dp</item>
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="android:typeface">normal</item>
+        <item name="fontFamily">@font/lato</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:layout_alignParentStart">true</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_alignParentEnd">true</item>
+    </style>
+</resources>

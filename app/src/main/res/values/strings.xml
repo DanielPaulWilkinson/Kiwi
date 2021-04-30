@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Kiwi</string>
+    <string name="title_item_detail">Item Detail</string>
+    <string name="name">Name</string>
+    <string name="food">Food</string>
+    <string name="schedule">Schedule</string>
+</resources>

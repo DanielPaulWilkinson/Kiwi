@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@layout/border_bottom"
+    android:paddingBottom="10dp">
+
+    <TextView
+        android:id="@+id/tvIngredientNameMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/lato"
+        android:text="3 Eggs (Iceland)"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/tvIngredientKcalMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_toEndOf="@+id/tvIngredientNameMedium"
+        android:fontFamily="@font/lato"
+        android:text="Kcal 321"
+        android:textAlignment="textEnd"
+        android:textSize="15dp" />
+
+</RelativeLayout>

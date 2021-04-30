@@ -1,0 +1,582 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "cbfe25d337c0f8d1c9f9271ad3f900b1",
+    "entities": [
+      {
+        "tableName": "Meal",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`mealId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `title` TEXT, `cheap` INTEGER, `healthScore` REAL, `vegetarian` INTEGER, `vegan` INTEGER, `glutenFree` INTEGER, `veryHealthy` INTEGER, `dairyFree` INTEGER, `veryPopular` INTEGER, `sustainable` INTEGER, `pricePerServing` REAL, `spoonId` INTEGER, `servings` INTEGER NOT NULL, `sourceUrl` TEXT, `summary` TEXT, `image` TEXT, `readyInMinutes` INTEGER NOT NULL, `diets` TEXT, `dishTypes` TEXT, `occasions` TEXT, `likes` TEXT, `usedIngredientCount` TEXT, `cuisines` TEXT, `timeOfDay` INTEGER, `complexity` INTEGER)",
+        "fields": [
+          {
+            "fieldPath": "mealId",
+            "columnName": "mealId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "cheap",
+            "columnName": "cheap",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "healthScore",
+            "columnName": "healthScore",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "vegetarian",
+            "columnName": "vegetarian",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "vegan",
+            "columnName": "vegan",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "glutenFree",
+            "columnName": "glutenFree",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "veryHealthy",
+            "columnName": "veryHealthy",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "dairyFree",
+            "columnName": "dairyFree",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "veryPopular",
+            "columnName": "veryPopular",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sustainable",
+            "columnName": "sustainable",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pricePerServing",
+            "columnName": "pricePerServing",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "spoonId",
+            "columnName": "spoonId",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "servings",
+            "columnName": "servings",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sourceUrl",
+            "columnName": "sourceUrl",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "summary",
+            "columnName": "summary",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "image",
+            "columnName": "image",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "readyInMinutes",
+            "columnName": "readyInMinutes",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "diets",
+            "columnName": "diets",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "dishTypes",
+            "columnName": "dishTypes",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "occasions",
+            "columnName": "occasions",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "likes",
+            "columnName": "likes",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "usedIngredientCount",
+            "columnName": "usedIngredientCount",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "cuisines",
+            "columnName": "cuisines",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "timeOfDay",
+            "columnName": "timeOfDay",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "complexity",
+            "columnName": "complexity",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "mealId"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "MealIngredientsJoin",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`mealId` INTEGER NOT NULL, `ingredientsId` INTEGER NOT NULL, `amount` REAL NOT NULL, PRIMARY KEY(`mealId`, `ingredientsId`))",
+        "fields": [
+          {
+            "fieldPath": "mealId",
+            "columnName": "mealId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ingredientsId",
+            "columnName": "ingredientsId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "amount",
+            "columnName": "amount",
+            "affinity": "REAL",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "mealId",
+            "ingredientsId"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [
+          {
+            "name": "index_MealIngredientsJoin_mealId",
+            "unique": false,
+            "columnNames": [
+              "mealId"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_MealIngredientsJoin_mealId` ON `${TABLE_NAME}` (`mealId`)"
+          },
+          {
+            "name": "index_MealIngredientsJoin_ingredientsId",
+            "unique": false,
+            "columnNames": [
+              "ingredientsId"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_MealIngredientsJoin_ingredientsId` ON `${TABLE_NAME}` (`ingredientsId`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Ingredients",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`ingredientsId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `spoonId` INTEGER, `name` TEXT, `description` TEXT, `brand` TEXT, `aisle` TEXT, `nameClean` TEXT, `original` TEXT, `consistency` TEXT, `freezable` INTEGER NOT NULL, `microwaveable` INTEGER NOT NULL, `vegan` INTEGER NOT NULL, `glutenFree` INTEGER NOT NULL, `servingSize` REAL, `Units` TEXT, `energy` REAL, `fat` REAL, `ofWhichSaturates` REAL, `fiber` REAL, `protein` REAL, `salt` REAL, `calories` REAL, `sugar` REAL)",
+        "fields": [
+          {
+            "fieldPath": "ingredientsId",
+            "columnName": "ingredientsId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "spoonId",
+            "columnName": "spoonId",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "description",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "brand",
+            "columnName": "brand",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "aisle",
+            "columnName": "aisle",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "nameClean",
+            "columnName": "nameClean",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "original",
+            "columnName": "original",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "consistency",
+            "columnName": "consistency",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "freezable",
+            "columnName": "freezable",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "microwaveable",
+            "columnName": "microwaveable",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "vegan",
+            "columnName": "vegan",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "glutenFree",
+            "columnName": "glutenFree",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "servingSize",
+            "columnName": "servingSize",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "Units",
+            "columnName": "Units",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "energy",
+            "columnName": "energy",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "fat",
+            "columnName": "fat",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "ofWhichSaturates",
+            "columnName": "ofWhichSaturates",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "fiber",
+            "columnName": "fiber",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "protein",
+            "columnName": "protein",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "salt",
+            "columnName": "salt",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "calories",
+            "columnName": "calories",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sugar",
+            "columnName": "sugar",
+            "affinity": "REAL",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "ingredientsId"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "MealMethodJoin",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`mealId` INTEGER NOT NULL, `methodId` INTEGER NOT NULL, PRIMARY KEY(`mealId`, `methodId`))",
+        "fields": [
+          {
+            "fieldPath": "mealId",
+            "columnName": "mealId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "methodId",
+            "columnName": "methodId",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "mealId",
+            "methodId"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [
+          {
+            "name": "index_MealMethodJoin_mealId",
+            "unique": false,
+            "columnNames": [
+              "mealId"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_MealMethodJoin_mealId` ON `${TABLE_NAME}` (`mealId`)"
+          },
+          {
+            "name": "index_MealMethodJoin_methodId",
+            "unique": false,
+            "columnNames": [
+              "methodId"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_MealMethodJoin_methodId` ON `${TABLE_NAME}` (`methodId`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Method",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`methodId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `method` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "methodId",
+            "columnName": "methodId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "method",
+            "columnName": "method",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "methodId"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Plan",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`planId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `cost` REAL, `name` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "planId",
+            "columnName": "planId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cost",
+            "columnName": "cost",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "planId"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "PlanDate",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`planDateId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `breakfast` INTEGER NOT NULL, `lunch` INTEGER NOT NULL, `dinner` INTEGER NOT NULL, `snack` INTEGER NOT NULL, `date` INTEGER)",
+        "fields": [
+          {
+            "fieldPath": "planDateId",
+            "columnName": "planDateId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "breakfast",
+            "columnName": "breakfast",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lunch",
+            "columnName": "lunch",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dinner",
+            "columnName": "dinner",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "snack",
+            "columnName": "snack",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "date",
+            "columnName": "date",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "planDateId"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "PlanDatesJoin",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`planId` INTEGER NOT NULL, `planDateId` INTEGER NOT NULL, PRIMARY KEY(`planId`, `planDateId`))",
+        "fields": [
+          {
+            "fieldPath": "planId",
+            "columnName": "planId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "planDateId",
+            "columnName": "planDateId",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "planId",
+            "planDateId"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [
+          {
+            "name": "index_PlanDatesJoin_planId",
+            "unique": false,
+            "columnNames": [
+              "planId"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_PlanDatesJoin_planId` ON `${TABLE_NAME}` (`planId`)"
+          },
+          {
+            "name": "index_PlanDatesJoin_planDateId",
+            "unique": false,
+            "columnNames": [
+              "planDateId"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_PlanDatesJoin_planDateId` ON `${TABLE_NAME}` (`planDateId`)"
+          }
+        ],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'cbfe25d337c0f8d1c9f9271ad3f900b1')"
+    ]
+  }
+}

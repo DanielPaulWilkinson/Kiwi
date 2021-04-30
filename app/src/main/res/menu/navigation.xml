@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/navigation_food"
+        android:icon="@drawable/avd_fastfood_settings"
+        app:showAsAction="ifRoom"
+        android:title="@string/food" />
+    <item
+        android:id="@+id/navigation_plan"
+        android:icon="@drawable/avd_schedule_settings"
+        app:showAsAction="ifRoom"
+        android:title="@string/schedule" />
+</menu>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/viewMealimg"
+        tools:srcCompat="@tools:sample/backgrounds/scenic"
+        android:layout_width="411dp"
+        android:layout_height="301dp"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/viewIngredientNametxt"
+        android:layout_width="395dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="?attr/colorPrimary"
+        android:fontFamily="@font/armata"
+        android:padding="5dp"
+        android:text="Egg"
+        android:textColor="?attr/colorOnPrimary"
+        app:layout_constraintTop_toBottomOf="@+id/viewMealimg" />
+
+    <TextView
+        android:id="@+id/viewMealNutriantInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:background="?attr/colorPrimary"
+        android:fontFamily="@font/armata"
+        android:padding="5dp"
+        android:text="Nutritional Information"
+        android:textColor="?attr/colorOnPrimary"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ViewMealNutriantInfo"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:background="?attr/colorPrimary"
+        android:fontFamily="@font/armata"
+        android:padding="5dp"
+        android:text="Method"
+        android:textColor="?attr/colorOnPrimary"
+        app:layout_constraintTop_toBottomOf="@+id/viewIngredientNametxt" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/normal_food_percentage"
+        tools:layout_editor_absoluteY="425dp" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="192dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/normal_food_percentage"
+        tools:layout_editor_absoluteY="425dp" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="280dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/normal_food_percentage"
+        tools:layout_editor_absoluteY="425dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="104dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/normal_food_percentage"
+        tools:layout_editor_absoluteY="425dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
