@@ -1,0 +1,142 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.zest"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+8-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="30" />
+9-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml
+10
+11    <uses-feature
+11-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:4:5-5:35
+12        android:name="android.hardware.camera"
+12-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:4:19-57
+13        android:required="true" />
+13-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:5:9-32
+14
+15    <uses-permission android:name="android.permission.INTERNET" />
+15-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:6:5-66
+15-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:6:22-64
+16
+17    <application
+17-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:8:5-54:19
+18        android:name="com.example.zest.application.MyApp"
+18-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:12:9-42
+19        android:allowBackup="true"
+19-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:11:9-35
+20        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+20-->[androidx.core:core:1.3.2] C:\Users\dpwde\.gradle\caches\transforms-3\48df86dae64c8b5051f5f2d2f5b775ba\transformed\core-1.3.2\AndroidManifest.xml:24:18-86
+21        android:debuggable="true"
+22        android:extractNativeLibs="false"
+23        android:icon="@mipmap/ic_launcher"
+23-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:9:9-43
+24        android:label="Zest"
+24-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:10:9-29
+25        android:roundIcon="@mipmap/ic_launcher_round"
+25-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:14:9-54
+26        android:supportsRtl="true"
+26-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:15:9-35
+27        android:testOnly="true"
+28        android:theme="@style/Theme.Zest"
+28-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:16:9-42
+29        android:usesCleartextTraffic="true" >
+29-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:13:9-44
+30        <activity
+30-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:17:9-25:20
+31            android:name="com.example.zest.activities.StartActivity"
+31-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:18:13-53
+32            android:label="@string/app_name"
+32-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:19:13-45
+33            android:theme="@style/Theme.Zest.NoActionBar" >
+33-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:20:13-58
+34            <intent-filter>
+34-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:21:13-24:29
+35                <action android:name="android.intent.action.MAIN" />
+35-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:22:17-69
+35-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:22:25-66
+36
+37                <category android:name="android.intent.category.LAUNCHER" />
+37-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:23:17-77
+37-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:23:27-74
+38            </intent-filter>
+39        </activity>
+40        <activity android:name="com.example.zest.activities.MainActivity" />
+40-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:26:9-61
+40-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:26:19-58
+41        <activity android:name="com.example.zest.activities.AddMealActivity" />
+41-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:27:9-64
+41-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:27:19-61
+42        <activity android:name="com.example.zest.activities.MealDetail" />
+42-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:28:9-59
+42-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:28:19-56
+43        <activity android:name="com.example.zest.activities.SearchIngredientActivity" >
+43-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:29:9-35:21
+43-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:29:19-70
+44            <intent-filter>
+44-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:30:13-32:29
+45                <action android:name="android.intent.action.SEARCH" />
+45-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:31:17-71
+45-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:31:25-68
+46            </intent-filter>
+47
+48            <meta-data
+48-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:33:13-34:54
+49                android:name="android.app.searchable"
+49-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:33:24-61
+50                android:resource="@xml/searchable" />
+50-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:34:17-51
+51        </activity>
+52        <activity android:name="com.example.zest.activities.AddPlanActivity" />
+52-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:36:9-64
+52-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:36:19-61
+53        <activity android:name="com.example.zest.activities.ServingSizeActivity" />
+53-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:37:9-68
+53-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:37:19-65
+54        <activity android:name="com.example.zest.activities.ShoppingListActivity" />
+54-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:38:9-69
+54-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:38:19-66
+55        <activity android:name="com.example.zest.activities.AddIngredientActivity" />
+55-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:39:9-70
+55-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:39:19-67
+56        <activity android:name="com.example.zest.activities.OnBoardingActivity" />
+56-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:40:9-67
+56-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:40:19-64
+57
+58        <meta-data
+58-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:42:9-44:57
+59            android:name="preloaded_fonts"
+59-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:43:13-43
+60            android:resource="@array/preloaded_fonts" />
+60-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:44:13-54
+61
+62        <provider
+63            android:name="androidx.core.content.FileProvider"
+63-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:46:13-62
+64            android:authorities="com.example.zest.provider"
+64-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:47:13-60
+65            android:exported="false"
+65-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:48:13-37
+66            android:grantUriPermissions="true" >
+66-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:49:13-47
+67            <meta-data
+67-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:50:13-52:58
+68                android:name="android.support.FILE_PROVIDER_PATHS"
+68-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:51:17-67
+69                android:resource="@xml/provider_paths" />
+69-->C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:52:17-55
+70        </provider>
+71
+72        <service
+72-->[androidx.room:room-runtime:2.2.6] C:\Users\dpwde\.gradle\caches\transforms-3\9ad927a6046b3c1c994ca3d8795b2564\transformed\room-runtime-2.2.6\AndroidManifest.xml:25:9-28:40
+73            android:name="androidx.room.MultiInstanceInvalidationService"
+73-->[androidx.room:room-runtime:2.2.6] C:\Users\dpwde\.gradle\caches\transforms-3\9ad927a6046b3c1c994ca3d8795b2564\transformed\room-runtime-2.2.6\AndroidManifest.xml:26:13-74
+74            android:directBootAware="true"
+74-->[androidx.room:room-runtime:2.2.6] C:\Users\dpwde\.gradle\caches\transforms-3\9ad927a6046b3c1c994ca3d8795b2564\transformed\room-runtime-2.2.6\AndroidManifest.xml:27:13-43
+75            android:exported="false" />
+75-->[androidx.room:room-runtime:2.2.6] C:\Users\dpwde\.gradle\caches\transforms-3\9ad927a6046b3c1c994ca3d8795b2564\transformed\room-runtime-2.2.6\AndroidManifest.xml:28:13-37
+76    </application>
+77
+78</manifest>
