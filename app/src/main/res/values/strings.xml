@@ -4,4 +4,26 @@
     <string name="name">Name</string>
     <string name="food">Food</string>
     <string name="schedule">Schedule</string>
+    <string name="search">Search</string>
+    <string name="vegan">Vegan</string>
+    <string name="meal_ingredients">Meal Ingredients</string>
+    <string name="next">Next</string>
+    <string name="meal_name">Meal name</string>
+    <string name="give_your_meal_a_name">Give your meal a name</string>
+    <string name="meal_description">Meal Description</string>
+    <string name="description_of_the_meal">Description of the meal</string>
+    <string name="hours">Hours</string>
+    <string name="steps_to_create_meal">Steps to create meal</string>
+    <string name="next_step">Next Step</string>
+    <string name="workout_plan">Workout Plan</string>
+    <string name="a_plan_desinged_for_weightloss">A custom plan</string>
+    <string name="view">View</string>
+    <string name="breakfast_image">Breakfast Image</string>
+    <string name="dinner_image">dinner image</string>
+    <string name="decription">Decription</string>
+    <string name="create">Create</string>
+    <string name="oh_no_you_have_no_plan">Oh no, you have no plan!</string>
+    <string name="creating_a_meal_plan_will_help_you_remember_which_meals_you_re_having_each_day_it_s_also_super_useful_to_check_which_ingredients_you_will_need_for_the_planned_amount_of_time">Creating a meal plan will help you remember which meals you\'re having each day. It\'s also super useful to check which ingredients you will need for the planned amount of time!</string>
+    <string name="lunch_image">lunch image</string>
+    <string name="how_would_you_describe_your_mean">How would you describe your meal?</string>
 </resources>

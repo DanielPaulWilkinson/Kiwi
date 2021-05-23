@@ -2,18 +2,12 @@ com/example/zest/dagger/AppModule.java
  com.example.zest.dagger.AppModule
 com/example/zest/room/entities/MealMethodJoin.java
  com.example.zest.room.entities.MealMethodJoin
-com/example/zest/helpers/DateProcessing.java
- com.example.zest.helpers.DateProcessing
-com/example/zest/dagger/ScheduledThreadModule.java
- com.example.zest.dagger.ScheduledThreadModule
-com/example/zest/adapters/MealAdapter.java
- com.example.zest.adapters.MealAdapter
- com.example.zest.adapters.MealAdapter$1
- com.example.zest.adapters.MealAdapter$MealFilter
- com.example.zest.adapters.MealAdapter$MealViewHolderSelectable
- com.example.zest.adapters.MealAdapter$MealViewHolderSmall
-com/example/zest/fragment/createPlan/PlanTypeFragment.java
- com.example.zest.fragment.createPlan.PlanTypeFragment
+com/example/zest/adapters/SingleSelectableMealAdapter.java
+ com.example.zest.adapters.SingleSelectableMealAdapter
+ com.example.zest.adapters.SingleSelectableMealAdapter$MealFilter
+ com.example.zest.adapters.SingleSelectableMealAdapter$MealViewHolderSelectable
+com/example/zest/fragment/createMealJourney/mealOverviewFragment.java
+ com.example.zest.fragment.createMealJourney.mealOverviewFragment
 com/example/zest/services/DocumentService.java
  com.example.zest.services.DocumentService
 com/example/zest/fragment/MealFragment.java
@@ -25,6 +19,131 @@ com/example/zest/activities/SearchIngredientActivity.java
 com/example/zest/adapters/PlanDateAdapter.java
  com.example.zest.adapters.PlanDateAdapter
  com.example.zest.adapters.PlanDateAdapter$MealDayViewHolder
+com/example/zest/room/interfaces/IngredientsDao.java
+ com.example.zest.room.interfaces.IngredientsDao
+com/example/zest/async/FixedThreadPool.java
+ com.example.zest.async.FixedThreadPool
+com/example/zest/fragment/createMealJourney/mealTimeFragment.java
+ com.example.zest.fragment.createMealJourney.mealTimeFragment
+ com.example.zest.fragment.createMealJourney.mealTimeFragment$1
+com/example/zest/room/entities/ProfilePlanJoin.java
+ com.example.zest.room.entities.ProfilePlanJoin
+com/example/zest/room/entities/Meal.java
+ com.example.zest.room.entities.Meal
+com/example/zest/room/repositories/CompleteMealRepository.java
+ com.example.zest.room.repositories.CompleteMealRepository
+com/example/zest/activities/AddMealJourney.java
+ com.example.zest.activities.AddMealJourney
+com/example/zest/enums/ComplexityEnum.java
+ com.example.zest.enums.ComplexityEnum
+com/example/zest/room/entities/Plan.java
+ com.example.zest.room.entities.Plan
+com/example/zest/fragment/createPlanJourney/reviewOfPlanFragment.java
+ com.example.zest.fragment.createPlanJourney.reviewOfPlanFragment
+ com.example.zest.fragment.createPlanJourney.reviewOfPlanFragment$1
+com/example/zest/fragment/createIngredientJourney/proteinOfIngredientFragment.java
+ com.example.zest.fragment.createIngredientJourney.proteinOfIngredientFragment
+com/example/zest/helpers/Consts.java
+ com.example.zest.helpers.Consts
+com/example/zest/dagger/SharedPreferencesModule.java
+ com.example.zest.dagger.SharedPreferencesModule
+com/example/zest/fragment/createPlanJourney/dateOfPlanFragment.java
+ com.example.zest.fragment.createPlanJourney.dateOfPlanFragment
+com/example/zest/activities/AddPlanJourney.java
+ com.example.zest.activities.AddPlanJourney
+com/example/zest/room/general/Converters.java
+ com.example.zest.room.general.Converters
+com/example/zest/fragment/createMealJourney/mealMethodFragment.java
+ com.example.zest.fragment.createMealJourney.mealMethodFragment
+ com.example.zest.fragment.createMealJourney.mealMethodFragment$1
+ com.example.zest.fragment.createMealJourney.mealMethodFragment$2
+com/example/zest/models/MealSearchModel.java
+ com.example.zest.models.MealSearchModel
+com/example/zest/room/entities/CompleteProfile.java
+ com.example.zest.room.entities.CompleteProfile
+com/example/zest/fragment/createIngredientJourney/fiberOfIngredientFragment.java
+ com.example.zest.fragment.createIngredientJourney.fiberOfIngredientFragment
+com/example/zest/room/interfaces/MealIngredientsJoinDao.java
+ com.example.zest.room.interfaces.MealIngredientsJoinDao
+com/example/zest/models/PlanDateMeal.java
+ com.example.zest.models.PlanDateMeal
+com/example/zest/helpers/AppConfig.java
+ com.example.zest.helpers.AppConfig
+com/example/zest/fragment/createIngredientJourney/energyOfIngredientFragment.java
+ com.example.zest.fragment.createIngredientJourney.energyOfIngredientFragment
+com/example/zest/room/general/RoomDB.java
+ com.example.zest.room.general.RoomDB
+com/example/zest/fragment/createMealJourney/mealIngredientFragment.java
+ com.example.zest.fragment.createMealJourney.mealIngredientFragment
+ com.example.zest.fragment.createMealJourney.mealIngredientFragment$1
+com/example/zest/extensions/GridRecyclerView.java
+ com.example.zest.extensions.GridRecyclerView
+com/example/zest/enums/TimeOfDayEnum.java
+ com.example.zest.enums.TimeOfDayEnum
+com/example/zest/dagger/ImageModule.java
+ com.example.zest.dagger.ImageModule
+com/example/zest/activities/MainActivity.java
+ com.example.zest.activities.MainActivity
+com/example/zest/fragment/createIngredientJourney/nameOfIngredientFragment.java
+ com.example.zest.fragment.createIngredientJourney.nameOfIngredientFragment
+com/example/zest/activities/PlanDetail.java
+ com.example.zest.activities.PlanDetail
+com/example/zest/enums/MealAdapterViewTypeEnum.java
+ com.example.zest.enums.MealAdapterViewTypeEnum
+com/example/zest/fragment/PlanFragment.java
+ com.example.zest.fragment.PlanFragment
+ com.example.zest.fragment.PlanFragment$1
+com/example/zest/fragment/createMealJourney/mealImageFragment.java
+ com.example.zest.fragment.createMealJourney.mealImageFragment
+com/example/zest/models/AddMealActivityIngredientState.java
+ com.example.zest.models.AddMealActivityIngredientState
+com/example/zest/enums/IngredientAdapterViewEnum.java
+ com.example.zest.enums.IngredientAdapterViewEnum
+com/example/zest/activities/AddIngredientJourney.java
+ com.example.zest.activities.AddIngredientJourney
+com/example/zest/room/interfaces/MethodDao.java
+ com.example.zest.room.interfaces.MethodDao
+com/example/zest/room/interfaces/MealMethodJoinDao.java
+ com.example.zest.room.interfaces.MealMethodJoinDao
+com/example/zest/fragment/createPlanJourney/generateDinnerFromPreferenceFragment.java
+ com.example.zest.fragment.createPlanJourney.generateDinnerFromPreferenceFragment
+com/example/zest/room/entities/Ingredients.java
+ com.example.zest.room.entities.Ingredients
+com/example/zest/room/repositories/IngredientRepository.java
+ com.example.zest.room.repositories.IngredientRepository
+com/example/zest/fragment/createIngredientJourney/descriptionOfIngredientFragment.java
+ com.example.zest.fragment.createIngredientJourney.descriptionOfIngredientFragment
+com/example/zest/activities/StartActivity.java
+ com.example.zest.activities.StartActivity
+com/example/zest/fragment/createPlanJourney/nameOfPlanFragment.java
+ com.example.zest.fragment.createPlanJourney.nameOfPlanFragment
+com/example/zest/room/seed/SeedData.java
+ com.example.zest.room.seed.SeedData
+ com.example.zest.room.seed.SeedData$Units
+com/example/zest/room/interfaces/ProfilePlanJoinDao.java
+ com.example.zest.room.interfaces.ProfilePlanJoinDao
+com/example/zest/dagger/RoomModule.java
+ com.example.zest.dagger.RoomModule
+com/example/zest/fragment/createPlanJourney/generateBreakfastFromPreferenceFragment.java
+ com.example.zest.fragment.createPlanJourney.generateBreakfastFromPreferenceFragment
+com/example/zest/dagger/AppComponent.java
+ com.example.zest.dagger.AppComponent
+com/example/zest/room/entities/Method.java
+ com.example.zest.room.entities.Method
+com/example/zest/async/Spoonacular.java
+ com.example.zest.async.Spoonacular
+com/example/zest/fragment/createPlanJourney/mealOfPlanFragment.java
+ com.example.zest.fragment.createPlanJourney.mealOfPlanFragment
+com/example/zest/helpers/DateProcessing.java
+ com.example.zest.helpers.DateProcessing
+com/example/zest/adapters/MealAdapter.java
+ com.example.zest.adapters.MealAdapter
+ com.example.zest.adapters.MealAdapter$1
+ com.example.zest.adapters.MealAdapter$MealFilter
+ com.example.zest.adapters.MealAdapter$MealViewHolderSelectable
+ com.example.zest.adapters.MealAdapter$MealViewHolderSmall
+com/example/zest/fragment/createIngredientJourney/fatOfIngredientFragment.java
+ com.example.zest.fragment.createIngredientJourney.fatOfIngredientFragment
 com/example/zest/room/entities/CompletePlan.java
  com.example.zest.room.entities.CompletePlan
 com/example/zest/adapters/IngredientAdapter.java
@@ -34,156 +153,90 @@ com/example/zest/adapters/IngredientAdapter.java
  com.example.zest.adapters.IngredientAdapter$MediumHolder
  com.example.zest.adapters.IngredientAdapter$ShoppingList
  com.example.zest.adapters.IngredientAdapter$SmallHolder
-com/example/zest/room/interfaces/IngredientsDao.java
- com.example.zest.room.interfaces.IngredientsDao
 com/example/zest/room/entities/CompleteMeal.java
  com.example.zest.room.entities.CompleteMeal
-com/example/zest/async/FixedThreadPool.java
- com.example.zest.async.FixedThreadPool
 com/example/zest/room/entities/PlanDatesJoin.java
  com.example.zest.room.entities.PlanDatesJoin
-com/example/zest/room/entities/ProfilePlanJoin.java
- com.example.zest.room.entities.ProfilePlanJoin
-com/example/zest/fragment/createPlan/PlanNameFragment.java
- com.example.zest.fragment.createPlan.PlanNameFragment
-com/example/zest/fragment/createPlan/MealPickerFragment.java
- com.example.zest.fragment.createPlan.MealPickerFragment
-com/example/zest/room/entities/Meal.java
- com.example.zest.room.entities.Meal
-com/example/zest/room/repositories/CompleteMealRepository.java
- com.example.zest.room.repositories.CompleteMealRepository
-com/example/zest/fragment/createPlan/PlanDateFragment.java
- com.example.zest.fragment.createPlan.PlanDateFragment
-com/example/zest/adapters/RecyclerViewClickInterface.java
- com.example.zest.adapters.RecyclerViewClickInterface
-com/example/zest/enums/ComplexityEnum.java
- com.example.zest.enums.ComplexityEnum
+com/example/zest/helpers/CustomDateValidator.java
+ com.example.zest.helpers.CustomDateValidator
+ com.example.zest.helpers.CustomDateValidator$1
 com/example/zest/activities/OnBoardingActivity.java
  com.example.zest.activities.OnBoardingActivity
  com.example.zest.activities.OnBoardingActivity$1
 com/example/zest/helpers/IntentManager.java
  com.example.zest.helpers.IntentManager
-com/example/zest/room/entities/Plan.java
- com.example.zest.room.entities.Plan
-com/example/zest/activities/ShoppingListActivity.java
- com.example.zest.activities.ShoppingListActivity
- com.example.zest.activities.ShoppingListActivity$1
-com/example/zest/helpers/Consts.java
- com.example.zest.helpers.Consts
+com/example/zest/fragment/createMealJourney/mealNameFragment.java
+ com.example.zest.fragment.createMealJourney.mealNameFragment
+com/example/zest/fragment/createMealJourney/mealDescriptionFragment.java
+ com.example.zest.fragment.createMealJourney.mealDescriptionFragment
 com/example/zest/room/interfaces/CompleteMealDao.java
  com.example.zest.room.interfaces.CompleteMealDao
 com/example/zest/room/interfaces/PlanDatesJoinDao.java
  com.example.zest.room.interfaces.PlanDatesJoinDao
 com/example/zest/dagger/FixedThreadModule.java
  com.example.zest.dagger.FixedThreadModule
-com/example/zest/room/interfaces/PlanDateDao.java
- com.example.zest.room.interfaces.PlanDateDao
 com/example/zest/activities/MealDetail.java
  com.example.zest.activities.MealDetail
  com.example.zest.activities.MealDetail$1
-com/example/zest/dagger/SharedPreferencesModule.java
- com.example.zest.dagger.SharedPreferencesModule
+com/example/zest/room/interfaces/PlanDateDao.java
+ com.example.zest.room.interfaces.PlanDateDao
 com/example/zest/helpers/ObjectMapper.java
  com.example.zest.helpers.ObjectMapper
 com/example/zest/room/repositories/MealIngredientJoinRepository.java
  com.example.zest.room.repositories.MealIngredientJoinRepository
-com/example/zest/room/general/Converters.java
- com.example.zest.room.general.Converters
+com/example/zest/fragment/createIngredientJourney/brandOfIngredientFragment.java
+ com.example.zest.fragment.createIngredientJourney.brandOfIngredientFragment
+com/example/zest/fragment/createIngredientJourney/overviewOfIngredientFragment.java
+ com.example.zest.fragment.createIngredientJourney.overviewOfIngredientFragment
 com/example/zest/adapters/MethodAdapter.java
  com.example.zest.adapters.MethodAdapter
  com.example.zest.adapters.MethodAdapter$ViewHolder
 com/example/zest/BuildConfig.java
  com.example.zest.BuildConfig
-com/example/zest/models/MealSearchModel.java
- com.example.zest.models.MealSearchModel
-com/example/zest/room/entities/CompleteProfile.java
- com.example.zest.room.entities.CompleteProfile
 com/example/zest/helpers/Validation.java
  com.example.zest.helpers.Validation
-com/example/zest/room/interfaces/MealIngredientsJoinDao.java
- com.example.zest.room.interfaces.MealIngredientsJoinDao
-com/example/zest/activities/AddPlanActivity.java
- com.example.zest.activities.AddPlanActivity
-com/example/zest/models/PlanDateMeal.java
- com.example.zest.models.PlanDateMeal
-com/example/zest/fragment/CreateMealPlanFragment.java
- com.example.zest.fragment.CreateMealPlanFragment
-com/example/zest/helpers/AppConfig.java
- com.example.zest.helpers.AppConfig
-com/example/zest/room/general/RoomDB.java
- com.example.zest.room.general.RoomDB
-com/example/zest/extensions/GridRecyclerView.java
- com.example.zest.extensions.GridRecyclerView
-com/example/zest/enums/TimeOfDayEnum.java
- com.example.zest.enums.TimeOfDayEnum
-com/example/zest/activities/AddIngredientActivity.java
- com.example.zest.activities.AddIngredientActivity
-com/example/zest/dagger/ImageModule.java
- com.example.zest.dagger.ImageModule
+com/example/zest/fragment/createIngredientJourney/amountOfIngredientFragment.java
+ com.example.zest.fragment.createIngredientJourney.amountOfIngredientFragment
+ com.example.zest.fragment.createIngredientJourney.amountOfIngredientFragment$1
 com/example/zest/room/entities/MealIngredientsJoin.java
  com.example.zest.room.entities.MealIngredientsJoin
-com/example/zest/activities/MainActivity.java
- com.example.zest.activities.MainActivity
-com/example/zest/enums/MealAdapterViewTypeEnum.java
- com.example.zest.enums.MealAdapterViewTypeEnum
-com/example/zest/fragment/PlanFragment.java
- com.example.zest.fragment.PlanFragment
- com.example.zest.fragment.PlanFragment$1
 com/example/zest/room/interfaces/MealDao.java
  com.example.zest.room.interfaces.MealDao
 com/example/zest/activities/ServingSizeActivity.java
  com.example.zest.activities.ServingSizeActivity
  com.example.zest.activities.ServingSizeActivity$1
-com/example/zest/models/AddMealActivityIngredientState.java
- com.example.zest.models.AddMealActivityIngredientState
+com/example/zest/fragment/createIngredientJourney/saturatesOfIngredientFragment.java
+ com.example.zest.fragment.createIngredientJourney.saturatesOfIngredientFragment
 com/example/zest/room/repositories/CompletePlanRepository.java
  com.example.zest.room.repositories.CompletePlanRepository
 com/example/zest/services/ImageProcessing.java
  com.example.zest.services.ImageProcessing
  com.example.zest.services.ImageProcessing$1
  com.example.zest.services.ImageProcessing$BitmapSize
-com/example/zest/enums/IngredientAdapterViewEnum.java
- com.example.zest.enums.IngredientAdapterViewEnum
 com/example/zest/adapters/SliderAdapter.java
  com.example.zest.adapters.SliderAdapter
+com/example/zest/helpers/WeightConverter.java
+ com.example.zest.helpers.WeightConverter
 com/example/zest/room/entities/Profile.java
  com.example.zest.room.entities.Profile
-com/example/zest/room/interfaces/MethodDao.java
- com.example.zest.room.interfaces.MethodDao
-com/example/zest/room/interfaces/MealMethodJoinDao.java
- com.example.zest.room.interfaces.MealMethodJoinDao
-com/example/zest/room/repositories/IngredientRepository.java
- com.example.zest.room.repositories.IngredientRepository
-com/example/zest/room/entities/Ingredients.java
- com.example.zest.room.entities.Ingredients
+com/example/zest/fragment/createIngredientJourney/chipsOfIngredientFragment.java
+ com.example.zest.fragment.createIngredientJourney.chipsOfIngredientFragment
+com/example/zest/fragment/createIngredientJourney/caloriesOfIngredientFragment.java
+ com.example.zest.fragment.createIngredientJourney.caloriesOfIngredientFragment
 com/example/zest/services/SharedPreferences.java
  com.example.zest.services.SharedPreferences
  com.example.zest.services.SharedPreferences$1
  com.example.zest.services.SharedPreferences$2
-com/example/zest/activities/StartActivity.java
- com.example.zest.activities.StartActivity
-com/example/zest/async/ScheduleThreadPool.java
- com.example.zest.async.ScheduleThreadPool
+ com.example.zest.services.SharedPreferences$3
 com/example/zest/room/entities/PlanDate.java
  com.example.zest.room.entities.PlanDate
-com/example/zest/room/seed/SeedData.java
- com.example.zest.room.seed.SeedData
- com.example.zest.room.seed.SeedData$Units
-com/example/zest/room/interfaces/ProfilePlanJoinDao.java
- com.example.zest.room.interfaces.ProfilePlanJoinDao
-com/example/zest/fragment/GenerateMealPlanFragment.java
- com.example.zest.fragment.GenerateMealPlanFragment
+com/example/zest/fragment/createIngredientJourney/sugarOfIngredientFragment.java
+ com.example.zest.fragment.createIngredientJourney.sugarOfIngredientFragment
 com/example/zest/room/interfaces/CompletePlanDao.java
  com.example.zest.room.interfaces.CompletePlanDao
-com/example/zest/dagger/RoomModule.java
- com.example.zest.dagger.RoomModule
-com/example/zest/activities/AddMealActivity.java
- com.example.zest.activities.AddMealActivity
 com/example/zest/application/MyApp.java
  com.example.zest.application.MyApp
-com/example/zest/dagger/AppComponent.java
- com.example.zest.dagger.AppComponent
-com/example/zest/room/entities/Method.java
- com.example.zest.room.entities.Method
-com/example/zest/async/Spoonacular.java
- com.example.zest.async.Spoonacular
+com/example/zest/fragment/createPlanJourney/generateLunchFromPreferenceFragment.java
+ com.example.zest.fragment.createPlanJourney.generateLunchFromPreferenceFragment
+com/example/zest/fragment/createPlanJourney/typeOfPlanFragment.java
+ com.example.zest.fragment.createPlanJourney.typeOfPlanFragment

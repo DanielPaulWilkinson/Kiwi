@@ -2,40 +2,85 @@
 package com.example.zest.dagger;
 
 import android.app.Application;
-import com.example.zest.activities.AddIngredientActivity;
-import com.example.zest.activities.AddIngredientActivity_MembersInjector;
-import com.example.zest.activities.AddMealActivity;
-import com.example.zest.activities.AddMealActivity_MembersInjector;
-import com.example.zest.activities.AddPlanActivity;
-import com.example.zest.activities.AddPlanActivity_MembersInjector;
+import com.example.zest.activities.AddIngredientJourney;
+import com.example.zest.activities.AddMealJourney;
+import com.example.zest.activities.AddMealJourney_MembersInjector;
+import com.example.zest.activities.AddPlanJourney;
 import com.example.zest.activities.MainActivity;
 import com.example.zest.activities.MainActivity_MembersInjector;
 import com.example.zest.activities.MealDetail;
 import com.example.zest.activities.MealDetail_MembersInjector;
 import com.example.zest.activities.OnBoardingActivity;
 import com.example.zest.activities.OnBoardingActivity_MembersInjector;
+import com.example.zest.activities.PlanDetail;
+import com.example.zest.activities.PlanDetail_MembersInjector;
 import com.example.zest.activities.SearchIngredientActivity;
 import com.example.zest.activities.SearchIngredientActivity_MembersInjector;
 import com.example.zest.activities.ServingSizeActivity;
 import com.example.zest.activities.ServingSizeActivity_MembersInjector;
-import com.example.zest.activities.ShoppingListActivity;
-import com.example.zest.activities.ShoppingListActivity_MembersInjector;
 import com.example.zest.activities.StartActivity;
 import com.example.zest.activities.StartActivity_MembersInjector;
 import com.example.zest.async.FixedThreadPool;
-import com.example.zest.fragment.GenerateMealPlanFragment;
-import com.example.zest.fragment.GenerateMealPlanFragment_MembersInjector;
 import com.example.zest.fragment.MealFragment;
 import com.example.zest.fragment.MealFragment_MembersInjector;
 import com.example.zest.fragment.PlanFragment;
 import com.example.zest.fragment.PlanFragment_MembersInjector;
-import com.example.zest.fragment.createPlan.MealPickerFragment;
-import com.example.zest.fragment.createPlan.MealPickerFragment_MembersInjector;
-import com.example.zest.fragment.createPlan.PlanDateFragment;
-import com.example.zest.fragment.createPlan.PlanDateFragment_MembersInjector;
-import com.example.zest.fragment.createPlan.PlanNameFragment;
-import com.example.zest.fragment.createPlan.PlanNameFragment_MembersInjector;
-import com.example.zest.fragment.createPlan.PlanTypeFragment;
+import com.example.zest.fragment.createIngredientJourney.amountOfIngredientFragment;
+import com.example.zest.fragment.createIngredientJourney.amountOfIngredientFragment_MembersInjector;
+import com.example.zest.fragment.createIngredientJourney.brandOfIngredientFragment;
+import com.example.zest.fragment.createIngredientJourney.brandOfIngredientFragment_MembersInjector;
+import com.example.zest.fragment.createIngredientJourney.caloriesOfIngredientFragment;
+import com.example.zest.fragment.createIngredientJourney.caloriesOfIngredientFragment_MembersInjector;
+import com.example.zest.fragment.createIngredientJourney.chipsOfIngredientFragment;
+import com.example.zest.fragment.createIngredientJourney.chipsOfIngredientFragment_MembersInjector;
+import com.example.zest.fragment.createIngredientJourney.descriptionOfIngredientFragment;
+import com.example.zest.fragment.createIngredientJourney.descriptionOfIngredientFragment_MembersInjector;
+import com.example.zest.fragment.createIngredientJourney.energyOfIngredientFragment;
+import com.example.zest.fragment.createIngredientJourney.energyOfIngredientFragment_MembersInjector;
+import com.example.zest.fragment.createIngredientJourney.fatOfIngredientFragment;
+import com.example.zest.fragment.createIngredientJourney.fatOfIngredientFragment_MembersInjector;
+import com.example.zest.fragment.createIngredientJourney.fiberOfIngredientFragment;
+import com.example.zest.fragment.createIngredientJourney.fiberOfIngredientFragment_MembersInjector;
+import com.example.zest.fragment.createIngredientJourney.nameOfIngredientFragment;
+import com.example.zest.fragment.createIngredientJourney.nameOfIngredientFragment_MembersInjector;
+import com.example.zest.fragment.createIngredientJourney.overviewOfIngredientFragment;
+import com.example.zest.fragment.createIngredientJourney.overviewOfIngredientFragment_MembersInjector;
+import com.example.zest.fragment.createIngredientJourney.proteinOfIngredientFragment;
+import com.example.zest.fragment.createIngredientJourney.proteinOfIngredientFragment_MembersInjector;
+import com.example.zest.fragment.createIngredientJourney.saturatesOfIngredientFragment;
+import com.example.zest.fragment.createIngredientJourney.saturatesOfIngredientFragment_MembersInjector;
+import com.example.zest.fragment.createIngredientJourney.sugarOfIngredientFragment;
+import com.example.zest.fragment.createIngredientJourney.sugarOfIngredientFragment_MembersInjector;
+import com.example.zest.fragment.createMealJourney.mealDescriptionFragment;
+import com.example.zest.fragment.createMealJourney.mealDescriptionFragment_MembersInjector;
+import com.example.zest.fragment.createMealJourney.mealImageFragment;
+import com.example.zest.fragment.createMealJourney.mealImageFragment_MembersInjector;
+import com.example.zest.fragment.createMealJourney.mealIngredientFragment;
+import com.example.zest.fragment.createMealJourney.mealIngredientFragment_MembersInjector;
+import com.example.zest.fragment.createMealJourney.mealMethodFragment;
+import com.example.zest.fragment.createMealJourney.mealMethodFragment_MembersInjector;
+import com.example.zest.fragment.createMealJourney.mealNameFragment;
+import com.example.zest.fragment.createMealJourney.mealNameFragment_MembersInjector;
+import com.example.zest.fragment.createMealJourney.mealOverviewFragment;
+import com.example.zest.fragment.createMealJourney.mealOverviewFragment_MembersInjector;
+import com.example.zest.fragment.createMealJourney.mealTimeFragment;
+import com.example.zest.fragment.createMealJourney.mealTimeFragment_MembersInjector;
+import com.example.zest.fragment.createPlanJourney.dateOfPlanFragment;
+import com.example.zest.fragment.createPlanJourney.dateOfPlanFragment_MembersInjector;
+import com.example.zest.fragment.createPlanJourney.generateBreakfastFromPreferenceFragment;
+import com.example.zest.fragment.createPlanJourney.generateBreakfastFromPreferenceFragment_MembersInjector;
+import com.example.zest.fragment.createPlanJourney.generateDinnerFromPreferenceFragment;
+import com.example.zest.fragment.createPlanJourney.generateDinnerFromPreferenceFragment_MembersInjector;
+import com.example.zest.fragment.createPlanJourney.generateLunchFromPreferenceFragment;
+import com.example.zest.fragment.createPlanJourney.generateLunchFromPreferenceFragment_MembersInjector;
+import com.example.zest.fragment.createPlanJourney.mealOfPlanFragment;
+import com.example.zest.fragment.createPlanJourney.mealOfPlanFragment_MembersInjector;
+import com.example.zest.fragment.createPlanJourney.nameOfPlanFragment;
+import com.example.zest.fragment.createPlanJourney.nameOfPlanFragment_MembersInjector;
+import com.example.zest.fragment.createPlanJourney.reviewOfPlanFragment;
+import com.example.zest.fragment.createPlanJourney.reviewOfPlanFragment_MembersInjector;
+import com.example.zest.fragment.createPlanJourney.typeOfPlanFragment;
+import com.example.zest.fragment.createPlanJourney.typeOfPlanFragment_MembersInjector;
 import com.example.zest.room.general.RoomDB;
 import com.example.zest.room.interfaces.CompleteMealDao;
 import com.example.zest.room.interfaces.CompletePlanDao;
@@ -64,11 +109,11 @@ public final class DaggerAppComponent implements AppComponent {
 
   private Provider<IngredientRepository> ingredientRepositoryProvider;
 
+  private Provider<SharedPreferences> providesSharedPreferenceServiceProvider;
+
   private Provider<CompleteMealDao> providesCompleteMealDaoProvider;
 
   private Provider<CompleteMealRepository> completeMealRepositoryProvider;
-
-  private Provider<SharedPreferences> providesSharedPreferenceServiceProvider;
 
   private Provider<ImageProcessing> providesImageServiceProvider;
 
@@ -102,9 +147,9 @@ public final class DaggerAppComponent implements AppComponent {
     this.providesRoomDatabaseProvider = DoubleCheck.provider(RoomModule_ProvidesRoomDatabaseFactory.create(roomModuleParam));
     this.providesIngredientDaoProvider = DoubleCheck.provider(RoomModule_ProvidesIngredientDaoFactory.create(roomModuleParam, providesRoomDatabaseProvider));
     this.ingredientRepositoryProvider = DoubleCheck.provider(RoomModule_IngredientRepositoryFactory.create(roomModuleParam, providesIngredientDaoProvider));
+    this.providesSharedPreferenceServiceProvider = DoubleCheck.provider(SharedPreferencesModule_ProvidesSharedPreferenceServiceFactory.create(sharedPreferencesModuleParam));
     this.providesCompleteMealDaoProvider = DoubleCheck.provider(RoomModule_ProvidesCompleteMealDaoFactory.create(roomModuleParam, providesRoomDatabaseProvider));
     this.completeMealRepositoryProvider = DoubleCheck.provider(RoomModule_CompleteMealRepositoryFactory.create(roomModuleParam, providesCompleteMealDaoProvider));
-    this.providesSharedPreferenceServiceProvider = DoubleCheck.provider(SharedPreferencesModule_ProvidesSharedPreferenceServiceFactory.create(sharedPreferencesModuleParam));
     this.providesImageServiceProvider = DoubleCheck.provider(ImageModule_ProvidesImageServiceFactory.create(imageModuleParam));
     this.providesCompletePlanDaoProvider = DoubleCheck.provider(RoomModule_ProvidesCompletePlanDaoFactory.create(roomModuleParam, providesRoomDatabaseProvider));
     this.CompletePlanRepositoryProvider = DoubleCheck.provider(RoomModule_CompletePlanRepositoryFactory.create(roomModuleParam, providesCompletePlanDaoProvider));
@@ -124,13 +169,12 @@ public final class DaggerAppComponent implements AppComponent {
   }
 
   @Override
-  public void inject(AddMealActivity addMealActivity) {
-    injectAddMealActivity(addMealActivity);
+  public void inject(AddMealJourney addMealActivity) {
+    injectAddMealJourney(addMealActivity);
   }
 
   @Override
-  public void inject(AddPlanActivity addPlanActivity) {
-    injectAddPlanActivity(addPlanActivity);
+  public void inject(AddPlanJourney addPlanActivity) {
   }
 
   @Override
@@ -149,18 +193,17 @@ public final class DaggerAppComponent implements AppComponent {
   }
 
   @Override
-  public void inject(GenerateMealPlanFragment generateMealPlanFragment) {
-    injectGenerateMealPlanFragment(generateMealPlanFragment);
+  public void inject(generateLunchFromPreferenceFragment generateMealPlanFragment) {
+    injectgenerateLunchFromPreferenceFragment(generateMealPlanFragment);
   }
 
   @Override
-  public void inject(AddIngredientActivity addIngredientActivity) {
-    injectAddIngredientActivity(addIngredientActivity);
+  public void inject(AddIngredientJourney addIngredientActivity) {
   }
 
   @Override
-  public void inject(ShoppingListActivity shoppingListActivity) {
-    injectShoppingListActivity(shoppingListActivity);
+  public void inject(PlanDetail shoppingListActivity) {
+    injectPlanDetail(shoppingListActivity);
   }
 
   @Override
@@ -179,52 +222,134 @@ public final class DaggerAppComponent implements AppComponent {
   }
 
   @Override
-  public void inject(PlanNameFragment planNameFragment) {
-    injectPlanNameFragment(planNameFragment);
+  public void inject(nameOfPlanFragment planNameFragment) {
+    injectnameOfPlanFragment(planNameFragment);
   }
 
   @Override
-  public void inject(PlanDateFragment planDateFragment) {
-    injectPlanDateFragment(planDateFragment);
+  public void inject(dateOfPlanFragment planDateFragment) {
+    injectdateOfPlanFragment(planDateFragment);
   }
 
   @Override
-  public void inject(PlanTypeFragment planTypeFragment) {
+  public void inject(typeOfPlanFragment planTypeFragment) {
+    injecttypeOfPlanFragment(planTypeFragment);
   }
 
   @Override
-  public void inject(MealPickerFragment mealPickerFragment) {
-    injectMealPickerFragment(mealPickerFragment);
+  public void inject(mealOfPlanFragment mealPickerFragment) {
+    injectmealOfPlanFragment(mealPickerFragment);
   }
 
   @Override
-  public IngredientsDao ingredientsDao() {
-    return providesIngredientDaoProvider.get();
+  public void inject(reviewOfPlanFragment planReviewFragment) {
+    injectreviewOfPlanFragment(planReviewFragment);
   }
 
   @Override
-  public CompleteMealDao completeMealDao() {
-    return providesCompleteMealDaoProvider.get();
+  public void inject(nameOfIngredientFragment nameOfPlanFragment) {
+    injectnameOfIngredientFragment(nameOfPlanFragment);
   }
 
   @Override
-  public CompletePlanDao completePlanDao() {
-    return providesCompletePlanDaoProvider.get();
+  public void inject(descriptionOfIngredientFragment descriptionOfIngredientFragment) {
+    injectdescriptionOfIngredientFragment(descriptionOfIngredientFragment);
   }
 
   @Override
-  public MealIngredientsJoinDao mealIngredientsJoinDao() {
-    return providesCompleteMealIngredientDaoProvider.get();
+  public void inject(amountOfIngredientFragment amountOfIngredientFragment) {
+    injectamountOfIngredientFragment(amountOfIngredientFragment);
   }
 
   @Override
-  public RoomDB roomDB() {
-    return providesRoomDatabaseProvider.get();
+  public void inject(chipsOfIngredientFragment chipsOfIngredientFragment) {
+    injectchipsOfIngredientFragment(chipsOfIngredientFragment);
   }
 
   @Override
-  public IngredientRepository ingredientDataSource() {
-    return ingredientRepositoryProvider.get();
+  public void inject(energyOfIngredientFragment energyOfIngredientFragment) {
+    injectenergyOfIngredientFragment(energyOfIngredientFragment);
+  }
+
+  @Override
+  public void inject(fatOfIngredientFragment fatOfIngredientFragment) {
+    injectfatOfIngredientFragment(fatOfIngredientFragment);
+  }
+
+  @Override
+  public void inject(fiberOfIngredientFragment fiberOfIngredientFragment) {
+    injectfiberOfIngredientFragment(fiberOfIngredientFragment);
+  }
+
+  @Override
+  public void inject(proteinOfIngredientFragment proteinOfIngredientFragment) {
+    injectproteinOfIngredientFragment(proteinOfIngredientFragment);
+  }
+
+  @Override
+  public void inject(saturatesOfIngredientFragment saturatesOfIngredientFragment) {
+    injectsaturatesOfIngredientFragment(saturatesOfIngredientFragment);
+  }
+
+  @Override
+  public void inject(sugarOfIngredientFragment sugarOfIngredientFragment) {
+    injectsugarOfIngredientFragment(sugarOfIngredientFragment);
+  }
+
+  @Override
+  public void inject(caloriesOfIngredientFragment caloriesOfIngredientFragment) {
+    injectcaloriesOfIngredientFragment(caloriesOfIngredientFragment);
+  }
+
+  @Override
+  public void inject(brandOfIngredientFragment brandOfIngredientFragment) {
+    injectbrandOfIngredientFragment(brandOfIngredientFragment);
+  }
+
+  @Override
+  public void inject(overviewOfIngredientFragment overviewOfIngredientFragment) {
+    injectoverviewOfIngredientFragment(overviewOfIngredientFragment);
+  }
+
+  @Override
+  public void inject(generateDinnerFromPreferenceFragment generateDinnerFromPreferenceFragment) {
+    injectgenerateDinnerFromPreferenceFragment(generateDinnerFromPreferenceFragment);
+  }
+
+  @Override
+  public void inject(
+      generateBreakfastFromPreferenceFragment generateBreakfastFromPreferenceFragment) {
+    injectgenerateBreakfastFromPreferenceFragment(generateBreakfastFromPreferenceFragment);
+  }
+
+  @Override
+  public void inject(mealNameFragment mealNameFragment) {
+    injectmealNameFragment(mealNameFragment);
+  }
+
+  @Override
+  public void inject(mealDescriptionFragment mealDescriptionFragment) {
+    injectmealDescriptionFragment(mealDescriptionFragment);
+  }
+
+  @Override
+  public void inject(mealIngredientFragment mealIngredientFragment) {
+    injectmealIngredientFragment(mealIngredientFragment);
+  }
+
+  @Override
+  public void inject(mealImageFragment mealImageFragment) {
+    injectmealImageFragment(mealImageFragment);
+  }
+
+  @Override
+  public void inject(mealTimeFragment mealTimeFragment) {
+    injectmealTimeFragment(mealTimeFragment);
+  }
+
+  @Override
+  public void inject(mealOverviewFragment mealOverviewFragment) {
+    injectmealOverviewFragment(mealOverviewFragment);
   }
 
   @Override
@@ -235,11 +360,6 @@ public final class DaggerAppComponent implements AppComponent {
   @Override
   public CompletePlanRepository completePlanRepository() {
     return CompletePlanRepositoryProvider.get();
-  }
-
-  @Override
-  public MealIngredientJoinRepository mealIngredientJoinRepository() {
-    return MealIngredientJoinRepositoryProvider.get();
   }
 
   @Override
@@ -262,6 +382,11 @@ public final class DaggerAppComponent implements AppComponent {
     return providesApplicationProvider.get();
   }
 
+  @Override
+  public void inject(mealMethodFragment mealMethodFragment) {
+    injectmealMethodFragment(mealMethodFragment);
+  }
+
   private MainActivity injectMainActivity(MainActivity instance) {
     MainActivity_MembersInjector.injectFixedThreadPool(instance, providesExecutorServiceProvider.get());
     return instance;
@@ -273,20 +398,8 @@ public final class DaggerAppComponent implements AppComponent {
     return instance;
   }
 
-  private AddMealActivity injectAddMealActivity(AddMealActivity instance) {
-    AddMealActivity_MembersInjector.injectCompleteMealRepository(instance, completeMealRepositoryProvider.get());
-    AddMealActivity_MembersInjector.injectIngredientRepository(instance, ingredientRepositoryProvider.get());
-    AddMealActivity_MembersInjector.injectFixedThreadPool(instance, providesExecutorServiceProvider.get());
-    AddMealActivity_MembersInjector.injectSharedPreferences(instance, providesSharedPreferenceServiceProvider.get());
-    AddMealActivity_MembersInjector.injectImageProcessing(instance, providesImageServiceProvider.get());
-    return instance;
-  }
-
-  private AddPlanActivity injectAddPlanActivity(AddPlanActivity instance) {
-    AddPlanActivity_MembersInjector.injectCompleteMealRepository(instance, completeMealRepositoryProvider.get());
-    AddPlanActivity_MembersInjector.injectCompletePlanRepository(instance, CompletePlanRepositoryProvider.get());
-    AddPlanActivity_MembersInjector.injectFixedThreadPool(instance, providesExecutorServiceProvider.get());
-    AddPlanActivity_MembersInjector.injectImageProcessing(instance, providesImageServiceProvider.get());
+  private AddMealJourney injectAddMealJourney(AddMealJourney instance) {
+    AddMealJourney_MembersInjector.injectSharedPreferences(instance, providesSharedPreferenceServiceProvider.get());
     return instance;
   }
 
@@ -314,26 +427,21 @@ public final class DaggerAppComponent implements AppComponent {
     return instance;
   }
 
-  private GenerateMealPlanFragment injectGenerateMealPlanFragment(
-      GenerateMealPlanFragment instance) {
-    GenerateMealPlanFragment_MembersInjector.injectCompleteMealRepository(instance, completeMealRepositoryProvider.get());
-    GenerateMealPlanFragment_MembersInjector.injectCompletePlanRepository(instance, CompletePlanRepositoryProvider.get());
-    GenerateMealPlanFragment_MembersInjector.injectFixedThreadPool(instance, providesExecutorServiceProvider.get());
-    GenerateMealPlanFragment_MembersInjector.injectImageProcessing(instance, providesImageServiceProvider.get());
+  private generateLunchFromPreferenceFragment injectgenerateLunchFromPreferenceFragment(
+      generateLunchFromPreferenceFragment instance) {
+    generateLunchFromPreferenceFragment_MembersInjector.injectCompleteMealRepository(instance, completeMealRepositoryProvider.get());
+    generateLunchFromPreferenceFragment_MembersInjector.injectCompletePlanRepository(instance, CompletePlanRepositoryProvider.get());
+    generateLunchFromPreferenceFragment_MembersInjector.injectFixedThreadPool(instance, providesExecutorServiceProvider.get());
+    generateLunchFromPreferenceFragment_MembersInjector.injectSharedPreferences(instance, providesSharedPreferenceServiceProvider.get());
+    generateLunchFromPreferenceFragment_MembersInjector.injectImageProcessing(instance, providesImageServiceProvider.get());
     return instance;
   }
 
-  private AddIngredientActivity injectAddIngredientActivity(AddIngredientActivity instance) {
-    AddIngredientActivity_MembersInjector.injectIngredientRepository(instance, ingredientRepositoryProvider.get());
-    AddIngredientActivity_MembersInjector.injectFixedThreadPool(instance, providesExecutorServiceProvider.get());
-    return instance;
-  }
-
-  private ShoppingListActivity injectShoppingListActivity(ShoppingListActivity instance) {
-    ShoppingListActivity_MembersInjector.injectCompleteMealRepository(instance, completeMealRepositoryProvider.get());
-    ShoppingListActivity_MembersInjector.injectMealIngredientJoinRepository(instance, MealIngredientJoinRepositoryProvider.get());
-    ShoppingListActivity_MembersInjector.injectCompletePlanRepository(instance, CompletePlanRepositoryProvider.get());
-    ShoppingListActivity_MembersInjector.injectFixedThreadPool(instance, providesExecutorServiceProvider.get());
+  private PlanDetail injectPlanDetail(PlanDetail instance) {
+    PlanDetail_MembersInjector.injectCompleteMealRepository(instance, completeMealRepositoryProvider.get());
+    PlanDetail_MembersInjector.injectMealIngredientJoinRepository(instance, MealIngredientJoinRepositoryProvider.get());
+    PlanDetail_MembersInjector.injectCompletePlanRepository(instance, CompletePlanRepositoryProvider.get());
+    PlanDetail_MembersInjector.injectFixedThreadPool(instance, providesExecutorServiceProvider.get());
     return instance;
   }
 
@@ -356,22 +464,190 @@ public final class DaggerAppComponent implements AppComponent {
     return instance;
   }
 
-  private PlanNameFragment injectPlanNameFragment(PlanNameFragment instance) {
-    PlanNameFragment_MembersInjector.injectSharedPreferences(instance, providesSharedPreferenceServiceProvider.get());
-    PlanNameFragment_MembersInjector.injectFixedThreadPool(instance, providesExecutorServiceProvider.get());
+  private nameOfPlanFragment injectnameOfPlanFragment(nameOfPlanFragment instance) {
+    nameOfPlanFragment_MembersInjector.injectSharedPreferences(instance, providesSharedPreferenceServiceProvider.get());
+    nameOfPlanFragment_MembersInjector.injectFixedThreadPool(instance, providesExecutorServiceProvider.get());
     return instance;
   }
 
-  private PlanDateFragment injectPlanDateFragment(PlanDateFragment instance) {
-    PlanDateFragment_MembersInjector.injectSharedPreferences(instance, providesSharedPreferenceServiceProvider.get());
-    PlanDateFragment_MembersInjector.injectFixedThreadPool(instance, providesExecutorServiceProvider.get());
+  private dateOfPlanFragment injectdateOfPlanFragment(dateOfPlanFragment instance) {
+    dateOfPlanFragment_MembersInjector.injectSharedPreferences(instance, providesSharedPreferenceServiceProvider.get());
+    dateOfPlanFragment_MembersInjector.injectFixedThreadPool(instance, providesExecutorServiceProvider.get());
+    dateOfPlanFragment_MembersInjector.injectCompletePlanRepository(instance, CompletePlanRepositoryProvider.get());
     return instance;
   }
 
-  private MealPickerFragment injectMealPickerFragment(MealPickerFragment instance) {
-    MealPickerFragment_MembersInjector.injectSharedPreferences(instance, providesSharedPreferenceServiceProvider.get());
-    MealPickerFragment_MembersInjector.injectFixedThreadPool(instance, providesExecutorServiceProvider.get());
-    MealPickerFragment_MembersInjector.injectCompleteMealRepository(instance, completeMealRepositoryProvider.get());
+  private typeOfPlanFragment injecttypeOfPlanFragment(typeOfPlanFragment instance) {
+    typeOfPlanFragment_MembersInjector.injectSharedPreferences(instance, providesSharedPreferenceServiceProvider.get());
+    return instance;
+  }
+
+  private mealOfPlanFragment injectmealOfPlanFragment(mealOfPlanFragment instance) {
+    mealOfPlanFragment_MembersInjector.injectSharedPreferences(instance, providesSharedPreferenceServiceProvider.get());
+    mealOfPlanFragment_MembersInjector.injectFixedThreadPool(instance, providesExecutorServiceProvider.get());
+    mealOfPlanFragment_MembersInjector.injectCompleteMealRepository(instance, completeMealRepositoryProvider.get());
+    mealOfPlanFragment_MembersInjector.injectImageProcessing(instance, providesImageServiceProvider.get());
+    return instance;
+  }
+
+  private reviewOfPlanFragment injectreviewOfPlanFragment(reviewOfPlanFragment instance) {
+    reviewOfPlanFragment_MembersInjector.injectSharedPreferences(instance, providesSharedPreferenceServiceProvider.get());
+    reviewOfPlanFragment_MembersInjector.injectFixedThreadPool(instance, providesExecutorServiceProvider.get());
+    reviewOfPlanFragment_MembersInjector.injectCompleteMealRepository(instance, completeMealRepositoryProvider.get());
+    reviewOfPlanFragment_MembersInjector.injectCompletePlanRepository(instance, CompletePlanRepositoryProvider.get());
+    reviewOfPlanFragment_MembersInjector.injectImageProcessing(instance, providesImageServiceProvider.get());
+    return instance;
+  }
+
+  private nameOfIngredientFragment injectnameOfIngredientFragment(
+      nameOfIngredientFragment instance) {
+    nameOfIngredientFragment_MembersInjector.injectSharedPreferences(instance, providesSharedPreferenceServiceProvider.get());
+    nameOfIngredientFragment_MembersInjector.injectFixedThreadPool(instance, providesExecutorServiceProvider.get());
+    return instance;
+  }
+
+  private descriptionOfIngredientFragment injectdescriptionOfIngredientFragment(
+      descriptionOfIngredientFragment instance) {
+    descriptionOfIngredientFragment_MembersInjector.injectSharedPreferences(instance, providesSharedPreferenceServiceProvider.get());
+    descriptionOfIngredientFragment_MembersInjector.injectFixedThreadPool(instance, providesExecutorServiceProvider.get());
+    return instance;
+  }
+
+  private amountOfIngredientFragment injectamountOfIngredientFragment(
+      amountOfIngredientFragment instance) {
+    amountOfIngredientFragment_MembersInjector.injectSharedPreferences(instance, providesSharedPreferenceServiceProvider.get());
+    amountOfIngredientFragment_MembersInjector.injectFixedThreadPool(instance, providesExecutorServiceProvider.get());
+    amountOfIngredientFragment_MembersInjector.injectIngredientRepository(instance, ingredientRepositoryProvider.get());
+    return instance;
+  }
+
+  private chipsOfIngredientFragment injectchipsOfIngredientFragment(
+      chipsOfIngredientFragment instance) {
+    chipsOfIngredientFragment_MembersInjector.injectSharedPreferences(instance, providesSharedPreferenceServiceProvider.get());
+    chipsOfIngredientFragment_MembersInjector.injectFixedThreadPool(instance, providesExecutorServiceProvider.get());
+    return instance;
+  }
+
+  private energyOfIngredientFragment injectenergyOfIngredientFragment(
+      energyOfIngredientFragment instance) {
+    energyOfIngredientFragment_MembersInjector.injectSharedPreferences(instance, providesSharedPreferenceServiceProvider.get());
+    energyOfIngredientFragment_MembersInjector.injectFixedThreadPool(instance, providesExecutorServiceProvider.get());
+    return instance;
+  }
+
+  private fatOfIngredientFragment injectfatOfIngredientFragment(fatOfIngredientFragment instance) {
+    fatOfIngredientFragment_MembersInjector.injectSharedPreferences(instance, providesSharedPreferenceServiceProvider.get());
+    fatOfIngredientFragment_MembersInjector.injectFixedThreadPool(instance, providesExecutorServiceProvider.get());
+    return instance;
+  }
+
+  private fiberOfIngredientFragment injectfiberOfIngredientFragment(
+      fiberOfIngredientFragment instance) {
+    fiberOfIngredientFragment_MembersInjector.injectSharedPreferences(instance, providesSharedPreferenceServiceProvider.get());
+    fiberOfIngredientFragment_MembersInjector.injectFixedThreadPool(instance, providesExecutorServiceProvider.get());
+    return instance;
+  }
+
+  private proteinOfIngredientFragment injectproteinOfIngredientFragment(
+      proteinOfIngredientFragment instance) {
+    proteinOfIngredientFragment_MembersInjector.injectSharedPreferences(instance, providesSharedPreferenceServiceProvider.get());
+    proteinOfIngredientFragment_MembersInjector.injectFixedThreadPool(instance, providesExecutorServiceProvider.get());
+    return instance;
+  }
+
+  private saturatesOfIngredientFragment injectsaturatesOfIngredientFragment(
+      saturatesOfIngredientFragment instance) {
+    saturatesOfIngredientFragment_MembersInjector.injectSharedPreferences(instance, providesSharedPreferenceServiceProvider.get());
+    saturatesOfIngredientFragment_MembersInjector.injectFixedThreadPool(instance, providesExecutorServiceProvider.get());
+    return instance;
+  }
+
+  private sugarOfIngredientFragment injectsugarOfIngredientFragment(
+      sugarOfIngredientFragment instance) {
+    sugarOfIngredientFragment_MembersInjector.injectSharedPreferences(instance, providesSharedPreferenceServiceProvider.get());
+    sugarOfIngredientFragment_MembersInjector.injectFixedThreadPool(instance, providesExecutorServiceProvider.get());
+    return instance;
+  }
+
+  private caloriesOfIngredientFragment injectcaloriesOfIngredientFragment(
+      caloriesOfIngredientFragment instance) {
+    caloriesOfIngredientFragment_MembersInjector.injectSharedPreferences(instance, providesSharedPreferenceServiceProvider.get());
+    caloriesOfIngredientFragment_MembersInjector.injectFixedThreadPool(instance, providesExecutorServiceProvider.get());
+    caloriesOfIngredientFragment_MembersInjector.injectIngredientRepository(instance, ingredientRepositoryProvider.get());
+    return instance;
+  }
+
+  private brandOfIngredientFragment injectbrandOfIngredientFragment(
+      brandOfIngredientFragment instance) {
+    brandOfIngredientFragment_MembersInjector.injectSharedPreferences(instance, providesSharedPreferenceServiceProvider.get());
+    brandOfIngredientFragment_MembersInjector.injectFixedThreadPool(instance, providesExecutorServiceProvider.get());
+    return instance;
+  }
+
+  private overviewOfIngredientFragment injectoverviewOfIngredientFragment(
+      overviewOfIngredientFragment instance) {
+    overviewOfIngredientFragment_MembersInjector.injectSharedPreferences(instance, providesSharedPreferenceServiceProvider.get());
+    overviewOfIngredientFragment_MembersInjector.injectFixedThreadPool(instance, providesExecutorServiceProvider.get());
+    overviewOfIngredientFragment_MembersInjector.injectIngredientRepository(instance, ingredientRepositoryProvider.get());
+    return instance;
+  }
+
+  private generateDinnerFromPreferenceFragment injectgenerateDinnerFromPreferenceFragment(
+      generateDinnerFromPreferenceFragment instance) {
+    generateDinnerFromPreferenceFragment_MembersInjector.injectCompleteMealRepository(instance, completeMealRepositoryProvider.get());
+    generateDinnerFromPreferenceFragment_MembersInjector.injectCompletePlanRepository(instance, CompletePlanRepositoryProvider.get());
+    generateDinnerFromPreferenceFragment_MembersInjector.injectFixedThreadPool(instance, providesExecutorServiceProvider.get());
+    generateDinnerFromPreferenceFragment_MembersInjector.injectSharedPreferences(instance, providesSharedPreferenceServiceProvider.get());
+    generateDinnerFromPreferenceFragment_MembersInjector.injectImageProcessing(instance, providesImageServiceProvider.get());
+    return instance;
+  }
+
+  private generateBreakfastFromPreferenceFragment injectgenerateBreakfastFromPreferenceFragment(
+      generateBreakfastFromPreferenceFragment instance) {
+    generateBreakfastFromPreferenceFragment_MembersInjector.injectCompleteMealRepository(instance, completeMealRepositoryProvider.get());
+    generateBreakfastFromPreferenceFragment_MembersInjector.injectCompletePlanRepository(instance, CompletePlanRepositoryProvider.get());
+    generateBreakfastFromPreferenceFragment_MembersInjector.injectFixedThreadPool(instance, providesExecutorServiceProvider.get());
+    generateBreakfastFromPreferenceFragment_MembersInjector.injectSharedPreferences(instance, providesSharedPreferenceServiceProvider.get());
+    generateBreakfastFromPreferenceFragment_MembersInjector.injectImageProcessing(instance, providesImageServiceProvider.get());
+    return instance;
+  }
+
+  private mealNameFragment injectmealNameFragment(mealNameFragment instance) {
+    mealNameFragment_MembersInjector.injectSharedPreferences(instance, providesSharedPreferenceServiceProvider.get());
+    return instance;
+  }
+
+  private mealDescriptionFragment injectmealDescriptionFragment(mealDescriptionFragment instance) {
+    mealDescriptionFragment_MembersInjector.injectSharedPreferences(instance, providesSharedPreferenceServiceProvider.get());
+    return instance;
+  }
+
+  private mealIngredientFragment injectmealIngredientFragment(mealIngredientFragment instance) {
+    mealIngredientFragment_MembersInjector.injectSharedPreferences(instance, providesSharedPreferenceServiceProvider.get());
+    mealIngredientFragment_MembersInjector.injectIngredientRepository(instance, ingredientRepositoryProvider.get());
+    return instance;
+  }
+
+  private mealImageFragment injectmealImageFragment(mealImageFragment instance) {
+    mealImageFragment_MembersInjector.injectSharedPreferences(instance, providesSharedPreferenceServiceProvider.get());
+    mealImageFragment_MembersInjector.injectImageProcessing(instance, providesImageServiceProvider.get());
+    return instance;
+  }
+
+  private mealTimeFragment injectmealTimeFragment(mealTimeFragment instance) {
+    mealTimeFragment_MembersInjector.injectSharedPreferences(instance, providesSharedPreferenceServiceProvider.get());
+    return instance;
+  }
+
+  private mealOverviewFragment injectmealOverviewFragment(mealOverviewFragment instance) {
+    mealOverviewFragment_MembersInjector.injectSharedPreferences(instance, providesSharedPreferenceServiceProvider.get());
+    mealOverviewFragment_MembersInjector.injectFixedThreadPool(instance, providesExecutorServiceProvider.get());
+    mealOverviewFragment_MembersInjector.injectCompleteMealRepository(instance, completeMealRepositoryProvider.get());
+    return instance;
+  }
+
+  private mealMethodFragment injectmealMethodFragment(mealMethodFragment instance) {
+    mealMethodFragment_MembersInjector.injectSharedPreferences(instance, providesSharedPreferenceServiceProvider.get());
     return instance;
   }
 

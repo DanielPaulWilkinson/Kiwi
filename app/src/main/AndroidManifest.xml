@@ -23,8 +23,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.MainActivity" />
-        <activity android:name=".activities.AddMealActivity" />
+        <activity android:name=".activities.MainActivity">
+            <meta-data android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity android:name=".activities.AddMealJourney" />
         <activity android:name=".activities.MealDetail" />
         <activity android:name=".activities.SearchIngredientActivity">
             <intent-filter>
@@ -33,10 +36,10 @@
             <meta-data android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
          </activity>
-        <activity android:name=".activities.AddPlanActivity" />
+        <activity android:name=".activities.AddPlanJourney" />
         <activity android:name=".activities.ServingSizeActivity" />
-        <activity android:name=".activities.ShoppingListActivity" />
-        <activity android:name=".activities.AddIngredientActivity" />
+        <activity android:name=".activities.PlanDetail" />
+        <activity android:name=".activities.AddIngredientJourney" />
         <activity android:name=".activities.OnBoardingActivity" />
 
         <meta-data

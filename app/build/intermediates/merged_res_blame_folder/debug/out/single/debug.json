@@ -24,24 +24,36 @@
         "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\drawable-hdpi\\add.png"
     },
     {
-        "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\animator_recycler_view_enlarge_on_click.xml.flat",
-        "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\animator\\recycler_view_enlarge_on_click.xml"
-    },
-    {
         "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_add_plan_date.xml.flat",
         "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\layout\\fragment_add_plan_date.xml"
+    },
+    {
+        "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\animator_recycler_view_enlarge_on_click.xml.flat",
+        "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\animator\\recycler_view_enlarge_on_click.xml"
     },
     {
         "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi_search.xml.flat",
         "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\drawable-anydpi\\search.xml"
     },
     {
+        "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_add_meal_method.xml.flat",
+        "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\layout\\fragment_add_meal_method.xml"
+    },
+    {
         "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
+        "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_generate_preferences_plan_breakfast.xml.flat",
+        "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\layout\\fragment_generate_preferences_plan_breakfast.xml"
+    },
+    {
         "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_arrow_forward.xml.flat",
         "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\drawable-xhdpi\\arrow_forward.xml"
+    },
+    {
+        "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_energy_of_ingredient.xml.flat",
+        "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\layout\\fragment_energy_of_ingredient.xml"
     },
     {
         "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\drawable_splash_screen.xml.flat",
@@ -50,6 +62,10 @@
     {
         "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_sugarfree.png.flat",
         "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\drawable-xhdpi\\sugarfree.png"
+    },
+    {
+        "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_name_of_ingredient.xml.flat",
+        "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\layout\\fragment_name_of_ingredient.xml"
     },
     {
         "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_lowcholesterol.png.flat",
@@ -76,12 +92,28 @@
         "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
     },
     {
+        "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_add_meal_ingredients.xml.flat",
+        "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\layout\\fragment_add_meal_ingredients.xml"
+    },
+    {
         "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\transition_change_image_transform.xml.flat",
         "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\transition\\change_image_transform.xml"
     },
     {
+        "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_title_black_24dp.xml.flat",
+        "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\drawable\\ic_title_black_24dp.xml"
+    },
+    {
         "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_on_boarding.xml.flat",
         "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\layout\\activity_on_boarding.xml"
+    },
+    {
+        "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_generate_preferences_plan_lunch.xml.flat",
+        "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\layout\\fragment_generate_preferences_plan_lunch.xml"
+    },
+    {
+        "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_add_meal_description.xml.flat",
+        "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\layout\\fragment_add_meal_description.xml"
     },
     {
         "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_noeggs.png.flat",
@@ -100,12 +132,20 @@
         "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\drawable-xhdpi\\brazilnut.png"
     },
     {
-        "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_add.png.flat",
-        "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\drawable-xxxhdpi\\add.png"
+        "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_sugar_of_ingredient.xml.flat",
+        "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\layout\\fragment_sugar_of_ingredient.xml"
+    },
+    {
+        "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_add_meal_name.xml.flat",
+        "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\layout\\fragment_add_meal_name.xml"
     },
     {
         "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\font_advent_pro_thin.xml.flat",
         "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\font\\advent_pro_thin.xml"
+    },
+    {
+        "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_add.png.flat",
+        "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\drawable-xxxhdpi\\add.png"
     },
     {
         "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_add_plan_meal_picker.xml.flat",
@@ -118,6 +158,10 @@
     {
         "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_search.png.flat",
         "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\drawable-mdpi\\search.png"
+    },
+    {
+        "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_calories_of_ingredient.xml.flat",
+        "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\layout\\fragment_calories_of_ingredient.xml"
     },
     {
         "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_add_plan_name.xml.flat",
@@ -144,6 +188,10 @@
         "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     },
     {
+        "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_add_meal_overview.xml.flat",
+        "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\layout\\fragment_add_meal_overview.xml"
+    },
+    {
         "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\anim_gridlayoutanimation.xml.flat",
         "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\anim\\gridlayoutanimation.xml"
     },
@@ -162,6 +210,10 @@
     {
         "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_method_small.xml.flat",
         "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\layout\\item_method_small.xml"
+    },
+    {
+        "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_generate_preferences_plan_dinner.xml.flat",
+        "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\layout\\fragment_generate_preferences_plan_dinner.xml"
     },
     {
         "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_complete_meal_day.xml.flat",
@@ -184,6 +236,10 @@
         "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
+        "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_brand_of_ingredient.xml.flat",
+        "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\layout\\fragment_brand_of_ingredient.xml"
+    },
+    {
         "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_add.png.flat",
         "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\drawable-mdpi\\add.png"
     },
@@ -202,6 +258,10 @@
     {
         "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_shopping_list.xml.flat",
         "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\layout\\activity_shopping_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\layout_list_item.xml.flat",
+        "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\layout\\list_item.xml"
     },
     {
         "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_mid_food_percentage.png.flat",
@@ -276,6 +336,10 @@
         "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\layout\\activity_add_ingredient.xml"
     },
     {
+        "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_add_meal_time.xml.flat",
+        "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\layout\\fragment_add_meal_time.xml"
+    },
+    {
         "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
     },
@@ -286,6 +350,10 @@
     {
         "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\menu_search_menu.xml.flat",
         "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\menu\\search_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_fat_of_ingredient.xml.flat",
+        "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\layout\\fragment_fat_of_ingredient.xml"
     },
     {
         "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_schedule_item.png.flat",
@@ -348,8 +416,16 @@
         "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\layout\\fragment_add_plan_overview.xml"
     },
     {
+        "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_search_meal.xml.flat",
+        "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\layout\\activity_search_meal.xml"
+    },
+    {
         "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_good_food_percentage.png.flat",
         "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\drawable-hdpi\\good_food_percentage.png"
+    },
+    {
+        "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_overview_of_ingredient.xml.flat",
+        "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\layout\\fragment_overview_of_ingredient.xml"
     },
     {
         "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
@@ -360,8 +436,16 @@
         "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\drawable\\avd_schedule.xml"
     },
     {
+        "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_chips_of_ingredient.xml.flat",
+        "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\layout\\fragment_chips_of_ingredient.xml"
+    },
+    {
         "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\anim_recyclerview_animation.xml.flat",
         "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\anim\\recyclerview_animation.xml"
+    },
+    {
+        "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_saturates_of_ingredient.xml.flat",
+        "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\layout\\fragment_saturates_of_ingredient.xml"
     },
     {
         "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\anim_slide_from_left.xml.flat",
@@ -384,10 +468,6 @@
         "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\drawable-xhdpi\\diabeticfood.png"
     },
     {
-        "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_generate_plan.xml.flat",
-        "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\layout\\fragment_generate_plan.xml"
-    },
-    {
         "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\drawable_forward.xml.flat",
         "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\drawable\\forward.xml"
     },
@@ -398,6 +478,10 @@
     {
         "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\font_lato.xml.flat",
         "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\font\\lato.xml"
+    },
+    {
+        "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_protein_of_ingredient.xml.flat",
+        "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\layout\\fragment_protein_of_ingredient.xml"
     },
     {
         "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\menu_search_ingredient_menu.xml.flat",
@@ -468,6 +552,14 @@
         "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\menu\\shopping_list_menu.xml"
     },
     {
+        "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_date_range_black_24dp.xml.flat",
+        "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\drawable\\ic_date_range_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_amount_of_ingredient.xml.flat",
+        "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\layout\\fragment_amount_of_ingredient.xml"
+    },
+    {
         "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\menu_navigation.xml.flat",
         "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\menu\\navigation.xml"
     },
@@ -512,6 +604,10 @@
         "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\layout\\item_ingredient_medium.xml"
     },
     {
+        "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_fiber_of_ingredient.xml.flat",
+        "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\layout\\fragment_fiber_of_ingredient.xml"
+    },
+    {
         "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_vegan.png.flat",
         "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\drawable-xhdpi\\vegan.png"
     },
@@ -520,8 +616,16 @@
         "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\drawable\\avd_schedule_settings.xml"
     },
     {
+        "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_add_meal_image.xml.flat",
+        "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\layout\\fragment_add_meal_image.xml"
+    },
+    {
         "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_create_item.png.flat",
         "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\drawable-xxxhdpi\\create_item.png"
+    },
+    {
+        "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_description_of_ingredient.xml.flat",
+        "source": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\src\\main\\res\\layout\\fragment_description_of_ingredient.xml"
     },
     {
         "merged": "C:\\Users\\dpwde\\AndroidStudioProjects\\Zest\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_calories.png.flat",

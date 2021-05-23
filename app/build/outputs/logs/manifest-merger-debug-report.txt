@@ -1,20 +1,20 @@
 -- Merging decision tree log ---
 provider#androidx.core.content.FileProvider
-INJECTED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:45:9-53:20
+INJECTED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:48:9-56:20
 	android:grantUriPermissions
-		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:49:13-47
+		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:52:13-47
 	android:authorities
 		INJECTED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:47:13-60
+		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:50:13-60
 	android:exported
-		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:48:13-37
+		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:51:13-37
 	android:name
-		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:46:13-62
+		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:49:13-62
 manifest
-ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:2:1-55:12
-INJECTED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:2:1-55:12
-INJECTED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:2:1-55:12
-INJECTED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:2:1-55:12
+ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:2:1-58:12
+INJECTED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:2:1-58:12
+INJECTED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:2:1-58:12
+INJECTED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:2:1-58:12
 MERGED from [me.zhanghai.android.materialprogressbar:library:1.1.7] C:\Users\dpwde\.gradle\caches\transforms-3\12af5e661d001e6c8980c99ac7697f1a\transformed\jetified-library-1.1.7\AndroidManifest.xml:6:1-16:12
 MERGED from [com.google.android.material:material:1.3.0] C:\Users\dpwde\.gradle\caches\transforms-3\0290ab3f293b2d01ea3f1008aa966cf9\transformed\material-1.3.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\dpwde\.gradle\caches\transforms-3\4ac8a882d7a09f97fc4f0cbc22697907\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -22,9 +22,9 @@ MERGED from [androidx.multidex:multidex:2.0.1] C:\Users\dpwde\.gradle\caches\tra
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\dpwde\.gradle\caches\transforms-3\1bab8127aeec47a7facc4c2711fb0493\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.applandeo:material-calendar-view:1.7.0] C:\Users\dpwde\.gradle\caches\transforms-3\3d6e862e92f435d5a191eb07b5fa7b15\transformed\jetified-material-calendar-view-1.7.0\AndroidManifest.xml:2:1-11:12
 MERGED from [devs.mulham.horizontalcalendar:horizontalcalendar:1.3.4] C:\Users\dpwde\.gradle\caches\transforms-3\acf4f27638b8ba597270f06b4cbe73a3\transformed\jetified-horizontalcalendar-1.3.4\AndroidManifest.xml:2:1-14:12
-MERGED from [androidx.room:room-runtime:2.2.6] C:\Users\dpwde\.gradle\caches\transforms-3\9ad927a6046b3c1c994ca3d8795b2564\transformed\room-runtime-2.2.6\AndroidManifest.xml:17:1-31:12
+MERGED from [androidx.room:room-runtime:2.4.0-alpha01] C:\Users\dpwde\.gradle\caches\transforms-3\25804d14a8eb763e12c7c7c82a41610c\transformed\room-runtime-2.4.0-alpha01\AndroidManifest.xml:17:1-31:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\dpwde\.gradle\caches\transforms-3\4535ab22fad49c16a393b1fb3cdb2430\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\dpwde\.gradle\caches\transforms-3\7ff778899f27bda0b701ac34905fff81\transformed\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.recyclerview:recyclerview:1.2.0] C:\Users\dpwde\.gradle\caches\transforms-3\c78f36adfa56f1b65c6aecd808104f86\transformed\recyclerview-1.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.core:core-ktx:1.3.2] C:\Users\dpwde\.gradle\caches\transforms-3\55f07e0d9c7c55b345ff4e3d8743fd2e\transformed\jetified-core-ktx-1.3.2\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\dpwde\.gradle\caches\transforms-3\25b4126761b3c8d70b651d0b5f140fdc\transformed\constraintlayout-2.0.1\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat:1.2.0] C:\Users\dpwde\.gradle\caches\transforms-3\1e260a5181cc36b6229e2e6e1e6c4f76\transformed\appcompat-1.2.0\AndroidManifest.xml:17:1-24:12
@@ -32,8 +32,8 @@ MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\dpwde\.gradle\ca
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\dpwde\.gradle\caches\transforms-3\773dcf72d46b014ea08e4a36645bcfb8\transformed\fragment-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\dpwde\.gradle\caches\transforms-3\95fa1eecdf55fb77d9d69686cda703bf\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.customview:customview:1.0.0] C:\Users\dpwde\.gradle\caches\transforms-3\10bbe1fafb5ec53a3ff72ffcdfd60f4c\transformed\customview-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.sqlite:sqlite-framework:2.0.1] C:\Users\dpwde\.gradle\caches\transforms-3\ff1c049cf678d8c49e71f3679593d70a\transformed\sqlite-framework-2.0.1\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.sqlite:sqlite:2.0.1] C:\Users\dpwde\.gradle\caches\transforms-3\91b9ba0efd233bf94fd5fe04fb23cbbf\transformed\sqlite-2.0.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.sqlite:sqlite-framework:2.1.0] C:\Users\dpwde\.gradle\caches\transforms-3\d872f6dfb6a99fd73f6595284597bf73\transformed\sqlite-framework-2.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.sqlite:sqlite:2.1.0] C:\Users\dpwde\.gradle\caches\transforms-3\9a46f4345acf7251d9af82fec0b6ee8b\transformed\sqlite-2.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\dpwde\.gradle\caches\transforms-3\77ed004c32c4a7ed9373f5227c823622\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\dpwde\.gradle\caches\transforms-3\1d7ba39cbeba5abe5e3db19762ee6f4b\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\dpwde\.gradle\caches\transforms-3\9f2ed5ea144935bfa76bcae02082a2ae\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -55,21 +55,21 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\dpwde\.gradle\ca
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\dpwde\.gradle\caches\transforms-3\f61506be1250a4dba9a526b569636708\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\dpwde\.gradle\caches\transforms-3\7ca8d359ffc269da9be0ff5f3fef04ca\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\dpwde\.gradle\caches\transforms-3\9ba82e10846f4eb952d4fe4063efb702\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\dpwde\.gradle\caches\transforms-3\963ba5ac0d3d334e5ffbc8be29676633\transformed\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:2:1-55:12
-INJECTED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:2:1-55:12
-INJECTED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:2:1-55:12
+MERGED from [androidx.annotation:annotation-experimental:1.1.0-rc01] C:\Users\dpwde\.gradle\caches\transforms-3\8c51977960abb60ebdb665324d104222\transformed\jetified-annotation-experimental-1.1.0-rc01\AndroidManifest.xml:17:1-24:12
+INJECTED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:2:1-58:12
+INJECTED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:2:1-58:12
+INJECTED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:2:1-58:12
 	package
 		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:3:5-31
 		INJECTED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:2:1-55:12
+		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:2:1-58:12
 		INJECTED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:2:1-55:12
+		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:2:1-58:12
 		INJECTED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:2:11-69
@@ -84,13 +84,13 @@ ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifes
 	android:name
 		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:6:22-64
 application
-ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:8:5-54:19
+ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:8:5-57:19
 MERGED from [com.google.android.material:material:1.3.0] C:\Users\dpwde\.gradle\caches\transforms-3\0290ab3f293b2d01ea3f1008aa966cf9\transformed\material-1.3.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.3.0] C:\Users\dpwde\.gradle\caches\transforms-3\0290ab3f293b2d01ea3f1008aa966cf9\transformed\material-1.3.0\AndroidManifest.xml:22:5-20
 MERGED from [devs.mulham.horizontalcalendar:horizontalcalendar:1.3.4] C:\Users\dpwde\.gradle\caches\transforms-3\acf4f27638b8ba597270f06b4cbe73a3\transformed\jetified-horizontalcalendar-1.3.4\AndroidManifest.xml:11:5-12:19
 MERGED from [devs.mulham.horizontalcalendar:horizontalcalendar:1.3.4] C:\Users\dpwde\.gradle\caches\transforms-3\acf4f27638b8ba597270f06b4cbe73a3\transformed\jetified-horizontalcalendar-1.3.4\AndroidManifest.xml:11:5-12:19
-MERGED from [androidx.room:room-runtime:2.2.6] C:\Users\dpwde\.gradle\caches\transforms-3\9ad927a6046b3c1c994ca3d8795b2564\transformed\room-runtime-2.2.6\AndroidManifest.xml:24:5-29:19
-MERGED from [androidx.room:room-runtime:2.2.6] C:\Users\dpwde\.gradle\caches\transforms-3\9ad927a6046b3c1c994ca3d8795b2564\transformed\room-runtime-2.2.6\AndroidManifest.xml:24:5-29:19
+MERGED from [androidx.room:room-runtime:2.4.0-alpha01] C:\Users\dpwde\.gradle\caches\transforms-3\25804d14a8eb763e12c7c7c82a41610c\transformed\room-runtime-2.4.0-alpha01\AndroidManifest.xml:24:5-29:19
+MERGED from [androidx.room:room-runtime:2.4.0-alpha01] C:\Users\dpwde\.gradle\caches\transforms-3\25804d14a8eb763e12c7c7c82a41610c\transformed\room-runtime-2.4.0-alpha01\AndroidManifest.xml:24:5-29:19
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\dpwde\.gradle\caches\transforms-3\25b4126761b3c8d70b651d0b5f140fdc\transformed\constraintlayout-2.0.1\AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\dpwde\.gradle\caches\transforms-3\25b4126761b3c8d70b651d0b5f140fdc\transformed\constraintlayout-2.0.1\AndroidManifest.xml:9:5-20
 MERGED from [androidx.core:core:1.3.2] C:\Users\dpwde\.gradle\caches\transforms-3\48df86dae64c8b5051f5f2d2f5b775ba\transformed\core-1.3.2\AndroidManifest.xml:24:5-89
@@ -134,59 +134,59 @@ ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifes
 	android:name
 		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:23:27-74
 activity#com.example.zest.activities.MainActivity
-ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:26:9-61
+ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:26:9-29:20
 	android:name
 		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:26:19-58
-activity#com.example.zest.activities.AddMealActivity
-ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:27:9-64
-	android:name
-		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:27:19-61
-activity#com.example.zest.activities.MealDetail
-ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:28:9-59
-	android:name
-		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:28:19-56
-activity#com.example.zest.activities.SearchIngredientActivity
-ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:29:9-35:21
-	android:name
-		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:29:19-70
-intent-filter#action:name:android.intent.action.SEARCH
-ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:30:13-32:29
-action#android.intent.action.SEARCH
-ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:31:17-71
-	android:name
-		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:31:25-68
 meta-data#android.app.searchable
-ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:33:13-34:54
+ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:27:13-28:54
 	android:resource
-		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:34:17-51
+		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:28:17-51
 	android:name
-		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:33:24-61
-activity#com.example.zest.activities.AddPlanActivity
-ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:36:9-64
+		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:27:24-61
+activity#com.example.zest.activities.AddMealJourney
+ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:30:9-63
 	android:name
-		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:36:19-61
+		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:30:19-60
+activity#com.example.zest.activities.MealDetail
+ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:31:9-59
+	android:name
+		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:31:19-56
+activity#com.example.zest.activities.SearchIngredientActivity
+ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:32:9-38:21
+	android:name
+		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:32:19-70
+intent-filter#action:name:android.intent.action.SEARCH
+ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:33:13-35:29
+action#android.intent.action.SEARCH
+ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:34:17-71
+	android:name
+		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:34:25-68
+activity#com.example.zest.activities.AddPlanJourney
+ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:39:9-63
+	android:name
+		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:39:19-60
 activity#com.example.zest.activities.ServingSizeActivity
-ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:37:9-68
+ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:40:9-68
 	android:name
-		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:37:19-65
-activity#com.example.zest.activities.ShoppingListActivity
-ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:38:9-69
+		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:40:19-65
+activity#com.example.zest.activities.PlanDetail
+ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:41:9-59
 	android:name
-		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:38:19-66
-activity#com.example.zest.activities.AddIngredientActivity
-ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:39:9-70
+		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:41:19-56
+activity#com.example.zest.activities.AddIngredientJourney
+ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:42:9-69
 	android:name
-		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:39:19-67
+		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:42:19-66
 activity#com.example.zest.activities.OnBoardingActivity
-ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:40:9-67
+ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:43:9-67
 	android:name
-		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:40:19-64
+		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:43:19-64
 meta-data#preloaded_fonts
-ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:42:9-44:57
+ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:45:9-47:57
 	android:resource
-		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:44:13-54
+		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:47:13-54
 	android:name
-		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:43:13-43
+		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:46:13-43
 uses-sdk
 INJECTED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml
@@ -205,12 +205,12 @@ MERGED from [com.applandeo:material-calendar-view:1.7.0] C:\Users\dpwde\.gradle\
 MERGED from [com.applandeo:material-calendar-view:1.7.0] C:\Users\dpwde\.gradle\caches\transforms-3\3d6e862e92f435d5a191eb07b5fa7b15\transformed\jetified-material-calendar-view-1.7.0\AndroidManifest.xml:7:5-9:41
 MERGED from [devs.mulham.horizontalcalendar:horizontalcalendar:1.3.4] C:\Users\dpwde\.gradle\caches\transforms-3\acf4f27638b8ba597270f06b4cbe73a3\transformed\jetified-horizontalcalendar-1.3.4\AndroidManifest.xml:7:5-9:41
 MERGED from [devs.mulham.horizontalcalendar:horizontalcalendar:1.3.4] C:\Users\dpwde\.gradle\caches\transforms-3\acf4f27638b8ba597270f06b4cbe73a3\transformed\jetified-horizontalcalendar-1.3.4\AndroidManifest.xml:7:5-9:41
-MERGED from [androidx.room:room-runtime:2.2.6] C:\Users\dpwde\.gradle\caches\transforms-3\9ad927a6046b3c1c994ca3d8795b2564\transformed\room-runtime-2.2.6\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.room:room-runtime:2.2.6] C:\Users\dpwde\.gradle\caches\transforms-3\9ad927a6046b3c1c994ca3d8795b2564\transformed\room-runtime-2.2.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.room:room-runtime:2.4.0-alpha01] C:\Users\dpwde\.gradle\caches\transforms-3\25804d14a8eb763e12c7c7c82a41610c\transformed\room-runtime-2.4.0-alpha01\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.room:room-runtime:2.4.0-alpha01] C:\Users\dpwde\.gradle\caches\transforms-3\25804d14a8eb763e12c7c7c82a41610c\transformed\room-runtime-2.4.0-alpha01\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\dpwde\.gradle\caches\transforms-3\4535ab22fad49c16a393b1fb3cdb2430\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\dpwde\.gradle\caches\transforms-3\4535ab22fad49c16a393b1fb3cdb2430\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\dpwde\.gradle\caches\transforms-3\7ff778899f27bda0b701ac34905fff81\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\dpwde\.gradle\caches\transforms-3\7ff778899f27bda0b701ac34905fff81\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.2.0] C:\Users\dpwde\.gradle\caches\transforms-3\c78f36adfa56f1b65c6aecd808104f86\transformed\recyclerview-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.2.0] C:\Users\dpwde\.gradle\caches\transforms-3\c78f36adfa56f1b65c6aecd808104f86\transformed\recyclerview-1.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.core:core-ktx:1.3.2] C:\Users\dpwde\.gradle\caches\transforms-3\55f07e0d9c7c55b345ff4e3d8743fd2e\transformed\jetified-core-ktx-1.3.2\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.core:core-ktx:1.3.2] C:\Users\dpwde\.gradle\caches\transforms-3\55f07e0d9c7c55b345ff4e3d8743fd2e\transformed\jetified-core-ktx-1.3.2\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\dpwde\.gradle\caches\transforms-3\25b4126761b3c8d70b651d0b5f140fdc\transformed\constraintlayout-2.0.1\AndroidManifest.xml:5:5-7:41
@@ -225,10 +225,10 @@ MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\dpwde\.gradle\caches\t
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\dpwde\.gradle\caches\transforms-3\95fa1eecdf55fb77d9d69686cda703bf\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.customview:customview:1.0.0] C:\Users\dpwde\.gradle\caches\transforms-3\10bbe1fafb5ec53a3ff72ffcdfd60f4c\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.customview:customview:1.0.0] C:\Users\dpwde\.gradle\caches\transforms-3\10bbe1fafb5ec53a3ff72ffcdfd60f4c\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.sqlite:sqlite-framework:2.0.1] C:\Users\dpwde\.gradle\caches\transforms-3\ff1c049cf678d8c49e71f3679593d70a\transformed\sqlite-framework-2.0.1\AndroidManifest.xml:20:5-44
-MERGED from [androidx.sqlite:sqlite-framework:2.0.1] C:\Users\dpwde\.gradle\caches\transforms-3\ff1c049cf678d8c49e71f3679593d70a\transformed\sqlite-framework-2.0.1\AndroidManifest.xml:20:5-44
-MERGED from [androidx.sqlite:sqlite:2.0.1] C:\Users\dpwde\.gradle\caches\transforms-3\91b9ba0efd233bf94fd5fe04fb23cbbf\transformed\sqlite-2.0.1\AndroidManifest.xml:20:5-44
-MERGED from [androidx.sqlite:sqlite:2.0.1] C:\Users\dpwde\.gradle\caches\transforms-3\91b9ba0efd233bf94fd5fe04fb23cbbf\transformed\sqlite-2.0.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite-framework:2.1.0] C:\Users\dpwde\.gradle\caches\transforms-3\d872f6dfb6a99fd73f6595284597bf73\transformed\sqlite-framework-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.sqlite:sqlite-framework:2.1.0] C:\Users\dpwde\.gradle\caches\transforms-3\d872f6dfb6a99fd73f6595284597bf73\transformed\sqlite-framework-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.sqlite:sqlite:2.1.0] C:\Users\dpwde\.gradle\caches\transforms-3\9a46f4345acf7251d9af82fec0b6ee8b\transformed\sqlite-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.sqlite:sqlite:2.1.0] C:\Users\dpwde\.gradle\caches\transforms-3\9a46f4345acf7251d9af82fec0b6ee8b\transformed\sqlite-2.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\dpwde\.gradle\caches\transforms-3\77ed004c32c4a7ed9373f5227c823622\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\dpwde\.gradle\caches\transforms-3\77ed004c32c4a7ed9373f5227c823622\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\dpwde\.gradle\caches\transforms-3\1d7ba39cbeba5abe5e3db19762ee6f4b\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
@@ -271,8 +271,8 @@ MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\User
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\dpwde\.gradle\caches\transforms-3\7ca8d359ffc269da9be0ff5f3fef04ca\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.print:print:1.0.0] C:\Users\dpwde\.gradle\caches\transforms-3\9ba82e10846f4eb952d4fe4063efb702\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.print:print:1.0.0] C:\Users\dpwde\.gradle\caches\transforms-3\9ba82e10846f4eb952d4fe4063efb702\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\dpwde\.gradle\caches\transforms-3\963ba5ac0d3d334e5ffbc8be29676633\transformed\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\dpwde\.gradle\caches\transforms-3\963ba5ac0d3d334e5ffbc8be29676633\transformed\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.1.0-rc01] C:\Users\dpwde\.gradle\caches\transforms-3\8c51977960abb60ebdb665324d104222\transformed\jetified-annotation-experimental-1.1.0-rc01\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.1.0-rc01] C:\Users\dpwde\.gradle\caches\transforms-3\8c51977960abb60ebdb665324d104222\transformed\jetified-annotation-experimental-1.1.0-rc01\AndroidManifest.xml:20:5-22:41
 INJECTED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
@@ -284,16 +284,16 @@ INJECTED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidMani
 		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:50:13-52:58
+ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:53:13-55:58
 	android:resource
-		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:52:17-55
+		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:55:17-55
 	android:name
-		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:51:17-67
+		ADDED from C:\Users\dpwde\AndroidStudioProjects\Zest\app\src\main\AndroidManifest.xml:54:17-67
 service#androidx.room.MultiInstanceInvalidationService
-ADDED from [androidx.room:room-runtime:2.2.6] C:\Users\dpwde\.gradle\caches\transforms-3\9ad927a6046b3c1c994ca3d8795b2564\transformed\room-runtime-2.2.6\AndroidManifest.xml:25:9-28:40
+ADDED from [androidx.room:room-runtime:2.4.0-alpha01] C:\Users\dpwde\.gradle\caches\transforms-3\25804d14a8eb763e12c7c7c82a41610c\transformed\room-runtime-2.4.0-alpha01\AndroidManifest.xml:25:9-28:40
 	android:exported
-		ADDED from [androidx.room:room-runtime:2.2.6] C:\Users\dpwde\.gradle\caches\transforms-3\9ad927a6046b3c1c994ca3d8795b2564\transformed\room-runtime-2.2.6\AndroidManifest.xml:28:13-37
+		ADDED from [androidx.room:room-runtime:2.4.0-alpha01] C:\Users\dpwde\.gradle\caches\transforms-3\25804d14a8eb763e12c7c7c82a41610c\transformed\room-runtime-2.4.0-alpha01\AndroidManifest.xml:28:13-37
 	android:directBootAware
-		ADDED from [androidx.room:room-runtime:2.2.6] C:\Users\dpwde\.gradle\caches\transforms-3\9ad927a6046b3c1c994ca3d8795b2564\transformed\room-runtime-2.2.6\AndroidManifest.xml:27:13-43
+		ADDED from [androidx.room:room-runtime:2.4.0-alpha01] C:\Users\dpwde\.gradle\caches\transforms-3\25804d14a8eb763e12c7c7c82a41610c\transformed\room-runtime-2.4.0-alpha01\AndroidManifest.xml:27:13-43
 	android:name
-		ADDED from [androidx.room:room-runtime:2.2.6] C:\Users\dpwde\.gradle\caches\transforms-3\9ad927a6046b3c1c994ca3d8795b2564\transformed\room-runtime-2.2.6\AndroidManifest.xml:26:13-74
+		ADDED from [androidx.room:room-runtime:2.4.0-alpha01] C:\Users\dpwde\.gradle\caches\transforms-3\25804d14a8eb763e12c7c7c82a41610c\transformed\room-runtime-2.4.0-alpha01\AndroidManifest.xml:26:13-74

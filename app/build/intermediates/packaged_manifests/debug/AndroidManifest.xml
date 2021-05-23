@@ -37,8 +37,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.zest.activities.MainActivity" />
-        <activity android:name="com.example.zest.activities.AddMealActivity" />
+        <activity android:name="com.example.zest.activities.MainActivity" >
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity android:name="com.example.zest.activities.AddMealJourney" />
         <activity android:name="com.example.zest.activities.MealDetail" />
         <activity android:name="com.example.zest.activities.SearchIngredientActivity" >
             <intent-filter>
@@ -49,10 +53,10 @@
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
         </activity>
-        <activity android:name="com.example.zest.activities.AddPlanActivity" />
+        <activity android:name="com.example.zest.activities.AddPlanJourney" />
         <activity android:name="com.example.zest.activities.ServingSizeActivity" />
-        <activity android:name="com.example.zest.activities.ShoppingListActivity" />
-        <activity android:name="com.example.zest.activities.AddIngredientActivity" />
+        <activity android:name="com.example.zest.activities.PlanDetail" />
+        <activity android:name="com.example.zest.activities.AddIngredientJourney" />
         <activity android:name="com.example.zest.activities.OnBoardingActivity" />
 
         <meta-data

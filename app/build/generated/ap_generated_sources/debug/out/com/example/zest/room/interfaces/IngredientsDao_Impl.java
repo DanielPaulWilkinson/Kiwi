@@ -11,12 +11,14 @@ import androidx.room.util.CursorUtil;
 import androidx.room.util.DBUtil;
 import androidx.sqlite.db.SupportSQLiteStatement;
 import com.example.zest.room.entities.Ingredients;
+import java.lang.Class;
 import java.lang.Double;
 import java.lang.Exception;
 import java.lang.Override;
 import java.lang.String;
 import java.lang.SuppressWarnings;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.Callable;
 
@@ -37,7 +39,7 @@ public final class IngredientsDao_Impl implements IngredientsDao {
     this.__insertionAdapterOfIngredients = new EntityInsertionAdapter<Ingredients>(__db) {
       @Override
       public String createQuery() {
-        return "INSERT OR REPLACE INTO `Ingredients` (`ingredientsId`,`spoonId`,`name`,`description`,`brand`,`aisle`,`nameClean`,`original`,`consistency`,`freezable`,`microwaveable`,`vegan`,`glutenFree`,`servingSize`,`Units`,`energy`,`fat`,`ofWhichSaturates`,`fiber`,`protein`,`salt`,`calories`,`sugar`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        return "INSERT OR REPLACE INTO `Ingredients` (`ingredientsId`,`spoonId`,`name`,`description`,`brand`,`aisle`,`nameClean`,`original`,`consistency`,`freezable`,`microwaveable`,`vegan`,`glutenFree`,`servingSize`,`unit`,`energy`,`fat`,`ofWhichSaturates`,`fiber`,`protein`,`salt`,`calories`,`sugar`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
       }
 
       @Override
@@ -100,10 +102,10 @@ public final class IngredientsDao_Impl implements IngredientsDao {
         } else {
           stmt.bindDouble(14, value.servingSize);
         }
-        if (value.Units == null) {
+        if (value.unit == null) {
           stmt.bindNull(15);
         } else {
-          stmt.bindString(15, value.Units);
+          stmt.bindString(15, value.unit);
         }
         if (value.energy == null) {
           stmt.bindNull(16);
@@ -161,7 +163,7 @@ public final class IngredientsDao_Impl implements IngredientsDao {
     this.__updateAdapterOfIngredients = new EntityDeletionOrUpdateAdapter<Ingredients>(__db) {
       @Override
       public String createQuery() {
-        return "UPDATE OR ABORT `Ingredients` SET `ingredientsId` = ?,`spoonId` = ?,`name` = ?,`description` = ?,`brand` = ?,`aisle` = ?,`nameClean` = ?,`original` = ?,`consistency` = ?,`freezable` = ?,`microwaveable` = ?,`vegan` = ?,`glutenFree` = ?,`servingSize` = ?,`Units` = ?,`energy` = ?,`fat` = ?,`ofWhichSaturates` = ?,`fiber` = ?,`protein` = ?,`salt` = ?,`calories` = ?,`sugar` = ? WHERE `ingredientsId` = ?";
+        return "UPDATE OR ABORT `Ingredients` SET `ingredientsId` = ?,`spoonId` = ?,`name` = ?,`description` = ?,`brand` = ?,`aisle` = ?,`nameClean` = ?,`original` = ?,`consistency` = ?,`freezable` = ?,`microwaveable` = ?,`vegan` = ?,`glutenFree` = ?,`servingSize` = ?,`unit` = ?,`energy` = ?,`fat` = ?,`ofWhichSaturates` = ?,`fiber` = ?,`protein` = ?,`salt` = ?,`calories` = ?,`sugar` = ? WHERE `ingredientsId` = ?";
       }
 
       @Override
@@ -224,10 +226,10 @@ public final class IngredientsDao_Impl implements IngredientsDao {
         } else {
           stmt.bindDouble(14, value.servingSize);
         }
-        if (value.Units == null) {
+        if (value.unit == null) {
           stmt.bindNull(15);
         } else {
-          stmt.bindString(15, value.Units);
+          stmt.bindString(15, value.unit);
         }
         if (value.energy == null) {
           stmt.bindNull(16);
@@ -370,7 +372,7 @@ public final class IngredientsDao_Impl implements IngredientsDao {
         final int _cursorIndexOfVegan = CursorUtil.getColumnIndexOrThrow(_cursor, "vegan");
         final int _cursorIndexOfGlutenFree = CursorUtil.getColumnIndexOrThrow(_cursor, "glutenFree");
         final int _cursorIndexOfServingSize = CursorUtil.getColumnIndexOrThrow(_cursor, "servingSize");
-        final int _cursorIndexOfUnits = CursorUtil.getColumnIndexOrThrow(_cursor, "Units");
+        final int _cursorIndexOfUnit = CursorUtil.getColumnIndexOrThrow(_cursor, "unit");
         final int _cursorIndexOfEnergy = CursorUtil.getColumnIndexOrThrow(_cursor, "energy");
         final int _cursorIndexOfFat = CursorUtil.getColumnIndexOrThrow(_cursor, "fat");
         final int _cursorIndexOfOfWhichSaturates = CursorUtil.getColumnIndexOrThrow(_cursor, "ofWhichSaturates");
@@ -384,11 +386,23 @@ public final class IngredientsDao_Impl implements IngredientsDao {
           final long _tmpIngredientsId;
           _tmpIngredientsId = _cursor.getLong(_cursorIndexOfIngredientsId);
           final String _tmpName;
-          _tmpName = _cursor.getString(_cursorIndexOfName);
+          if (_cursor.isNull(_cursorIndexOfName)) {
+            _tmpName = null;
+          } else {
+            _tmpName = _cursor.getString(_cursorIndexOfName);
+          }
           final String _tmpDescription;
-          _tmpDescription = _cursor.getString(_cursorIndexOfDescription);
+          if (_cursor.isNull(_cursorIndexOfDescription)) {
+            _tmpDescription = null;
+          } else {
+            _tmpDescription = _cursor.getString(_cursorIndexOfDescription);
+          }
           final String _tmpBrand;
-          _tmpBrand = _cursor.getString(_cursorIndexOfBrand);
+          if (_cursor.isNull(_cursorIndexOfBrand)) {
+            _tmpBrand = null;
+          } else {
+            _tmpBrand = _cursor.getString(_cursorIndexOfBrand);
+          }
           final boolean _tmpFreezable;
           final int _tmp;
           _tmp = _cursor.getInt(_cursorIndexOfFreezable);
@@ -411,8 +425,12 @@ public final class IngredientsDao_Impl implements IngredientsDao {
           } else {
             _tmpServingSize = _cursor.getDouble(_cursorIndexOfServingSize);
           }
-          final String _tmpUnits;
-          _tmpUnits = _cursor.getString(_cursorIndexOfUnits);
+          final String _tmpUnit;
+          if (_cursor.isNull(_cursorIndexOfUnit)) {
+            _tmpUnit = null;
+          } else {
+            _tmpUnit = _cursor.getString(_cursorIndexOfUnit);
+          }
           final Double _tmpEnergy;
           if (_cursor.isNull(_cursorIndexOfEnergy)) {
             _tmpEnergy = null;
@@ -461,16 +479,32 @@ public final class IngredientsDao_Impl implements IngredientsDao {
           } else {
             _tmpSugar = _cursor.getDouble(_cursorIndexOfSugar);
           }
-          _result = new Ingredients(_tmpIngredientsId,_tmpName,_tmpDescription,_tmpBrand,_tmpServingSize,_tmpUnits,_tmpCalories,_tmpEnergy,_tmpFat,_tmpOfWhichSaturates,_tmpFiber,_tmpProtein,_tmpSalt,_tmpSugar,_tmpFreezable,_tmpMicrowaveable,_tmpVegan,_tmpGlutenFree);
+          _result = new Ingredients(_tmpIngredientsId,_tmpName,_tmpDescription,_tmpBrand,_tmpServingSize,_tmpUnit,_tmpCalories,_tmpEnergy,_tmpFat,_tmpOfWhichSaturates,_tmpFiber,_tmpProtein,_tmpSalt,_tmpSugar,_tmpFreezable,_tmpMicrowaveable,_tmpVegan,_tmpGlutenFree);
           if (_cursor.isNull(_cursorIndexOfSpoonId)) {
             _result.spoonId = null;
           } else {
             _result.spoonId = _cursor.getLong(_cursorIndexOfSpoonId);
           }
-          _result.aisle = _cursor.getString(_cursorIndexOfAisle);
-          _result.nameClean = _cursor.getString(_cursorIndexOfNameClean);
-          _result.original = _cursor.getString(_cursorIndexOfOriginal);
-          _result.consistency = _cursor.getString(_cursorIndexOfConsistency);
+          if (_cursor.isNull(_cursorIndexOfAisle)) {
+            _result.aisle = null;
+          } else {
+            _result.aisle = _cursor.getString(_cursorIndexOfAisle);
+          }
+          if (_cursor.isNull(_cursorIndexOfNameClean)) {
+            _result.nameClean = null;
+          } else {
+            _result.nameClean = _cursor.getString(_cursorIndexOfNameClean);
+          }
+          if (_cursor.isNull(_cursorIndexOfOriginal)) {
+            _result.original = null;
+          } else {
+            _result.original = _cursor.getString(_cursorIndexOfOriginal);
+          }
+          if (_cursor.isNull(_cursorIndexOfConsistency)) {
+            _result.consistency = null;
+          } else {
+            _result.consistency = _cursor.getString(_cursorIndexOfConsistency);
+          }
         } else {
           _result = null;
         }
@@ -506,7 +540,7 @@ public final class IngredientsDao_Impl implements IngredientsDao {
       final int _cursorIndexOfVegan = CursorUtil.getColumnIndexOrThrow(_cursor, "vegan");
       final int _cursorIndexOfGlutenFree = CursorUtil.getColumnIndexOrThrow(_cursor, "glutenFree");
       final int _cursorIndexOfServingSize = CursorUtil.getColumnIndexOrThrow(_cursor, "servingSize");
-      final int _cursorIndexOfUnits = CursorUtil.getColumnIndexOrThrow(_cursor, "Units");
+      final int _cursorIndexOfUnit = CursorUtil.getColumnIndexOrThrow(_cursor, "unit");
       final int _cursorIndexOfEnergy = CursorUtil.getColumnIndexOrThrow(_cursor, "energy");
       final int _cursorIndexOfFat = CursorUtil.getColumnIndexOrThrow(_cursor, "fat");
       final int _cursorIndexOfOfWhichSaturates = CursorUtil.getColumnIndexOrThrow(_cursor, "ofWhichSaturates");
@@ -521,11 +555,23 @@ public final class IngredientsDao_Impl implements IngredientsDao {
         final long _tmpIngredientsId;
         _tmpIngredientsId = _cursor.getLong(_cursorIndexOfIngredientsId);
         final String _tmpName;
-        _tmpName = _cursor.getString(_cursorIndexOfName);
+        if (_cursor.isNull(_cursorIndexOfName)) {
+          _tmpName = null;
+        } else {
+          _tmpName = _cursor.getString(_cursorIndexOfName);
+        }
         final String _tmpDescription;
-        _tmpDescription = _cursor.getString(_cursorIndexOfDescription);
+        if (_cursor.isNull(_cursorIndexOfDescription)) {
+          _tmpDescription = null;
+        } else {
+          _tmpDescription = _cursor.getString(_cursorIndexOfDescription);
+        }
         final String _tmpBrand;
-        _tmpBrand = _cursor.getString(_cursorIndexOfBrand);
+        if (_cursor.isNull(_cursorIndexOfBrand)) {
+          _tmpBrand = null;
+        } else {
+          _tmpBrand = _cursor.getString(_cursorIndexOfBrand);
+        }
         final boolean _tmpFreezable;
         final int _tmp;
         _tmp = _cursor.getInt(_cursorIndexOfFreezable);
@@ -548,8 +594,12 @@ public final class IngredientsDao_Impl implements IngredientsDao {
         } else {
           _tmpServingSize = _cursor.getDouble(_cursorIndexOfServingSize);
         }
-        final String _tmpUnits;
-        _tmpUnits = _cursor.getString(_cursorIndexOfUnits);
+        final String _tmpUnit;
+        if (_cursor.isNull(_cursorIndexOfUnit)) {
+          _tmpUnit = null;
+        } else {
+          _tmpUnit = _cursor.getString(_cursorIndexOfUnit);
+        }
         final Double _tmpEnergy;
         if (_cursor.isNull(_cursorIndexOfEnergy)) {
           _tmpEnergy = null;
@@ -598,16 +648,32 @@ public final class IngredientsDao_Impl implements IngredientsDao {
         } else {
           _tmpSugar = _cursor.getDouble(_cursorIndexOfSugar);
         }
-        _item = new Ingredients(_tmpIngredientsId,_tmpName,_tmpDescription,_tmpBrand,_tmpServingSize,_tmpUnits,_tmpCalories,_tmpEnergy,_tmpFat,_tmpOfWhichSaturates,_tmpFiber,_tmpProtein,_tmpSalt,_tmpSugar,_tmpFreezable,_tmpMicrowaveable,_tmpVegan,_tmpGlutenFree);
+        _item = new Ingredients(_tmpIngredientsId,_tmpName,_tmpDescription,_tmpBrand,_tmpServingSize,_tmpUnit,_tmpCalories,_tmpEnergy,_tmpFat,_tmpOfWhichSaturates,_tmpFiber,_tmpProtein,_tmpSalt,_tmpSugar,_tmpFreezable,_tmpMicrowaveable,_tmpVegan,_tmpGlutenFree);
         if (_cursor.isNull(_cursorIndexOfSpoonId)) {
           _item.spoonId = null;
         } else {
           _item.spoonId = _cursor.getLong(_cursorIndexOfSpoonId);
         }
-        _item.aisle = _cursor.getString(_cursorIndexOfAisle);
-        _item.nameClean = _cursor.getString(_cursorIndexOfNameClean);
-        _item.original = _cursor.getString(_cursorIndexOfOriginal);
-        _item.consistency = _cursor.getString(_cursorIndexOfConsistency);
+        if (_cursor.isNull(_cursorIndexOfAisle)) {
+          _item.aisle = null;
+        } else {
+          _item.aisle = _cursor.getString(_cursorIndexOfAisle);
+        }
+        if (_cursor.isNull(_cursorIndexOfNameClean)) {
+          _item.nameClean = null;
+        } else {
+          _item.nameClean = _cursor.getString(_cursorIndexOfNameClean);
+        }
+        if (_cursor.isNull(_cursorIndexOfOriginal)) {
+          _item.original = null;
+        } else {
+          _item.original = _cursor.getString(_cursorIndexOfOriginal);
+        }
+        if (_cursor.isNull(_cursorIndexOfConsistency)) {
+          _item.consistency = null;
+        } else {
+          _item.consistency = _cursor.getString(_cursorIndexOfConsistency);
+        }
         _result.add(_item);
       }
       return _result;
@@ -640,7 +706,7 @@ public final class IngredientsDao_Impl implements IngredientsDao {
           final int _cursorIndexOfVegan = CursorUtil.getColumnIndexOrThrow(_cursor, "vegan");
           final int _cursorIndexOfGlutenFree = CursorUtil.getColumnIndexOrThrow(_cursor, "glutenFree");
           final int _cursorIndexOfServingSize = CursorUtil.getColumnIndexOrThrow(_cursor, "servingSize");
-          final int _cursorIndexOfUnits = CursorUtil.getColumnIndexOrThrow(_cursor, "Units");
+          final int _cursorIndexOfUnit = CursorUtil.getColumnIndexOrThrow(_cursor, "unit");
           final int _cursorIndexOfEnergy = CursorUtil.getColumnIndexOrThrow(_cursor, "energy");
           final int _cursorIndexOfFat = CursorUtil.getColumnIndexOrThrow(_cursor, "fat");
           final int _cursorIndexOfOfWhichSaturates = CursorUtil.getColumnIndexOrThrow(_cursor, "ofWhichSaturates");
@@ -655,11 +721,23 @@ public final class IngredientsDao_Impl implements IngredientsDao {
             final long _tmpIngredientsId;
             _tmpIngredientsId = _cursor.getLong(_cursorIndexOfIngredientsId);
             final String _tmpName;
-            _tmpName = _cursor.getString(_cursorIndexOfName);
+            if (_cursor.isNull(_cursorIndexOfName)) {
+              _tmpName = null;
+            } else {
+              _tmpName = _cursor.getString(_cursorIndexOfName);
+            }
             final String _tmpDescription;
-            _tmpDescription = _cursor.getString(_cursorIndexOfDescription);
+            if (_cursor.isNull(_cursorIndexOfDescription)) {
+              _tmpDescription = null;
+            } else {
+              _tmpDescription = _cursor.getString(_cursorIndexOfDescription);
+            }
             final String _tmpBrand;
-            _tmpBrand = _cursor.getString(_cursorIndexOfBrand);
+            if (_cursor.isNull(_cursorIndexOfBrand)) {
+              _tmpBrand = null;
+            } else {
+              _tmpBrand = _cursor.getString(_cursorIndexOfBrand);
+            }
             final boolean _tmpFreezable;
             final int _tmp;
             _tmp = _cursor.getInt(_cursorIndexOfFreezable);
@@ -682,8 +760,12 @@ public final class IngredientsDao_Impl implements IngredientsDao {
             } else {
               _tmpServingSize = _cursor.getDouble(_cursorIndexOfServingSize);
             }
-            final String _tmpUnits;
-            _tmpUnits = _cursor.getString(_cursorIndexOfUnits);
+            final String _tmpUnit;
+            if (_cursor.isNull(_cursorIndexOfUnit)) {
+              _tmpUnit = null;
+            } else {
+              _tmpUnit = _cursor.getString(_cursorIndexOfUnit);
+            }
             final Double _tmpEnergy;
             if (_cursor.isNull(_cursorIndexOfEnergy)) {
               _tmpEnergy = null;
@@ -732,16 +814,32 @@ public final class IngredientsDao_Impl implements IngredientsDao {
             } else {
               _tmpSugar = _cursor.getDouble(_cursorIndexOfSugar);
             }
-            _item = new Ingredients(_tmpIngredientsId,_tmpName,_tmpDescription,_tmpBrand,_tmpServingSize,_tmpUnits,_tmpCalories,_tmpEnergy,_tmpFat,_tmpOfWhichSaturates,_tmpFiber,_tmpProtein,_tmpSalt,_tmpSugar,_tmpFreezable,_tmpMicrowaveable,_tmpVegan,_tmpGlutenFree);
+            _item = new Ingredients(_tmpIngredientsId,_tmpName,_tmpDescription,_tmpBrand,_tmpServingSize,_tmpUnit,_tmpCalories,_tmpEnergy,_tmpFat,_tmpOfWhichSaturates,_tmpFiber,_tmpProtein,_tmpSalt,_tmpSugar,_tmpFreezable,_tmpMicrowaveable,_tmpVegan,_tmpGlutenFree);
             if (_cursor.isNull(_cursorIndexOfSpoonId)) {
               _item.spoonId = null;
             } else {
               _item.spoonId = _cursor.getLong(_cursorIndexOfSpoonId);
             }
-            _item.aisle = _cursor.getString(_cursorIndexOfAisle);
-            _item.nameClean = _cursor.getString(_cursorIndexOfNameClean);
-            _item.original = _cursor.getString(_cursorIndexOfOriginal);
-            _item.consistency = _cursor.getString(_cursorIndexOfConsistency);
+            if (_cursor.isNull(_cursorIndexOfAisle)) {
+              _item.aisle = null;
+            } else {
+              _item.aisle = _cursor.getString(_cursorIndexOfAisle);
+            }
+            if (_cursor.isNull(_cursorIndexOfNameClean)) {
+              _item.nameClean = null;
+            } else {
+              _item.nameClean = _cursor.getString(_cursorIndexOfNameClean);
+            }
+            if (_cursor.isNull(_cursorIndexOfOriginal)) {
+              _item.original = null;
+            } else {
+              _item.original = _cursor.getString(_cursorIndexOfOriginal);
+            }
+            if (_cursor.isNull(_cursorIndexOfConsistency)) {
+              _item.consistency = null;
+            } else {
+              _item.consistency = _cursor.getString(_cursorIndexOfConsistency);
+            }
             _result.add(_item);
           }
           return _result;
@@ -755,5 +853,9 @@ public final class IngredientsDao_Impl implements IngredientsDao {
         _statement.release();
       }
     });
+  }
+
+  public static List<Class<?>> getRequiredConverters() {
+    return Collections.emptyList();
   }
 }

@@ -19,6 +19,7 @@ import com.example.zest.room.entities.MealMethodJoin;
 import com.example.zest.room.entities.Method;
 import com.example.zest.room.general.Converters;
 import java.lang.Boolean;
+import java.lang.Class;
 import java.lang.Double;
 import java.lang.Exception;
 import java.lang.Integer;
@@ -27,6 +28,7 @@ import java.lang.Override;
 import java.lang.String;
 import java.lang.SuppressWarnings;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.Callable;
 
@@ -34,198 +36,44 @@ import java.util.concurrent.Callable;
 public final class MealDao_Impl implements MealDao {
   private final RoomDatabase __db;
 
-  private final EntityInsertionAdapter<Method> __insertionAdapterOfMethod;
-
-  private final EntityInsertionAdapter<MealMethodJoin> __insertionAdapterOfMealMethodJoin;
+  private final EntityInsertionAdapter<Meal> __insertionAdapterOfMeal;
 
   private final EntityInsertionAdapter<MealIngredientsJoin> __insertionAdapterOfMealIngredientsJoin;
 
   private final EntityInsertionAdapter<Ingredients> __insertionAdapterOfIngredients;
 
-  private final EntityInsertionAdapter<Meal> __insertionAdapterOfMeal;
+  private final EntityInsertionAdapter<Method> __insertionAdapterOfMethod;
 
-  private final EntityDeletionOrUpdateAdapter<Method> __deletionAdapterOfMethod;
+  private final EntityInsertionAdapter<MealMethodJoin> __insertionAdapterOfMealMethodJoin;
 
-  private final EntityDeletionOrUpdateAdapter<MealMethodJoin> __deletionAdapterOfMealMethodJoin;
+  private final EntityDeletionOrUpdateAdapter<Meal> __deletionAdapterOfMeal;
 
   private final EntityDeletionOrUpdateAdapter<MealIngredientsJoin> __deletionAdapterOfMealIngredientsJoin;
 
   private final EntityDeletionOrUpdateAdapter<Ingredients> __deletionAdapterOfIngredients;
 
-  private final EntityDeletionOrUpdateAdapter<Meal> __deletionAdapterOfMeal;
+  private final EntityDeletionOrUpdateAdapter<Method> __deletionAdapterOfMethod;
 
-  private final EntityDeletionOrUpdateAdapter<Method> __updateAdapterOfMethod;
+  private final EntityDeletionOrUpdateAdapter<MealMethodJoin> __deletionAdapterOfMealMethodJoin;
 
-  private final EntityDeletionOrUpdateAdapter<MealMethodJoin> __updateAdapterOfMealMethodJoin;
+  private final EntityDeletionOrUpdateAdapter<Meal> __updateAdapterOfMeal;
 
   private final EntityDeletionOrUpdateAdapter<MealIngredientsJoin> __updateAdapterOfMealIngredientsJoin;
 
   private final EntityDeletionOrUpdateAdapter<Ingredients> __updateAdapterOfIngredients;
 
-  private final EntityDeletionOrUpdateAdapter<Meal> __updateAdapterOfMeal;
+  private final EntityDeletionOrUpdateAdapter<Method> __updateAdapterOfMethod;
+
+  private final EntityDeletionOrUpdateAdapter<MealMethodJoin> __updateAdapterOfMealMethodJoin;
 
   private final SharedSQLiteStatement __preparedStmtOfDeleteAll;
 
   public MealDao_Impl(RoomDatabase __db) {
     this.__db = __db;
-    this.__insertionAdapterOfMethod = new EntityInsertionAdapter<Method>(__db) {
-      @Override
-      public String createQuery() {
-        return "INSERT OR REPLACE INTO `Method` (`methodId`,`method`) VALUES (nullif(?, 0),?)";
-      }
-
-      @Override
-      public void bind(SupportSQLiteStatement stmt, Method value) {
-        stmt.bindLong(1, value.methodId);
-        if (value.method == null) {
-          stmt.bindNull(2);
-        } else {
-          stmt.bindString(2, value.method);
-        }
-      }
-    };
-    this.__insertionAdapterOfMealMethodJoin = new EntityInsertionAdapter<MealMethodJoin>(__db) {
-      @Override
-      public String createQuery() {
-        return "INSERT OR REPLACE INTO `MealMethodJoin` (`mealId`,`methodId`) VALUES (?,?)";
-      }
-
-      @Override
-      public void bind(SupportSQLiteStatement stmt, MealMethodJoin value) {
-        stmt.bindLong(1, value.mealId);
-        stmt.bindLong(2, value.methodId);
-      }
-    };
-    this.__insertionAdapterOfMealIngredientsJoin = new EntityInsertionAdapter<MealIngredientsJoin>(__db) {
-      @Override
-      public String createQuery() {
-        return "INSERT OR REPLACE INTO `MealIngredientsJoin` (`mealId`,`ingredientsId`,`amount`) VALUES (?,?,?)";
-      }
-
-      @Override
-      public void bind(SupportSQLiteStatement stmt, MealIngredientsJoin value) {
-        stmt.bindLong(1, value.mealId);
-        stmt.bindLong(2, value.ingredientsId);
-        stmt.bindDouble(3, value.amount);
-      }
-    };
-    this.__insertionAdapterOfIngredients = new EntityInsertionAdapter<Ingredients>(__db) {
-      @Override
-      public String createQuery() {
-        return "INSERT OR REPLACE INTO `Ingredients` (`ingredientsId`,`spoonId`,`name`,`description`,`brand`,`aisle`,`nameClean`,`original`,`consistency`,`freezable`,`microwaveable`,`vegan`,`glutenFree`,`servingSize`,`Units`,`energy`,`fat`,`ofWhichSaturates`,`fiber`,`protein`,`salt`,`calories`,`sugar`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-      }
-
-      @Override
-      public void bind(SupportSQLiteStatement stmt, Ingredients value) {
-        stmt.bindLong(1, value.ingredientsId);
-        if (value.spoonId == null) {
-          stmt.bindNull(2);
-        } else {
-          stmt.bindLong(2, value.spoonId);
-        }
-        if (value.name == null) {
-          stmt.bindNull(3);
-        } else {
-          stmt.bindString(3, value.name);
-        }
-        if (value.description == null) {
-          stmt.bindNull(4);
-        } else {
-          stmt.bindString(4, value.description);
-        }
-        if (value.brand == null) {
-          stmt.bindNull(5);
-        } else {
-          stmt.bindString(5, value.brand);
-        }
-        if (value.aisle == null) {
-          stmt.bindNull(6);
-        } else {
-          stmt.bindString(6, value.aisle);
-        }
-        if (value.nameClean == null) {
-          stmt.bindNull(7);
-        } else {
-          stmt.bindString(7, value.nameClean);
-        }
-        if (value.original == null) {
-          stmt.bindNull(8);
-        } else {
-          stmt.bindString(8, value.original);
-        }
-        if (value.consistency == null) {
-          stmt.bindNull(9);
-        } else {
-          stmt.bindString(9, value.consistency);
-        }
-        final int _tmp;
-        _tmp = value.freezable ? 1 : 0;
-        stmt.bindLong(10, _tmp);
-        final int _tmp_1;
-        _tmp_1 = value.microwaveable ? 1 : 0;
-        stmt.bindLong(11, _tmp_1);
-        final int _tmp_2;
-        _tmp_2 = value.vegan ? 1 : 0;
-        stmt.bindLong(12, _tmp_2);
-        final int _tmp_3;
-        _tmp_3 = value.glutenFree ? 1 : 0;
-        stmt.bindLong(13, _tmp_3);
-        if (value.servingSize == null) {
-          stmt.bindNull(14);
-        } else {
-          stmt.bindDouble(14, value.servingSize);
-        }
-        if (value.Units == null) {
-          stmt.bindNull(15);
-        } else {
-          stmt.bindString(15, value.Units);
-        }
-        if (value.energy == null) {
-          stmt.bindNull(16);
-        } else {
-          stmt.bindDouble(16, value.energy);
-        }
-        if (value.fat == null) {
-          stmt.bindNull(17);
-        } else {
-          stmt.bindDouble(17, value.fat);
-        }
-        if (value.ofWhichSaturates == null) {
-          stmt.bindNull(18);
-        } else {
-          stmt.bindDouble(18, value.ofWhichSaturates);
-        }
-        if (value.fiber == null) {
-          stmt.bindNull(19);
-        } else {
-          stmt.bindDouble(19, value.fiber);
-        }
-        if (value.protein == null) {
-          stmt.bindNull(20);
-        } else {
-          stmt.bindDouble(20, value.protein);
-        }
-        if (value.salt == null) {
-          stmt.bindNull(21);
-        } else {
-          stmt.bindDouble(21, value.salt);
-        }
-        if (value.calories == null) {
-          stmt.bindNull(22);
-        } else {
-          stmt.bindDouble(22, value.calories);
-        }
-        if (value.sugar == null) {
-          stmt.bindNull(23);
-        } else {
-          stmt.bindDouble(23, value.sugar);
-        }
-      }
-    };
     this.__insertionAdapterOfMeal = new EntityInsertionAdapter<Meal>(__db) {
       @Override
       public String createQuery() {
-        return "INSERT OR REPLACE INTO `Meal` (`mealId`,`title`,`cheap`,`healthScore`,`vegetarian`,`vegan`,`glutenFree`,`veryHealthy`,`dairyFree`,`veryPopular`,`sustainable`,`pricePerServing`,`spoonId`,`servings`,`sourceUrl`,`summary`,`image`,`readyInMinutes`,`diets`,`dishTypes`,`occasions`,`likes`,`usedIngredientCount`,`cuisines`,`timeOfDay`,`complexity`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        return "INSERT OR REPLACE INTO `Meal` (`mealId`,`title`,`cheap`,`healthScore`,`vegetarian`,`vegan`,`glutenFree`,`veryHealthy`,`dairyFree`,`veryPopular`,`sustainable`,`pricePerServing`,`spoonId`,`servings`,`sourceUrl`,`summary`,`image`,`readyInMinutes`,`diets`,`dishTypes`,`occasions`,`likes`,`usedIngredientCount`,`cuisines`,`isSpoonacularMeal`,`totalCalories`,`timeOfDay`,`complexity`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
       }
 
       @Override
@@ -354,106 +202,30 @@ public final class MealDao_Impl implements MealDao {
         } else {
           stmt.bindString(24, value.cuisines);
         }
-        final int _tmp_8;
-        _tmp_8 = Converters.fromTimeOfDayEnumToInt(value.timeOfDay);
-        stmt.bindLong(25, _tmp_8);
-        final int _tmp_9;
-        _tmp_9 = Converters.fromComplexityToInt(value.complexity);
-        stmt.bindLong(26, _tmp_9);
-      }
-    };
-    this.__deletionAdapterOfMethod = new EntityDeletionOrUpdateAdapter<Method>(__db) {
-      @Override
-      public String createQuery() {
-        return "DELETE FROM `Method` WHERE `methodId` = ?";
-      }
-
-      @Override
-      public void bind(SupportSQLiteStatement stmt, Method value) {
-        stmt.bindLong(1, value.methodId);
-      }
-    };
-    this.__deletionAdapterOfMealMethodJoin = new EntityDeletionOrUpdateAdapter<MealMethodJoin>(__db) {
-      @Override
-      public String createQuery() {
-        return "DELETE FROM `MealMethodJoin` WHERE `mealId` = ? AND `methodId` = ?";
-      }
-
-      @Override
-      public void bind(SupportSQLiteStatement stmt, MealMethodJoin value) {
-        stmt.bindLong(1, value.mealId);
-        stmt.bindLong(2, value.methodId);
-      }
-    };
-    this.__deletionAdapterOfMealIngredientsJoin = new EntityDeletionOrUpdateAdapter<MealIngredientsJoin>(__db) {
-      @Override
-      public String createQuery() {
-        return "DELETE FROM `MealIngredientsJoin` WHERE `mealId` = ? AND `ingredientsId` = ?";
-      }
-
-      @Override
-      public void bind(SupportSQLiteStatement stmt, MealIngredientsJoin value) {
-        stmt.bindLong(1, value.mealId);
-        stmt.bindLong(2, value.ingredientsId);
-      }
-    };
-    this.__deletionAdapterOfIngredients = new EntityDeletionOrUpdateAdapter<Ingredients>(__db) {
-      @Override
-      public String createQuery() {
-        return "DELETE FROM `Ingredients` WHERE `ingredientsId` = ?";
-      }
-
-      @Override
-      public void bind(SupportSQLiteStatement stmt, Ingredients value) {
-        stmt.bindLong(1, value.ingredientsId);
-      }
-    };
-    this.__deletionAdapterOfMeal = new EntityDeletionOrUpdateAdapter<Meal>(__db) {
-      @Override
-      public String createQuery() {
-        return "DELETE FROM `Meal` WHERE `mealId` = ?";
-      }
-
-      @Override
-      public void bind(SupportSQLiteStatement stmt, Meal value) {
-        stmt.bindLong(1, value.mealId);
-      }
-    };
-    this.__updateAdapterOfMethod = new EntityDeletionOrUpdateAdapter<Method>(__db) {
-      @Override
-      public String createQuery() {
-        return "UPDATE OR ABORT `Method` SET `methodId` = ?,`method` = ? WHERE `methodId` = ?";
-      }
-
-      @Override
-      public void bind(SupportSQLiteStatement stmt, Method value) {
-        stmt.bindLong(1, value.methodId);
-        if (value.method == null) {
-          stmt.bindNull(2);
+        final Integer _tmp_8;
+        _tmp_8 = value.isSpoonacularMeal == null ? null : (value.isSpoonacularMeal ? 1 : 0);
+        if (_tmp_8 == null) {
+          stmt.bindNull(25);
         } else {
-          stmt.bindString(2, value.method);
+          stmt.bindLong(25, _tmp_8);
         }
-        stmt.bindLong(3, value.methodId);
+        if (value.totalCalories == null) {
+          stmt.bindNull(26);
+        } else {
+          stmt.bindDouble(26, value.totalCalories);
+        }
+        final int _tmp_9;
+        _tmp_9 = Converters.fromTimeOfDayEnumToInt(value.timeOfDay);
+        stmt.bindLong(27, _tmp_9);
+        final int _tmp_10;
+        _tmp_10 = Converters.fromComplexityToInt(value.complexity);
+        stmt.bindLong(28, _tmp_10);
       }
     };
-    this.__updateAdapterOfMealMethodJoin = new EntityDeletionOrUpdateAdapter<MealMethodJoin>(__db) {
+    this.__insertionAdapterOfMealIngredientsJoin = new EntityInsertionAdapter<MealIngredientsJoin>(__db) {
       @Override
       public String createQuery() {
-        return "UPDATE OR ABORT `MealMethodJoin` SET `mealId` = ?,`methodId` = ? WHERE `mealId` = ? AND `methodId` = ?";
-      }
-
-      @Override
-      public void bind(SupportSQLiteStatement stmt, MealMethodJoin value) {
-        stmt.bindLong(1, value.mealId);
-        stmt.bindLong(2, value.methodId);
-        stmt.bindLong(3, value.mealId);
-        stmt.bindLong(4, value.methodId);
-      }
-    };
-    this.__updateAdapterOfMealIngredientsJoin = new EntityDeletionOrUpdateAdapter<MealIngredientsJoin>(__db) {
-      @Override
-      public String createQuery() {
-        return "UPDATE OR ABORT `MealIngredientsJoin` SET `mealId` = ?,`ingredientsId` = ?,`amount` = ? WHERE `mealId` = ? AND `ingredientsId` = ?";
+        return "INSERT OR REPLACE INTO `MealIngredientsJoin` (`mealId`,`ingredientsId`,`amount`) VALUES (?,?,?)";
       }
 
       @Override
@@ -461,14 +233,12 @@ public final class MealDao_Impl implements MealDao {
         stmt.bindLong(1, value.mealId);
         stmt.bindLong(2, value.ingredientsId);
         stmt.bindDouble(3, value.amount);
-        stmt.bindLong(4, value.mealId);
-        stmt.bindLong(5, value.ingredientsId);
       }
     };
-    this.__updateAdapterOfIngredients = new EntityDeletionOrUpdateAdapter<Ingredients>(__db) {
+    this.__insertionAdapterOfIngredients = new EntityInsertionAdapter<Ingredients>(__db) {
       @Override
       public String createQuery() {
-        return "UPDATE OR ABORT `Ingredients` SET `ingredientsId` = ?,`spoonId` = ?,`name` = ?,`description` = ?,`brand` = ?,`aisle` = ?,`nameClean` = ?,`original` = ?,`consistency` = ?,`freezable` = ?,`microwaveable` = ?,`vegan` = ?,`glutenFree` = ?,`servingSize` = ?,`Units` = ?,`energy` = ?,`fat` = ?,`ofWhichSaturates` = ?,`fiber` = ?,`protein` = ?,`salt` = ?,`calories` = ?,`sugar` = ? WHERE `ingredientsId` = ?";
+        return "INSERT OR REPLACE INTO `Ingredients` (`ingredientsId`,`spoonId`,`name`,`description`,`brand`,`aisle`,`nameClean`,`original`,`consistency`,`freezable`,`microwaveable`,`vegan`,`glutenFree`,`servingSize`,`unit`,`energy`,`fat`,`ofWhichSaturates`,`fiber`,`protein`,`salt`,`calories`,`sugar`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
       }
 
       @Override
@@ -531,10 +301,376 @@ public final class MealDao_Impl implements MealDao {
         } else {
           stmt.bindDouble(14, value.servingSize);
         }
-        if (value.Units == null) {
+        if (value.unit == null) {
           stmt.bindNull(15);
         } else {
-          stmt.bindString(15, value.Units);
+          stmt.bindString(15, value.unit);
+        }
+        if (value.energy == null) {
+          stmt.bindNull(16);
+        } else {
+          stmt.bindDouble(16, value.energy);
+        }
+        if (value.fat == null) {
+          stmt.bindNull(17);
+        } else {
+          stmt.bindDouble(17, value.fat);
+        }
+        if (value.ofWhichSaturates == null) {
+          stmt.bindNull(18);
+        } else {
+          stmt.bindDouble(18, value.ofWhichSaturates);
+        }
+        if (value.fiber == null) {
+          stmt.bindNull(19);
+        } else {
+          stmt.bindDouble(19, value.fiber);
+        }
+        if (value.protein == null) {
+          stmt.bindNull(20);
+        } else {
+          stmt.bindDouble(20, value.protein);
+        }
+        if (value.salt == null) {
+          stmt.bindNull(21);
+        } else {
+          stmt.bindDouble(21, value.salt);
+        }
+        if (value.calories == null) {
+          stmt.bindNull(22);
+        } else {
+          stmt.bindDouble(22, value.calories);
+        }
+        if (value.sugar == null) {
+          stmt.bindNull(23);
+        } else {
+          stmt.bindDouble(23, value.sugar);
+        }
+      }
+    };
+    this.__insertionAdapterOfMethod = new EntityInsertionAdapter<Method>(__db) {
+      @Override
+      public String createQuery() {
+        return "INSERT OR REPLACE INTO `Method` (`methodId`,`method`) VALUES (nullif(?, 0),?)";
+      }
+
+      @Override
+      public void bind(SupportSQLiteStatement stmt, Method value) {
+        stmt.bindLong(1, value.methodId);
+        if (value.method == null) {
+          stmt.bindNull(2);
+        } else {
+          stmt.bindString(2, value.method);
+        }
+      }
+    };
+    this.__insertionAdapterOfMealMethodJoin = new EntityInsertionAdapter<MealMethodJoin>(__db) {
+      @Override
+      public String createQuery() {
+        return "INSERT OR REPLACE INTO `MealMethodJoin` (`mealId`,`methodId`) VALUES (?,?)";
+      }
+
+      @Override
+      public void bind(SupportSQLiteStatement stmt, MealMethodJoin value) {
+        stmt.bindLong(1, value.mealId);
+        stmt.bindLong(2, value.methodId);
+      }
+    };
+    this.__deletionAdapterOfMeal = new EntityDeletionOrUpdateAdapter<Meal>(__db) {
+      @Override
+      public String createQuery() {
+        return "DELETE FROM `Meal` WHERE `mealId` = ?";
+      }
+
+      @Override
+      public void bind(SupportSQLiteStatement stmt, Meal value) {
+        stmt.bindLong(1, value.mealId);
+      }
+    };
+    this.__deletionAdapterOfMealIngredientsJoin = new EntityDeletionOrUpdateAdapter<MealIngredientsJoin>(__db) {
+      @Override
+      public String createQuery() {
+        return "DELETE FROM `MealIngredientsJoin` WHERE `mealId` = ? AND `ingredientsId` = ?";
+      }
+
+      @Override
+      public void bind(SupportSQLiteStatement stmt, MealIngredientsJoin value) {
+        stmt.bindLong(1, value.mealId);
+        stmt.bindLong(2, value.ingredientsId);
+      }
+    };
+    this.__deletionAdapterOfIngredients = new EntityDeletionOrUpdateAdapter<Ingredients>(__db) {
+      @Override
+      public String createQuery() {
+        return "DELETE FROM `Ingredients` WHERE `ingredientsId` = ?";
+      }
+
+      @Override
+      public void bind(SupportSQLiteStatement stmt, Ingredients value) {
+        stmt.bindLong(1, value.ingredientsId);
+      }
+    };
+    this.__deletionAdapterOfMethod = new EntityDeletionOrUpdateAdapter<Method>(__db) {
+      @Override
+      public String createQuery() {
+        return "DELETE FROM `Method` WHERE `methodId` = ?";
+      }
+
+      @Override
+      public void bind(SupportSQLiteStatement stmt, Method value) {
+        stmt.bindLong(1, value.methodId);
+      }
+    };
+    this.__deletionAdapterOfMealMethodJoin = new EntityDeletionOrUpdateAdapter<MealMethodJoin>(__db) {
+      @Override
+      public String createQuery() {
+        return "DELETE FROM `MealMethodJoin` WHERE `mealId` = ? AND `methodId` = ?";
+      }
+
+      @Override
+      public void bind(SupportSQLiteStatement stmt, MealMethodJoin value) {
+        stmt.bindLong(1, value.mealId);
+        stmt.bindLong(2, value.methodId);
+      }
+    };
+    this.__updateAdapterOfMeal = new EntityDeletionOrUpdateAdapter<Meal>(__db) {
+      @Override
+      public String createQuery() {
+        return "UPDATE OR ABORT `Meal` SET `mealId` = ?,`title` = ?,`cheap` = ?,`healthScore` = ?,`vegetarian` = ?,`vegan` = ?,`glutenFree` = ?,`veryHealthy` = ?,`dairyFree` = ?,`veryPopular` = ?,`sustainable` = ?,`pricePerServing` = ?,`spoonId` = ?,`servings` = ?,`sourceUrl` = ?,`summary` = ?,`image` = ?,`readyInMinutes` = ?,`diets` = ?,`dishTypes` = ?,`occasions` = ?,`likes` = ?,`usedIngredientCount` = ?,`cuisines` = ?,`isSpoonacularMeal` = ?,`totalCalories` = ?,`timeOfDay` = ?,`complexity` = ? WHERE `mealId` = ?";
+      }
+
+      @Override
+      public void bind(SupportSQLiteStatement stmt, Meal value) {
+        stmt.bindLong(1, value.mealId);
+        if (value.title == null) {
+          stmt.bindNull(2);
+        } else {
+          stmt.bindString(2, value.title);
+        }
+        final Integer _tmp;
+        _tmp = value.cheap == null ? null : (value.cheap ? 1 : 0);
+        if (_tmp == null) {
+          stmt.bindNull(3);
+        } else {
+          stmt.bindLong(3, _tmp);
+        }
+        if (value.healthScore == null) {
+          stmt.bindNull(4);
+        } else {
+          stmt.bindDouble(4, value.healthScore);
+        }
+        final Integer _tmp_1;
+        _tmp_1 = value.vegetarian == null ? null : (value.vegetarian ? 1 : 0);
+        if (_tmp_1 == null) {
+          stmt.bindNull(5);
+        } else {
+          stmt.bindLong(5, _tmp_1);
+        }
+        final Integer _tmp_2;
+        _tmp_2 = value.vegan == null ? null : (value.vegan ? 1 : 0);
+        if (_tmp_2 == null) {
+          stmt.bindNull(6);
+        } else {
+          stmt.bindLong(6, _tmp_2);
+        }
+        final Integer _tmp_3;
+        _tmp_3 = value.glutenFree == null ? null : (value.glutenFree ? 1 : 0);
+        if (_tmp_3 == null) {
+          stmt.bindNull(7);
+        } else {
+          stmt.bindLong(7, _tmp_3);
+        }
+        final Integer _tmp_4;
+        _tmp_4 = value.veryHealthy == null ? null : (value.veryHealthy ? 1 : 0);
+        if (_tmp_4 == null) {
+          stmt.bindNull(8);
+        } else {
+          stmt.bindLong(8, _tmp_4);
+        }
+        final Integer _tmp_5;
+        _tmp_5 = value.dairyFree == null ? null : (value.dairyFree ? 1 : 0);
+        if (_tmp_5 == null) {
+          stmt.bindNull(9);
+        } else {
+          stmt.bindLong(9, _tmp_5);
+        }
+        final Integer _tmp_6;
+        _tmp_6 = value.veryPopular == null ? null : (value.veryPopular ? 1 : 0);
+        if (_tmp_6 == null) {
+          stmt.bindNull(10);
+        } else {
+          stmt.bindLong(10, _tmp_6);
+        }
+        final Integer _tmp_7;
+        _tmp_7 = value.sustainable == null ? null : (value.sustainable ? 1 : 0);
+        if (_tmp_7 == null) {
+          stmt.bindNull(11);
+        } else {
+          stmt.bindLong(11, _tmp_7);
+        }
+        if (value.pricePerServing == null) {
+          stmt.bindNull(12);
+        } else {
+          stmt.bindDouble(12, value.pricePerServing);
+        }
+        if (value.spoonId == null) {
+          stmt.bindNull(13);
+        } else {
+          stmt.bindLong(13, value.spoonId);
+        }
+        stmt.bindLong(14, value.servings);
+        if (value.sourceUrl == null) {
+          stmt.bindNull(15);
+        } else {
+          stmt.bindString(15, value.sourceUrl);
+        }
+        if (value.summary == null) {
+          stmt.bindNull(16);
+        } else {
+          stmt.bindString(16, value.summary);
+        }
+        if (value.image == null) {
+          stmt.bindNull(17);
+        } else {
+          stmt.bindString(17, value.image);
+        }
+        stmt.bindLong(18, value.readyInMinutes);
+        if (value.diets == null) {
+          stmt.bindNull(19);
+        } else {
+          stmt.bindString(19, value.diets);
+        }
+        if (value.dishTypes == null) {
+          stmt.bindNull(20);
+        } else {
+          stmt.bindString(20, value.dishTypes);
+        }
+        if (value.occasions == null) {
+          stmt.bindNull(21);
+        } else {
+          stmt.bindString(21, value.occasions);
+        }
+        if (value.likes == null) {
+          stmt.bindNull(22);
+        } else {
+          stmt.bindString(22, value.likes);
+        }
+        if (value.usedIngredientCount == null) {
+          stmt.bindNull(23);
+        } else {
+          stmt.bindString(23, value.usedIngredientCount);
+        }
+        if (value.cuisines == null) {
+          stmt.bindNull(24);
+        } else {
+          stmt.bindString(24, value.cuisines);
+        }
+        final Integer _tmp_8;
+        _tmp_8 = value.isSpoonacularMeal == null ? null : (value.isSpoonacularMeal ? 1 : 0);
+        if (_tmp_8 == null) {
+          stmt.bindNull(25);
+        } else {
+          stmt.bindLong(25, _tmp_8);
+        }
+        if (value.totalCalories == null) {
+          stmt.bindNull(26);
+        } else {
+          stmt.bindDouble(26, value.totalCalories);
+        }
+        final int _tmp_9;
+        _tmp_9 = Converters.fromTimeOfDayEnumToInt(value.timeOfDay);
+        stmt.bindLong(27, _tmp_9);
+        final int _tmp_10;
+        _tmp_10 = Converters.fromComplexityToInt(value.complexity);
+        stmt.bindLong(28, _tmp_10);
+        stmt.bindLong(29, value.mealId);
+      }
+    };
+    this.__updateAdapterOfMealIngredientsJoin = new EntityDeletionOrUpdateAdapter<MealIngredientsJoin>(__db) {
+      @Override
+      public String createQuery() {
+        return "UPDATE OR ABORT `MealIngredientsJoin` SET `mealId` = ?,`ingredientsId` = ?,`amount` = ? WHERE `mealId` = ? AND `ingredientsId` = ?";
+      }
+
+      @Override
+      public void bind(SupportSQLiteStatement stmt, MealIngredientsJoin value) {
+        stmt.bindLong(1, value.mealId);
+        stmt.bindLong(2, value.ingredientsId);
+        stmt.bindDouble(3, value.amount);
+        stmt.bindLong(4, value.mealId);
+        stmt.bindLong(5, value.ingredientsId);
+      }
+    };
+    this.__updateAdapterOfIngredients = new EntityDeletionOrUpdateAdapter<Ingredients>(__db) {
+      @Override
+      public String createQuery() {
+        return "UPDATE OR ABORT `Ingredients` SET `ingredientsId` = ?,`spoonId` = ?,`name` = ?,`description` = ?,`brand` = ?,`aisle` = ?,`nameClean` = ?,`original` = ?,`consistency` = ?,`freezable` = ?,`microwaveable` = ?,`vegan` = ?,`glutenFree` = ?,`servingSize` = ?,`unit` = ?,`energy` = ?,`fat` = ?,`ofWhichSaturates` = ?,`fiber` = ?,`protein` = ?,`salt` = ?,`calories` = ?,`sugar` = ? WHERE `ingredientsId` = ?";
+      }
+
+      @Override
+      public void bind(SupportSQLiteStatement stmt, Ingredients value) {
+        stmt.bindLong(1, value.ingredientsId);
+        if (value.spoonId == null) {
+          stmt.bindNull(2);
+        } else {
+          stmt.bindLong(2, value.spoonId);
+        }
+        if (value.name == null) {
+          stmt.bindNull(3);
+        } else {
+          stmt.bindString(3, value.name);
+        }
+        if (value.description == null) {
+          stmt.bindNull(4);
+        } else {
+          stmt.bindString(4, value.description);
+        }
+        if (value.brand == null) {
+          stmt.bindNull(5);
+        } else {
+          stmt.bindString(5, value.brand);
+        }
+        if (value.aisle == null) {
+          stmt.bindNull(6);
+        } else {
+          stmt.bindString(6, value.aisle);
+        }
+        if (value.nameClean == null) {
+          stmt.bindNull(7);
+        } else {
+          stmt.bindString(7, value.nameClean);
+        }
+        if (value.original == null) {
+          stmt.bindNull(8);
+        } else {
+          stmt.bindString(8, value.original);
+        }
+        if (value.consistency == null) {
+          stmt.bindNull(9);
+        } else {
+          stmt.bindString(9, value.consistency);
+        }
+        final int _tmp;
+        _tmp = value.freezable ? 1 : 0;
+        stmt.bindLong(10, _tmp);
+        final int _tmp_1;
+        _tmp_1 = value.microwaveable ? 1 : 0;
+        stmt.bindLong(11, _tmp_1);
+        final int _tmp_2;
+        _tmp_2 = value.vegan ? 1 : 0;
+        stmt.bindLong(12, _tmp_2);
+        final int _tmp_3;
+        _tmp_3 = value.glutenFree ? 1 : 0;
+        stmt.bindLong(13, _tmp_3);
+        if (value.servingSize == null) {
+          stmt.bindNull(14);
+        } else {
+          stmt.bindDouble(14, value.servingSize);
+        }
+        if (value.unit == null) {
+          stmt.bindNull(15);
+        } else {
+          stmt.bindString(15, value.unit);
         }
         if (value.energy == null) {
           stmt.bindNull(16);
@@ -579,145 +715,35 @@ public final class MealDao_Impl implements MealDao {
         stmt.bindLong(24, value.ingredientsId);
       }
     };
-    this.__updateAdapterOfMeal = new EntityDeletionOrUpdateAdapter<Meal>(__db) {
+    this.__updateAdapterOfMethod = new EntityDeletionOrUpdateAdapter<Method>(__db) {
       @Override
       public String createQuery() {
-        return "UPDATE OR ABORT `Meal` SET `mealId` = ?,`title` = ?,`cheap` = ?,`healthScore` = ?,`vegetarian` = ?,`vegan` = ?,`glutenFree` = ?,`veryHealthy` = ?,`dairyFree` = ?,`veryPopular` = ?,`sustainable` = ?,`pricePerServing` = ?,`spoonId` = ?,`servings` = ?,`sourceUrl` = ?,`summary` = ?,`image` = ?,`readyInMinutes` = ?,`diets` = ?,`dishTypes` = ?,`occasions` = ?,`likes` = ?,`usedIngredientCount` = ?,`cuisines` = ?,`timeOfDay` = ?,`complexity` = ? WHERE `mealId` = ?";
+        return "UPDATE OR ABORT `Method` SET `methodId` = ?,`method` = ? WHERE `methodId` = ?";
       }
 
       @Override
-      public void bind(SupportSQLiteStatement stmt, Meal value) {
-        stmt.bindLong(1, value.mealId);
-        if (value.title == null) {
+      public void bind(SupportSQLiteStatement stmt, Method value) {
+        stmt.bindLong(1, value.methodId);
+        if (value.method == null) {
           stmt.bindNull(2);
         } else {
-          stmt.bindString(2, value.title);
+          stmt.bindString(2, value.method);
         }
-        final Integer _tmp;
-        _tmp = value.cheap == null ? null : (value.cheap ? 1 : 0);
-        if (_tmp == null) {
-          stmt.bindNull(3);
-        } else {
-          stmt.bindLong(3, _tmp);
-        }
-        if (value.healthScore == null) {
-          stmt.bindNull(4);
-        } else {
-          stmt.bindDouble(4, value.healthScore);
-        }
-        final Integer _tmp_1;
-        _tmp_1 = value.vegetarian == null ? null : (value.vegetarian ? 1 : 0);
-        if (_tmp_1 == null) {
-          stmt.bindNull(5);
-        } else {
-          stmt.bindLong(5, _tmp_1);
-        }
-        final Integer _tmp_2;
-        _tmp_2 = value.vegan == null ? null : (value.vegan ? 1 : 0);
-        if (_tmp_2 == null) {
-          stmt.bindNull(6);
-        } else {
-          stmt.bindLong(6, _tmp_2);
-        }
-        final Integer _tmp_3;
-        _tmp_3 = value.glutenFree == null ? null : (value.glutenFree ? 1 : 0);
-        if (_tmp_3 == null) {
-          stmt.bindNull(7);
-        } else {
-          stmt.bindLong(7, _tmp_3);
-        }
-        final Integer _tmp_4;
-        _tmp_4 = value.veryHealthy == null ? null : (value.veryHealthy ? 1 : 0);
-        if (_tmp_4 == null) {
-          stmt.bindNull(8);
-        } else {
-          stmt.bindLong(8, _tmp_4);
-        }
-        final Integer _tmp_5;
-        _tmp_5 = value.dairyFree == null ? null : (value.dairyFree ? 1 : 0);
-        if (_tmp_5 == null) {
-          stmt.bindNull(9);
-        } else {
-          stmt.bindLong(9, _tmp_5);
-        }
-        final Integer _tmp_6;
-        _tmp_6 = value.veryPopular == null ? null : (value.veryPopular ? 1 : 0);
-        if (_tmp_6 == null) {
-          stmt.bindNull(10);
-        } else {
-          stmt.bindLong(10, _tmp_6);
-        }
-        final Integer _tmp_7;
-        _tmp_7 = value.sustainable == null ? null : (value.sustainable ? 1 : 0);
-        if (_tmp_7 == null) {
-          stmt.bindNull(11);
-        } else {
-          stmt.bindLong(11, _tmp_7);
-        }
-        if (value.pricePerServing == null) {
-          stmt.bindNull(12);
-        } else {
-          stmt.bindDouble(12, value.pricePerServing);
-        }
-        if (value.spoonId == null) {
-          stmt.bindNull(13);
-        } else {
-          stmt.bindLong(13, value.spoonId);
-        }
-        stmt.bindLong(14, value.servings);
-        if (value.sourceUrl == null) {
-          stmt.bindNull(15);
-        } else {
-          stmt.bindString(15, value.sourceUrl);
-        }
-        if (value.summary == null) {
-          stmt.bindNull(16);
-        } else {
-          stmt.bindString(16, value.summary);
-        }
-        if (value.image == null) {
-          stmt.bindNull(17);
-        } else {
-          stmt.bindString(17, value.image);
-        }
-        stmt.bindLong(18, value.readyInMinutes);
-        if (value.diets == null) {
-          stmt.bindNull(19);
-        } else {
-          stmt.bindString(19, value.diets);
-        }
-        if (value.dishTypes == null) {
-          stmt.bindNull(20);
-        } else {
-          stmt.bindString(20, value.dishTypes);
-        }
-        if (value.occasions == null) {
-          stmt.bindNull(21);
-        } else {
-          stmt.bindString(21, value.occasions);
-        }
-        if (value.likes == null) {
-          stmt.bindNull(22);
-        } else {
-          stmt.bindString(22, value.likes);
-        }
-        if (value.usedIngredientCount == null) {
-          stmt.bindNull(23);
-        } else {
-          stmt.bindString(23, value.usedIngredientCount);
-        }
-        if (value.cuisines == null) {
-          stmt.bindNull(24);
-        } else {
-          stmt.bindString(24, value.cuisines);
-        }
-        final int _tmp_8;
-        _tmp_8 = Converters.fromTimeOfDayEnumToInt(value.timeOfDay);
-        stmt.bindLong(25, _tmp_8);
-        final int _tmp_9;
-        _tmp_9 = Converters.fromComplexityToInt(value.complexity);
-        stmt.bindLong(26, _tmp_9);
-        stmt.bindLong(27, value.mealId);
+        stmt.bindLong(3, value.methodId);
+      }
+    };
+    this.__updateAdapterOfMealMethodJoin = new EntityDeletionOrUpdateAdapter<MealMethodJoin>(__db) {
+      @Override
+      public String createQuery() {
+        return "UPDATE OR ABORT `MealMethodJoin` SET `mealId` = ?,`methodId` = ? WHERE `mealId` = ? AND `methodId` = ?";
+      }
+
+      @Override
+      public void bind(SupportSQLiteStatement stmt, MealMethodJoin value) {
+        stmt.bindLong(1, value.mealId);
+        stmt.bindLong(2, value.methodId);
+        stmt.bindLong(3, value.mealId);
+        stmt.bindLong(4, value.methodId);
       }
     };
     this.__preparedStmtOfDeleteAll = new SharedSQLiteStatement(__db) {
@@ -730,25 +756,13 @@ public final class MealDao_Impl implements MealDao {
   }
 
   @Override
-  public long Create(final Method method) {
+  public long Create(final Meal meal) {
     __db.assertNotSuspendingTransaction();
     __db.beginTransaction();
     try {
-      long _result = __insertionAdapterOfMethod.insertAndReturnId(method);
+      long _result = __insertionAdapterOfMeal.insertAndReturnId(meal);
       __db.setTransactionSuccessful();
       return _result;
-    } finally {
-      __db.endTransaction();
-    }
-  }
-
-  @Override
-  public void insertMealMethod(final MealMethodJoin... mealMethodJoins) {
-    __db.assertNotSuspendingTransaction();
-    __db.beginTransaction();
-    try {
-      __insertionAdapterOfMealMethodJoin.insert(mealMethodJoins);
-      __db.setTransactionSuccessful();
     } finally {
       __db.endTransaction();
     }
@@ -793,11 +807,11 @@ public final class MealDao_Impl implements MealDao {
   }
 
   @Override
-  public long Create(final Meal meal) {
+  public long Create(final Method method) {
     __db.assertNotSuspendingTransaction();
     __db.beginTransaction();
     try {
-      long _result = __insertionAdapterOfMeal.insertAndReturnId(meal);
+      long _result = __insertionAdapterOfMethod.insertAndReturnId(method);
       __db.setTransactionSuccessful();
       return _result;
     } finally {
@@ -806,11 +820,11 @@ public final class MealDao_Impl implements MealDao {
   }
 
   @Override
-  public void delete(final Method method) {
+  public void insertMealMethod(final MealMethodJoin... mealMethodJoins) {
     __db.assertNotSuspendingTransaction();
     __db.beginTransaction();
     try {
-      __deletionAdapterOfMethod.handle(method);
+      __insertionAdapterOfMealMethodJoin.insert(mealMethodJoins);
       __db.setTransactionSuccessful();
     } finally {
       __db.endTransaction();
@@ -818,11 +832,11 @@ public final class MealDao_Impl implements MealDao {
   }
 
   @Override
-  public void delete(final MealMethodJoin mealMethodJoins) {
+  public void Delete(final Meal meal) {
     __db.assertNotSuspendingTransaction();
     __db.beginTransaction();
     try {
-      __deletionAdapterOfMealMethodJoin.handle(mealMethodJoins);
+      __deletionAdapterOfMeal.handle(meal);
       __db.setTransactionSuccessful();
     } finally {
       __db.endTransaction();
@@ -854,11 +868,11 @@ public final class MealDao_Impl implements MealDao {
   }
 
   @Override
-  public void Delete(final Meal meal) {
+  public void delete(final Method method) {
     __db.assertNotSuspendingTransaction();
     __db.beginTransaction();
     try {
-      __deletionAdapterOfMeal.handle(meal);
+      __deletionAdapterOfMethod.handle(method);
       __db.setTransactionSuccessful();
     } finally {
       __db.endTransaction();
@@ -866,11 +880,11 @@ public final class MealDao_Impl implements MealDao {
   }
 
   @Override
-  public void updateMethod(final Method... method) {
+  public void delete(final MealMethodJoin mealMethodJoins) {
     __db.assertNotSuspendingTransaction();
     __db.beginTransaction();
     try {
-      __updateAdapterOfMethod.handleMultiple(method);
+      __deletionAdapterOfMealMethodJoin.handle(mealMethodJoins);
       __db.setTransactionSuccessful();
     } finally {
       __db.endTransaction();
@@ -878,11 +892,11 @@ public final class MealDao_Impl implements MealDao {
   }
 
   @Override
-  public void updateIngredients(final MealMethodJoin... mealMethodJoins) {
+  public void Update(final Meal... meal) {
     __db.assertNotSuspendingTransaction();
     __db.beginTransaction();
     try {
-      __updateAdapterOfMealMethodJoin.handleMultiple(mealMethodJoins);
+      __updateAdapterOfMeal.handleMultiple(meal);
       __db.setTransactionSuccessful();
     } finally {
       __db.endTransaction();
@@ -914,11 +928,23 @@ public final class MealDao_Impl implements MealDao {
   }
 
   @Override
-  public void Update(final Meal... meal) {
+  public void updateMethod(final Method... method) {
     __db.assertNotSuspendingTransaction();
     __db.beginTransaction();
     try {
-      __updateAdapterOfMeal.handleMultiple(meal);
+      __updateAdapterOfMethod.handleMultiple(method);
+      __db.setTransactionSuccessful();
+    } finally {
+      __db.endTransaction();
+    }
+  }
+
+  @Override
+  public void updateIngredients(final MealMethodJoin... mealMethodJoins) {
+    __db.assertNotSuspendingTransaction();
+    __db.beginTransaction();
+    try {
+      __updateAdapterOfMealMethodJoin.handleMultiple(mealMethodJoins);
       __db.setTransactionSuccessful();
     } finally {
       __db.endTransaction();
@@ -940,23 +966,212 @@ public final class MealDao_Impl implements MealDao {
   }
 
   @Override
-  public Method GetMethod(final long id) {
-    final String _sql = "SELECT * FROM Method WHERE methodId=? ";
+  public Meal Get(final long id) {
+    final String _sql = "SELECT * FROM meal WHERE mealId=? ";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
     int _argIndex = 1;
     _statement.bindLong(_argIndex, id);
     __db.assertNotSuspendingTransaction();
     final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
     try {
-      final int _cursorIndexOfMethodId = CursorUtil.getColumnIndexOrThrow(_cursor, "methodId");
-      final int _cursorIndexOfMethod = CursorUtil.getColumnIndexOrThrow(_cursor, "method");
-      final Method _result;
+      final int _cursorIndexOfMealId = CursorUtil.getColumnIndexOrThrow(_cursor, "mealId");
+      final int _cursorIndexOfTitle = CursorUtil.getColumnIndexOrThrow(_cursor, "title");
+      final int _cursorIndexOfCheap = CursorUtil.getColumnIndexOrThrow(_cursor, "cheap");
+      final int _cursorIndexOfHealthScore = CursorUtil.getColumnIndexOrThrow(_cursor, "healthScore");
+      final int _cursorIndexOfVegetarian = CursorUtil.getColumnIndexOrThrow(_cursor, "vegetarian");
+      final int _cursorIndexOfVegan = CursorUtil.getColumnIndexOrThrow(_cursor, "vegan");
+      final int _cursorIndexOfGlutenFree = CursorUtil.getColumnIndexOrThrow(_cursor, "glutenFree");
+      final int _cursorIndexOfVeryHealthy = CursorUtil.getColumnIndexOrThrow(_cursor, "veryHealthy");
+      final int _cursorIndexOfDairyFree = CursorUtil.getColumnIndexOrThrow(_cursor, "dairyFree");
+      final int _cursorIndexOfVeryPopular = CursorUtil.getColumnIndexOrThrow(_cursor, "veryPopular");
+      final int _cursorIndexOfSustainable = CursorUtil.getColumnIndexOrThrow(_cursor, "sustainable");
+      final int _cursorIndexOfPricePerServing = CursorUtil.getColumnIndexOrThrow(_cursor, "pricePerServing");
+      final int _cursorIndexOfSpoonId = CursorUtil.getColumnIndexOrThrow(_cursor, "spoonId");
+      final int _cursorIndexOfServings = CursorUtil.getColumnIndexOrThrow(_cursor, "servings");
+      final int _cursorIndexOfSourceUrl = CursorUtil.getColumnIndexOrThrow(_cursor, "sourceUrl");
+      final int _cursorIndexOfSummary = CursorUtil.getColumnIndexOrThrow(_cursor, "summary");
+      final int _cursorIndexOfImage = CursorUtil.getColumnIndexOrThrow(_cursor, "image");
+      final int _cursorIndexOfReadyInMinutes = CursorUtil.getColumnIndexOrThrow(_cursor, "readyInMinutes");
+      final int _cursorIndexOfDiets = CursorUtil.getColumnIndexOrThrow(_cursor, "diets");
+      final int _cursorIndexOfDishTypes = CursorUtil.getColumnIndexOrThrow(_cursor, "dishTypes");
+      final int _cursorIndexOfOccasions = CursorUtil.getColumnIndexOrThrow(_cursor, "occasions");
+      final int _cursorIndexOfLikes = CursorUtil.getColumnIndexOrThrow(_cursor, "likes");
+      final int _cursorIndexOfUsedIngredientCount = CursorUtil.getColumnIndexOrThrow(_cursor, "usedIngredientCount");
+      final int _cursorIndexOfCuisines = CursorUtil.getColumnIndexOrThrow(_cursor, "cuisines");
+      final int _cursorIndexOfIsSpoonacularMeal = CursorUtil.getColumnIndexOrThrow(_cursor, "isSpoonacularMeal");
+      final int _cursorIndexOfTotalCalories = CursorUtil.getColumnIndexOrThrow(_cursor, "totalCalories");
+      final int _cursorIndexOfTimeOfDay = CursorUtil.getColumnIndexOrThrow(_cursor, "timeOfDay");
+      final int _cursorIndexOfComplexity = CursorUtil.getColumnIndexOrThrow(_cursor, "complexity");
+      final Meal _result;
       if(_cursor.moveToFirst()) {
-        final long _tmpMethodId;
-        _tmpMethodId = _cursor.getLong(_cursorIndexOfMethodId);
-        final String _tmpMethod;
-        _tmpMethod = _cursor.getString(_cursorIndexOfMethod);
-        _result = new Method(_tmpMethodId,_tmpMethod);
+        final long _tmpMealId;
+        _tmpMealId = _cursor.getLong(_cursorIndexOfMealId);
+        final String _tmpTitle;
+        if (_cursor.isNull(_cursorIndexOfTitle)) {
+          _tmpTitle = null;
+        } else {
+          _tmpTitle = _cursor.getString(_cursorIndexOfTitle);
+        }
+        final Boolean _tmpCheap;
+        final Integer _tmp;
+        if (_cursor.isNull(_cursorIndexOfCheap)) {
+          _tmp = null;
+        } else {
+          _tmp = _cursor.getInt(_cursorIndexOfCheap);
+        }
+        _tmpCheap = _tmp == null ? null : _tmp != 0;
+        final Double _tmpHealthScore;
+        if (_cursor.isNull(_cursorIndexOfHealthScore)) {
+          _tmpHealthScore = null;
+        } else {
+          _tmpHealthScore = _cursor.getDouble(_cursorIndexOfHealthScore);
+        }
+        final Boolean _tmpVegetarian;
+        final Integer _tmp_1;
+        if (_cursor.isNull(_cursorIndexOfVegetarian)) {
+          _tmp_1 = null;
+        } else {
+          _tmp_1 = _cursor.getInt(_cursorIndexOfVegetarian);
+        }
+        _tmpVegetarian = _tmp_1 == null ? null : _tmp_1 != 0;
+        final Boolean _tmpVegan;
+        final Integer _tmp_2;
+        if (_cursor.isNull(_cursorIndexOfVegan)) {
+          _tmp_2 = null;
+        } else {
+          _tmp_2 = _cursor.getInt(_cursorIndexOfVegan);
+        }
+        _tmpVegan = _tmp_2 == null ? null : _tmp_2 != 0;
+        final Boolean _tmpGlutenFree;
+        final Integer _tmp_3;
+        if (_cursor.isNull(_cursorIndexOfGlutenFree)) {
+          _tmp_3 = null;
+        } else {
+          _tmp_3 = _cursor.getInt(_cursorIndexOfGlutenFree);
+        }
+        _tmpGlutenFree = _tmp_3 == null ? null : _tmp_3 != 0;
+        final Boolean _tmpVeryHealthy;
+        final Integer _tmp_4;
+        if (_cursor.isNull(_cursorIndexOfVeryHealthy)) {
+          _tmp_4 = null;
+        } else {
+          _tmp_4 = _cursor.getInt(_cursorIndexOfVeryHealthy);
+        }
+        _tmpVeryHealthy = _tmp_4 == null ? null : _tmp_4 != 0;
+        final Boolean _tmpDairyFree;
+        final Integer _tmp_5;
+        if (_cursor.isNull(_cursorIndexOfDairyFree)) {
+          _tmp_5 = null;
+        } else {
+          _tmp_5 = _cursor.getInt(_cursorIndexOfDairyFree);
+        }
+        _tmpDairyFree = _tmp_5 == null ? null : _tmp_5 != 0;
+        final Boolean _tmpVeryPopular;
+        final Integer _tmp_6;
+        if (_cursor.isNull(_cursorIndexOfVeryPopular)) {
+          _tmp_6 = null;
+        } else {
+          _tmp_6 = _cursor.getInt(_cursorIndexOfVeryPopular);
+        }
+        _tmpVeryPopular = _tmp_6 == null ? null : _tmp_6 != 0;
+        final Boolean _tmpSustainable;
+        final Integer _tmp_7;
+        if (_cursor.isNull(_cursorIndexOfSustainable)) {
+          _tmp_7 = null;
+        } else {
+          _tmp_7 = _cursor.getInt(_cursorIndexOfSustainable);
+        }
+        _tmpSustainable = _tmp_7 == null ? null : _tmp_7 != 0;
+        final Double _tmpPricePerServing;
+        if (_cursor.isNull(_cursorIndexOfPricePerServing)) {
+          _tmpPricePerServing = null;
+        } else {
+          _tmpPricePerServing = _cursor.getDouble(_cursorIndexOfPricePerServing);
+        }
+        final Long _tmpSpoonId;
+        if (_cursor.isNull(_cursorIndexOfSpoonId)) {
+          _tmpSpoonId = null;
+        } else {
+          _tmpSpoonId = _cursor.getLong(_cursorIndexOfSpoonId);
+        }
+        final int _tmpServings;
+        _tmpServings = _cursor.getInt(_cursorIndexOfServings);
+        final String _tmpSourceUrl;
+        if (_cursor.isNull(_cursorIndexOfSourceUrl)) {
+          _tmpSourceUrl = null;
+        } else {
+          _tmpSourceUrl = _cursor.getString(_cursorIndexOfSourceUrl);
+        }
+        final String _tmpSummary;
+        if (_cursor.isNull(_cursorIndexOfSummary)) {
+          _tmpSummary = null;
+        } else {
+          _tmpSummary = _cursor.getString(_cursorIndexOfSummary);
+        }
+        final String _tmpImage;
+        if (_cursor.isNull(_cursorIndexOfImage)) {
+          _tmpImage = null;
+        } else {
+          _tmpImage = _cursor.getString(_cursorIndexOfImage);
+        }
+        final int _tmpReadyInMinutes;
+        _tmpReadyInMinutes = _cursor.getInt(_cursorIndexOfReadyInMinutes);
+        final String _tmpDiets;
+        if (_cursor.isNull(_cursorIndexOfDiets)) {
+          _tmpDiets = null;
+        } else {
+          _tmpDiets = _cursor.getString(_cursorIndexOfDiets);
+        }
+        final String _tmpDishTypes;
+        if (_cursor.isNull(_cursorIndexOfDishTypes)) {
+          _tmpDishTypes = null;
+        } else {
+          _tmpDishTypes = _cursor.getString(_cursorIndexOfDishTypes);
+        }
+        final String _tmpOccasions;
+        if (_cursor.isNull(_cursorIndexOfOccasions)) {
+          _tmpOccasions = null;
+        } else {
+          _tmpOccasions = _cursor.getString(_cursorIndexOfOccasions);
+        }
+        final String _tmpLikes;
+        if (_cursor.isNull(_cursorIndexOfLikes)) {
+          _tmpLikes = null;
+        } else {
+          _tmpLikes = _cursor.getString(_cursorIndexOfLikes);
+        }
+        final String _tmpUsedIngredientCount;
+        if (_cursor.isNull(_cursorIndexOfUsedIngredientCount)) {
+          _tmpUsedIngredientCount = null;
+        } else {
+          _tmpUsedIngredientCount = _cursor.getString(_cursorIndexOfUsedIngredientCount);
+        }
+        final TimeOfDayEnum _tmpTimeOfDay;
+        final int _tmp_8;
+        _tmp_8 = _cursor.getInt(_cursorIndexOfTimeOfDay);
+        _tmpTimeOfDay = Converters.fromIntToTimeOfDay(_tmp_8);
+        final ComplexityEnum _tmpComplexity;
+        final int _tmp_9;
+        _tmp_9 = _cursor.getInt(_cursorIndexOfComplexity);
+        _tmpComplexity = Converters.fromIntToComplexity(_tmp_9);
+        _result = new Meal(_tmpMealId,_tmpSpoonId,_tmpTitle,_tmpSummary,_tmpHealthScore,_tmpPricePerServing,_tmpCheap,_tmpSourceUrl,_tmpVegetarian,_tmpVegan,_tmpGlutenFree,_tmpVeryHealthy,_tmpDairyFree,_tmpVeryPopular,_tmpSustainable,_tmpDiets,_tmpServings,_tmpReadyInMinutes,_tmpImage,_tmpDishTypes,_tmpOccasions,_tmpLikes,_tmpUsedIngredientCount,_tmpTimeOfDay,_tmpComplexity);
+        if (_cursor.isNull(_cursorIndexOfCuisines)) {
+          _result.cuisines = null;
+        } else {
+          _result.cuisines = _cursor.getString(_cursorIndexOfCuisines);
+        }
+        final Integer _tmp_10;
+        if (_cursor.isNull(_cursorIndexOfIsSpoonacularMeal)) {
+          _tmp_10 = null;
+        } else {
+          _tmp_10 = _cursor.getInt(_cursorIndexOfIsSpoonacularMeal);
+        }
+        _result.isSpoonacularMeal = _tmp_10 == null ? null : _tmp_10 != 0;
+        if (_cursor.isNull(_cursorIndexOfTotalCalories)) {
+          _result.totalCalories = null;
+        } else {
+          _result.totalCalories = _cursor.getDouble(_cursorIndexOfTotalCalories);
+        }
       } else {
         _result = null;
       }
@@ -965,6 +1180,265 @@ public final class MealDao_Impl implements MealDao {
       _cursor.close();
       _statement.release();
     }
+  }
+
+  @Override
+  public List<Meal> GetAll() {
+    final String _sql = "SELECT * FROM meal";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
+    __db.assertNotSuspendingTransaction();
+    __db.beginTransaction();
+    try {
+      final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+      try {
+        final int _cursorIndexOfMealId = CursorUtil.getColumnIndexOrThrow(_cursor, "mealId");
+        final int _cursorIndexOfTitle = CursorUtil.getColumnIndexOrThrow(_cursor, "title");
+        final int _cursorIndexOfCheap = CursorUtil.getColumnIndexOrThrow(_cursor, "cheap");
+        final int _cursorIndexOfHealthScore = CursorUtil.getColumnIndexOrThrow(_cursor, "healthScore");
+        final int _cursorIndexOfVegetarian = CursorUtil.getColumnIndexOrThrow(_cursor, "vegetarian");
+        final int _cursorIndexOfVegan = CursorUtil.getColumnIndexOrThrow(_cursor, "vegan");
+        final int _cursorIndexOfGlutenFree = CursorUtil.getColumnIndexOrThrow(_cursor, "glutenFree");
+        final int _cursorIndexOfVeryHealthy = CursorUtil.getColumnIndexOrThrow(_cursor, "veryHealthy");
+        final int _cursorIndexOfDairyFree = CursorUtil.getColumnIndexOrThrow(_cursor, "dairyFree");
+        final int _cursorIndexOfVeryPopular = CursorUtil.getColumnIndexOrThrow(_cursor, "veryPopular");
+        final int _cursorIndexOfSustainable = CursorUtil.getColumnIndexOrThrow(_cursor, "sustainable");
+        final int _cursorIndexOfPricePerServing = CursorUtil.getColumnIndexOrThrow(_cursor, "pricePerServing");
+        final int _cursorIndexOfSpoonId = CursorUtil.getColumnIndexOrThrow(_cursor, "spoonId");
+        final int _cursorIndexOfServings = CursorUtil.getColumnIndexOrThrow(_cursor, "servings");
+        final int _cursorIndexOfSourceUrl = CursorUtil.getColumnIndexOrThrow(_cursor, "sourceUrl");
+        final int _cursorIndexOfSummary = CursorUtil.getColumnIndexOrThrow(_cursor, "summary");
+        final int _cursorIndexOfImage = CursorUtil.getColumnIndexOrThrow(_cursor, "image");
+        final int _cursorIndexOfReadyInMinutes = CursorUtil.getColumnIndexOrThrow(_cursor, "readyInMinutes");
+        final int _cursorIndexOfDiets = CursorUtil.getColumnIndexOrThrow(_cursor, "diets");
+        final int _cursorIndexOfDishTypes = CursorUtil.getColumnIndexOrThrow(_cursor, "dishTypes");
+        final int _cursorIndexOfOccasions = CursorUtil.getColumnIndexOrThrow(_cursor, "occasions");
+        final int _cursorIndexOfLikes = CursorUtil.getColumnIndexOrThrow(_cursor, "likes");
+        final int _cursorIndexOfUsedIngredientCount = CursorUtil.getColumnIndexOrThrow(_cursor, "usedIngredientCount");
+        final int _cursorIndexOfCuisines = CursorUtil.getColumnIndexOrThrow(_cursor, "cuisines");
+        final int _cursorIndexOfIsSpoonacularMeal = CursorUtil.getColumnIndexOrThrow(_cursor, "isSpoonacularMeal");
+        final int _cursorIndexOfTotalCalories = CursorUtil.getColumnIndexOrThrow(_cursor, "totalCalories");
+        final int _cursorIndexOfTimeOfDay = CursorUtil.getColumnIndexOrThrow(_cursor, "timeOfDay");
+        final int _cursorIndexOfComplexity = CursorUtil.getColumnIndexOrThrow(_cursor, "complexity");
+        final List<Meal> _result = new ArrayList<Meal>(_cursor.getCount());
+        while(_cursor.moveToNext()) {
+          final Meal _item;
+          final long _tmpMealId;
+          _tmpMealId = _cursor.getLong(_cursorIndexOfMealId);
+          final String _tmpTitle;
+          if (_cursor.isNull(_cursorIndexOfTitle)) {
+            _tmpTitle = null;
+          } else {
+            _tmpTitle = _cursor.getString(_cursorIndexOfTitle);
+          }
+          final Boolean _tmpCheap;
+          final Integer _tmp;
+          if (_cursor.isNull(_cursorIndexOfCheap)) {
+            _tmp = null;
+          } else {
+            _tmp = _cursor.getInt(_cursorIndexOfCheap);
+          }
+          _tmpCheap = _tmp == null ? null : _tmp != 0;
+          final Double _tmpHealthScore;
+          if (_cursor.isNull(_cursorIndexOfHealthScore)) {
+            _tmpHealthScore = null;
+          } else {
+            _tmpHealthScore = _cursor.getDouble(_cursorIndexOfHealthScore);
+          }
+          final Boolean _tmpVegetarian;
+          final Integer _tmp_1;
+          if (_cursor.isNull(_cursorIndexOfVegetarian)) {
+            _tmp_1 = null;
+          } else {
+            _tmp_1 = _cursor.getInt(_cursorIndexOfVegetarian);
+          }
+          _tmpVegetarian = _tmp_1 == null ? null : _tmp_1 != 0;
+          final Boolean _tmpVegan;
+          final Integer _tmp_2;
+          if (_cursor.isNull(_cursorIndexOfVegan)) {
+            _tmp_2 = null;
+          } else {
+            _tmp_2 = _cursor.getInt(_cursorIndexOfVegan);
+          }
+          _tmpVegan = _tmp_2 == null ? null : _tmp_2 != 0;
+          final Boolean _tmpGlutenFree;
+          final Integer _tmp_3;
+          if (_cursor.isNull(_cursorIndexOfGlutenFree)) {
+            _tmp_3 = null;
+          } else {
+            _tmp_3 = _cursor.getInt(_cursorIndexOfGlutenFree);
+          }
+          _tmpGlutenFree = _tmp_3 == null ? null : _tmp_3 != 0;
+          final Boolean _tmpVeryHealthy;
+          final Integer _tmp_4;
+          if (_cursor.isNull(_cursorIndexOfVeryHealthy)) {
+            _tmp_4 = null;
+          } else {
+            _tmp_4 = _cursor.getInt(_cursorIndexOfVeryHealthy);
+          }
+          _tmpVeryHealthy = _tmp_4 == null ? null : _tmp_4 != 0;
+          final Boolean _tmpDairyFree;
+          final Integer _tmp_5;
+          if (_cursor.isNull(_cursorIndexOfDairyFree)) {
+            _tmp_5 = null;
+          } else {
+            _tmp_5 = _cursor.getInt(_cursorIndexOfDairyFree);
+          }
+          _tmpDairyFree = _tmp_5 == null ? null : _tmp_5 != 0;
+          final Boolean _tmpVeryPopular;
+          final Integer _tmp_6;
+          if (_cursor.isNull(_cursorIndexOfVeryPopular)) {
+            _tmp_6 = null;
+          } else {
+            _tmp_6 = _cursor.getInt(_cursorIndexOfVeryPopular);
+          }
+          _tmpVeryPopular = _tmp_6 == null ? null : _tmp_6 != 0;
+          final Boolean _tmpSustainable;
+          final Integer _tmp_7;
+          if (_cursor.isNull(_cursorIndexOfSustainable)) {
+            _tmp_7 = null;
+          } else {
+            _tmp_7 = _cursor.getInt(_cursorIndexOfSustainable);
+          }
+          _tmpSustainable = _tmp_7 == null ? null : _tmp_7 != 0;
+          final Double _tmpPricePerServing;
+          if (_cursor.isNull(_cursorIndexOfPricePerServing)) {
+            _tmpPricePerServing = null;
+          } else {
+            _tmpPricePerServing = _cursor.getDouble(_cursorIndexOfPricePerServing);
+          }
+          final Long _tmpSpoonId;
+          if (_cursor.isNull(_cursorIndexOfSpoonId)) {
+            _tmpSpoonId = null;
+          } else {
+            _tmpSpoonId = _cursor.getLong(_cursorIndexOfSpoonId);
+          }
+          final int _tmpServings;
+          _tmpServings = _cursor.getInt(_cursorIndexOfServings);
+          final String _tmpSourceUrl;
+          if (_cursor.isNull(_cursorIndexOfSourceUrl)) {
+            _tmpSourceUrl = null;
+          } else {
+            _tmpSourceUrl = _cursor.getString(_cursorIndexOfSourceUrl);
+          }
+          final String _tmpSummary;
+          if (_cursor.isNull(_cursorIndexOfSummary)) {
+            _tmpSummary = null;
+          } else {
+            _tmpSummary = _cursor.getString(_cursorIndexOfSummary);
+          }
+          final String _tmpImage;
+          if (_cursor.isNull(_cursorIndexOfImage)) {
+            _tmpImage = null;
+          } else {
+            _tmpImage = _cursor.getString(_cursorIndexOfImage);
+          }
+          final int _tmpReadyInMinutes;
+          _tmpReadyInMinutes = _cursor.getInt(_cursorIndexOfReadyInMinutes);
+          final String _tmpDiets;
+          if (_cursor.isNull(_cursorIndexOfDiets)) {
+            _tmpDiets = null;
+          } else {
+            _tmpDiets = _cursor.getString(_cursorIndexOfDiets);
+          }
+          final String _tmpDishTypes;
+          if (_cursor.isNull(_cursorIndexOfDishTypes)) {
+            _tmpDishTypes = null;
+          } else {
+            _tmpDishTypes = _cursor.getString(_cursorIndexOfDishTypes);
+          }
+          final String _tmpOccasions;
+          if (_cursor.isNull(_cursorIndexOfOccasions)) {
+            _tmpOccasions = null;
+          } else {
+            _tmpOccasions = _cursor.getString(_cursorIndexOfOccasions);
+          }
+          final String _tmpLikes;
+          if (_cursor.isNull(_cursorIndexOfLikes)) {
+            _tmpLikes = null;
+          } else {
+            _tmpLikes = _cursor.getString(_cursorIndexOfLikes);
+          }
+          final String _tmpUsedIngredientCount;
+          if (_cursor.isNull(_cursorIndexOfUsedIngredientCount)) {
+            _tmpUsedIngredientCount = null;
+          } else {
+            _tmpUsedIngredientCount = _cursor.getString(_cursorIndexOfUsedIngredientCount);
+          }
+          final TimeOfDayEnum _tmpTimeOfDay;
+          final int _tmp_8;
+          _tmp_8 = _cursor.getInt(_cursorIndexOfTimeOfDay);
+          _tmpTimeOfDay = Converters.fromIntToTimeOfDay(_tmp_8);
+          final ComplexityEnum _tmpComplexity;
+          final int _tmp_9;
+          _tmp_9 = _cursor.getInt(_cursorIndexOfComplexity);
+          _tmpComplexity = Converters.fromIntToComplexity(_tmp_9);
+          _item = new Meal(_tmpMealId,_tmpSpoonId,_tmpTitle,_tmpSummary,_tmpHealthScore,_tmpPricePerServing,_tmpCheap,_tmpSourceUrl,_tmpVegetarian,_tmpVegan,_tmpGlutenFree,_tmpVeryHealthy,_tmpDairyFree,_tmpVeryPopular,_tmpSustainable,_tmpDiets,_tmpServings,_tmpReadyInMinutes,_tmpImage,_tmpDishTypes,_tmpOccasions,_tmpLikes,_tmpUsedIngredientCount,_tmpTimeOfDay,_tmpComplexity);
+          if (_cursor.isNull(_cursorIndexOfCuisines)) {
+            _item.cuisines = null;
+          } else {
+            _item.cuisines = _cursor.getString(_cursorIndexOfCuisines);
+          }
+          final Integer _tmp_10;
+          if (_cursor.isNull(_cursorIndexOfIsSpoonacularMeal)) {
+            _tmp_10 = null;
+          } else {
+            _tmp_10 = _cursor.getInt(_cursorIndexOfIsSpoonacularMeal);
+          }
+          _item.isSpoonacularMeal = _tmp_10 == null ? null : _tmp_10 != 0;
+          if (_cursor.isNull(_cursorIndexOfTotalCalories)) {
+            _item.totalCalories = null;
+          } else {
+            _item.totalCalories = _cursor.getDouble(_cursorIndexOfTotalCalories);
+          }
+          _result.add(_item);
+        }
+        __db.setTransactionSuccessful();
+        return _result;
+      } finally {
+        _cursor.close();
+        _statement.release();
+      }
+    } finally {
+      __db.endTransaction();
+    }
+  }
+
+  @Override
+  public LiveData<List<Long>> GetIds() {
+    final String _sql = "select mealId from meal";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
+    return __db.getInvalidationTracker().createLiveData(new String[]{"meal"}, true, new Callable<List<Long>>() {
+      @Override
+      public List<Long> call() throws Exception {
+        __db.beginTransaction();
+        try {
+          final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+          try {
+            final List<Long> _result = new ArrayList<Long>(_cursor.getCount());
+            while(_cursor.moveToNext()) {
+              final Long _item;
+              if (_cursor.isNull(0)) {
+                _item = null;
+              } else {
+                _item = _cursor.getLong(0);
+              }
+              _result.add(_item);
+            }
+            __db.setTransactionSuccessful();
+            return _result;
+          } finally {
+            _cursor.close();
+          }
+        } finally {
+          __db.endTransaction();
+        }
+      }
+
+      @Override
+      protected void finalize() {
+        _statement.release();
+      }
+    });
   }
 
   @Override
@@ -1059,7 +1533,7 @@ public final class MealDao_Impl implements MealDao {
         final int _cursorIndexOfVegan = CursorUtil.getColumnIndexOrThrow(_cursor, "vegan");
         final int _cursorIndexOfGlutenFree = CursorUtil.getColumnIndexOrThrow(_cursor, "glutenFree");
         final int _cursorIndexOfServingSize = CursorUtil.getColumnIndexOrThrow(_cursor, "servingSize");
-        final int _cursorIndexOfUnits = CursorUtil.getColumnIndexOrThrow(_cursor, "Units");
+        final int _cursorIndexOfUnit = CursorUtil.getColumnIndexOrThrow(_cursor, "unit");
         final int _cursorIndexOfEnergy = CursorUtil.getColumnIndexOrThrow(_cursor, "energy");
         final int _cursorIndexOfFat = CursorUtil.getColumnIndexOrThrow(_cursor, "fat");
         final int _cursorIndexOfOfWhichSaturates = CursorUtil.getColumnIndexOrThrow(_cursor, "ofWhichSaturates");
@@ -1073,11 +1547,23 @@ public final class MealDao_Impl implements MealDao {
           final long _tmpIngredientsId;
           _tmpIngredientsId = _cursor.getLong(_cursorIndexOfIngredientsId);
           final String _tmpName;
-          _tmpName = _cursor.getString(_cursorIndexOfName);
+          if (_cursor.isNull(_cursorIndexOfName)) {
+            _tmpName = null;
+          } else {
+            _tmpName = _cursor.getString(_cursorIndexOfName);
+          }
           final String _tmpDescription;
-          _tmpDescription = _cursor.getString(_cursorIndexOfDescription);
+          if (_cursor.isNull(_cursorIndexOfDescription)) {
+            _tmpDescription = null;
+          } else {
+            _tmpDescription = _cursor.getString(_cursorIndexOfDescription);
+          }
           final String _tmpBrand;
-          _tmpBrand = _cursor.getString(_cursorIndexOfBrand);
+          if (_cursor.isNull(_cursorIndexOfBrand)) {
+            _tmpBrand = null;
+          } else {
+            _tmpBrand = _cursor.getString(_cursorIndexOfBrand);
+          }
           final boolean _tmpFreezable;
           final int _tmp;
           _tmp = _cursor.getInt(_cursorIndexOfFreezable);
@@ -1100,8 +1586,12 @@ public final class MealDao_Impl implements MealDao {
           } else {
             _tmpServingSize = _cursor.getDouble(_cursorIndexOfServingSize);
           }
-          final String _tmpUnits;
-          _tmpUnits = _cursor.getString(_cursorIndexOfUnits);
+          final String _tmpUnit;
+          if (_cursor.isNull(_cursorIndexOfUnit)) {
+            _tmpUnit = null;
+          } else {
+            _tmpUnit = _cursor.getString(_cursorIndexOfUnit);
+          }
           final Double _tmpEnergy;
           if (_cursor.isNull(_cursorIndexOfEnergy)) {
             _tmpEnergy = null;
@@ -1150,16 +1640,32 @@ public final class MealDao_Impl implements MealDao {
           } else {
             _tmpSugar = _cursor.getDouble(_cursorIndexOfSugar);
           }
-          _result = new Ingredients(_tmpIngredientsId,_tmpName,_tmpDescription,_tmpBrand,_tmpServingSize,_tmpUnits,_tmpCalories,_tmpEnergy,_tmpFat,_tmpOfWhichSaturates,_tmpFiber,_tmpProtein,_tmpSalt,_tmpSugar,_tmpFreezable,_tmpMicrowaveable,_tmpVegan,_tmpGlutenFree);
+          _result = new Ingredients(_tmpIngredientsId,_tmpName,_tmpDescription,_tmpBrand,_tmpServingSize,_tmpUnit,_tmpCalories,_tmpEnergy,_tmpFat,_tmpOfWhichSaturates,_tmpFiber,_tmpProtein,_tmpSalt,_tmpSugar,_tmpFreezable,_tmpMicrowaveable,_tmpVegan,_tmpGlutenFree);
           if (_cursor.isNull(_cursorIndexOfSpoonId)) {
             _result.spoonId = null;
           } else {
             _result.spoonId = _cursor.getLong(_cursorIndexOfSpoonId);
           }
-          _result.aisle = _cursor.getString(_cursorIndexOfAisle);
-          _result.nameClean = _cursor.getString(_cursorIndexOfNameClean);
-          _result.original = _cursor.getString(_cursorIndexOfOriginal);
-          _result.consistency = _cursor.getString(_cursorIndexOfConsistency);
+          if (_cursor.isNull(_cursorIndexOfAisle)) {
+            _result.aisle = null;
+          } else {
+            _result.aisle = _cursor.getString(_cursorIndexOfAisle);
+          }
+          if (_cursor.isNull(_cursorIndexOfNameClean)) {
+            _result.nameClean = null;
+          } else {
+            _result.nameClean = _cursor.getString(_cursorIndexOfNameClean);
+          }
+          if (_cursor.isNull(_cursorIndexOfOriginal)) {
+            _result.original = null;
+          } else {
+            _result.original = _cursor.getString(_cursorIndexOfOriginal);
+          }
+          if (_cursor.isNull(_cursorIndexOfConsistency)) {
+            _result.consistency = null;
+          } else {
+            _result.consistency = _cursor.getString(_cursorIndexOfConsistency);
+          }
         } else {
           _result = null;
         }
@@ -1195,7 +1701,7 @@ public final class MealDao_Impl implements MealDao {
       final int _cursorIndexOfVegan = CursorUtil.getColumnIndexOrThrow(_cursor, "vegan");
       final int _cursorIndexOfGlutenFree = CursorUtil.getColumnIndexOrThrow(_cursor, "glutenFree");
       final int _cursorIndexOfServingSize = CursorUtil.getColumnIndexOrThrow(_cursor, "servingSize");
-      final int _cursorIndexOfUnits = CursorUtil.getColumnIndexOrThrow(_cursor, "Units");
+      final int _cursorIndexOfUnit = CursorUtil.getColumnIndexOrThrow(_cursor, "unit");
       final int _cursorIndexOfEnergy = CursorUtil.getColumnIndexOrThrow(_cursor, "energy");
       final int _cursorIndexOfFat = CursorUtil.getColumnIndexOrThrow(_cursor, "fat");
       final int _cursorIndexOfOfWhichSaturates = CursorUtil.getColumnIndexOrThrow(_cursor, "ofWhichSaturates");
@@ -1210,11 +1716,23 @@ public final class MealDao_Impl implements MealDao {
         final long _tmpIngredientsId;
         _tmpIngredientsId = _cursor.getLong(_cursorIndexOfIngredientsId);
         final String _tmpName;
-        _tmpName = _cursor.getString(_cursorIndexOfName);
+        if (_cursor.isNull(_cursorIndexOfName)) {
+          _tmpName = null;
+        } else {
+          _tmpName = _cursor.getString(_cursorIndexOfName);
+        }
         final String _tmpDescription;
-        _tmpDescription = _cursor.getString(_cursorIndexOfDescription);
+        if (_cursor.isNull(_cursorIndexOfDescription)) {
+          _tmpDescription = null;
+        } else {
+          _tmpDescription = _cursor.getString(_cursorIndexOfDescription);
+        }
         final String _tmpBrand;
-        _tmpBrand = _cursor.getString(_cursorIndexOfBrand);
+        if (_cursor.isNull(_cursorIndexOfBrand)) {
+          _tmpBrand = null;
+        } else {
+          _tmpBrand = _cursor.getString(_cursorIndexOfBrand);
+        }
         final boolean _tmpFreezable;
         final int _tmp;
         _tmp = _cursor.getInt(_cursorIndexOfFreezable);
@@ -1237,8 +1755,12 @@ public final class MealDao_Impl implements MealDao {
         } else {
           _tmpServingSize = _cursor.getDouble(_cursorIndexOfServingSize);
         }
-        final String _tmpUnits;
-        _tmpUnits = _cursor.getString(_cursorIndexOfUnits);
+        final String _tmpUnit;
+        if (_cursor.isNull(_cursorIndexOfUnit)) {
+          _tmpUnit = null;
+        } else {
+          _tmpUnit = _cursor.getString(_cursorIndexOfUnit);
+        }
         final Double _tmpEnergy;
         if (_cursor.isNull(_cursorIndexOfEnergy)) {
           _tmpEnergy = null;
@@ -1287,16 +1809,32 @@ public final class MealDao_Impl implements MealDao {
         } else {
           _tmpSugar = _cursor.getDouble(_cursorIndexOfSugar);
         }
-        _item = new Ingredients(_tmpIngredientsId,_tmpName,_tmpDescription,_tmpBrand,_tmpServingSize,_tmpUnits,_tmpCalories,_tmpEnergy,_tmpFat,_tmpOfWhichSaturates,_tmpFiber,_tmpProtein,_tmpSalt,_tmpSugar,_tmpFreezable,_tmpMicrowaveable,_tmpVegan,_tmpGlutenFree);
+        _item = new Ingredients(_tmpIngredientsId,_tmpName,_tmpDescription,_tmpBrand,_tmpServingSize,_tmpUnit,_tmpCalories,_tmpEnergy,_tmpFat,_tmpOfWhichSaturates,_tmpFiber,_tmpProtein,_tmpSalt,_tmpSugar,_tmpFreezable,_tmpMicrowaveable,_tmpVegan,_tmpGlutenFree);
         if (_cursor.isNull(_cursorIndexOfSpoonId)) {
           _item.spoonId = null;
         } else {
           _item.spoonId = _cursor.getLong(_cursorIndexOfSpoonId);
         }
-        _item.aisle = _cursor.getString(_cursorIndexOfAisle);
-        _item.nameClean = _cursor.getString(_cursorIndexOfNameClean);
-        _item.original = _cursor.getString(_cursorIndexOfOriginal);
-        _item.consistency = _cursor.getString(_cursorIndexOfConsistency);
+        if (_cursor.isNull(_cursorIndexOfAisle)) {
+          _item.aisle = null;
+        } else {
+          _item.aisle = _cursor.getString(_cursorIndexOfAisle);
+        }
+        if (_cursor.isNull(_cursorIndexOfNameClean)) {
+          _item.nameClean = null;
+        } else {
+          _item.nameClean = _cursor.getString(_cursorIndexOfNameClean);
+        }
+        if (_cursor.isNull(_cursorIndexOfOriginal)) {
+          _item.original = null;
+        } else {
+          _item.original = _cursor.getString(_cursorIndexOfOriginal);
+        }
+        if (_cursor.isNull(_cursorIndexOfConsistency)) {
+          _item.consistency = null;
+        } else {
+          _item.consistency = _cursor.getString(_cursorIndexOfConsistency);
+        }
         _result.add(_item);
       }
       return _result;
@@ -1329,7 +1867,7 @@ public final class MealDao_Impl implements MealDao {
           final int _cursorIndexOfVegan = CursorUtil.getColumnIndexOrThrow(_cursor, "vegan");
           final int _cursorIndexOfGlutenFree = CursorUtil.getColumnIndexOrThrow(_cursor, "glutenFree");
           final int _cursorIndexOfServingSize = CursorUtil.getColumnIndexOrThrow(_cursor, "servingSize");
-          final int _cursorIndexOfUnits = CursorUtil.getColumnIndexOrThrow(_cursor, "Units");
+          final int _cursorIndexOfUnit = CursorUtil.getColumnIndexOrThrow(_cursor, "unit");
           final int _cursorIndexOfEnergy = CursorUtil.getColumnIndexOrThrow(_cursor, "energy");
           final int _cursorIndexOfFat = CursorUtil.getColumnIndexOrThrow(_cursor, "fat");
           final int _cursorIndexOfOfWhichSaturates = CursorUtil.getColumnIndexOrThrow(_cursor, "ofWhichSaturates");
@@ -1344,11 +1882,23 @@ public final class MealDao_Impl implements MealDao {
             final long _tmpIngredientsId;
             _tmpIngredientsId = _cursor.getLong(_cursorIndexOfIngredientsId);
             final String _tmpName;
-            _tmpName = _cursor.getString(_cursorIndexOfName);
+            if (_cursor.isNull(_cursorIndexOfName)) {
+              _tmpName = null;
+            } else {
+              _tmpName = _cursor.getString(_cursorIndexOfName);
+            }
             final String _tmpDescription;
-            _tmpDescription = _cursor.getString(_cursorIndexOfDescription);
+            if (_cursor.isNull(_cursorIndexOfDescription)) {
+              _tmpDescription = null;
+            } else {
+              _tmpDescription = _cursor.getString(_cursorIndexOfDescription);
+            }
             final String _tmpBrand;
-            _tmpBrand = _cursor.getString(_cursorIndexOfBrand);
+            if (_cursor.isNull(_cursorIndexOfBrand)) {
+              _tmpBrand = null;
+            } else {
+              _tmpBrand = _cursor.getString(_cursorIndexOfBrand);
+            }
             final boolean _tmpFreezable;
             final int _tmp;
             _tmp = _cursor.getInt(_cursorIndexOfFreezable);
@@ -1371,8 +1921,12 @@ public final class MealDao_Impl implements MealDao {
             } else {
               _tmpServingSize = _cursor.getDouble(_cursorIndexOfServingSize);
             }
-            final String _tmpUnits;
-            _tmpUnits = _cursor.getString(_cursorIndexOfUnits);
+            final String _tmpUnit;
+            if (_cursor.isNull(_cursorIndexOfUnit)) {
+              _tmpUnit = null;
+            } else {
+              _tmpUnit = _cursor.getString(_cursorIndexOfUnit);
+            }
             final Double _tmpEnergy;
             if (_cursor.isNull(_cursorIndexOfEnergy)) {
               _tmpEnergy = null;
@@ -1421,16 +1975,32 @@ public final class MealDao_Impl implements MealDao {
             } else {
               _tmpSugar = _cursor.getDouble(_cursorIndexOfSugar);
             }
-            _item = new Ingredients(_tmpIngredientsId,_tmpName,_tmpDescription,_tmpBrand,_tmpServingSize,_tmpUnits,_tmpCalories,_tmpEnergy,_tmpFat,_tmpOfWhichSaturates,_tmpFiber,_tmpProtein,_tmpSalt,_tmpSugar,_tmpFreezable,_tmpMicrowaveable,_tmpVegan,_tmpGlutenFree);
+            _item = new Ingredients(_tmpIngredientsId,_tmpName,_tmpDescription,_tmpBrand,_tmpServingSize,_tmpUnit,_tmpCalories,_tmpEnergy,_tmpFat,_tmpOfWhichSaturates,_tmpFiber,_tmpProtein,_tmpSalt,_tmpSugar,_tmpFreezable,_tmpMicrowaveable,_tmpVegan,_tmpGlutenFree);
             if (_cursor.isNull(_cursorIndexOfSpoonId)) {
               _item.spoonId = null;
             } else {
               _item.spoonId = _cursor.getLong(_cursorIndexOfSpoonId);
             }
-            _item.aisle = _cursor.getString(_cursorIndexOfAisle);
-            _item.nameClean = _cursor.getString(_cursorIndexOfNameClean);
-            _item.original = _cursor.getString(_cursorIndexOfOriginal);
-            _item.consistency = _cursor.getString(_cursorIndexOfConsistency);
+            if (_cursor.isNull(_cursorIndexOfAisle)) {
+              _item.aisle = null;
+            } else {
+              _item.aisle = _cursor.getString(_cursorIndexOfAisle);
+            }
+            if (_cursor.isNull(_cursorIndexOfNameClean)) {
+              _item.nameClean = null;
+            } else {
+              _item.nameClean = _cursor.getString(_cursorIndexOfNameClean);
+            }
+            if (_cursor.isNull(_cursorIndexOfOriginal)) {
+              _item.original = null;
+            } else {
+              _item.original = _cursor.getString(_cursorIndexOfOriginal);
+            }
+            if (_cursor.isNull(_cursorIndexOfConsistency)) {
+              _item.consistency = null;
+            } else {
+              _item.consistency = _cursor.getString(_cursorIndexOfConsistency);
+            }
             _result.add(_item);
           }
           return _result;
@@ -1447,158 +2017,27 @@ public final class MealDao_Impl implements MealDao {
   }
 
   @Override
-  public Meal Get(final long id) {
-    final String _sql = "SELECT * FROM meal WHERE mealId=? ";
+  public Method GetMethod(final long id) {
+    final String _sql = "SELECT * FROM Method WHERE methodId=? ";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
     int _argIndex = 1;
     _statement.bindLong(_argIndex, id);
     __db.assertNotSuspendingTransaction();
     final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
     try {
-      final int _cursorIndexOfMealId = CursorUtil.getColumnIndexOrThrow(_cursor, "mealId");
-      final int _cursorIndexOfTitle = CursorUtil.getColumnIndexOrThrow(_cursor, "title");
-      final int _cursorIndexOfCheap = CursorUtil.getColumnIndexOrThrow(_cursor, "cheap");
-      final int _cursorIndexOfHealthScore = CursorUtil.getColumnIndexOrThrow(_cursor, "healthScore");
-      final int _cursorIndexOfVegetarian = CursorUtil.getColumnIndexOrThrow(_cursor, "vegetarian");
-      final int _cursorIndexOfVegan = CursorUtil.getColumnIndexOrThrow(_cursor, "vegan");
-      final int _cursorIndexOfGlutenFree = CursorUtil.getColumnIndexOrThrow(_cursor, "glutenFree");
-      final int _cursorIndexOfVeryHealthy = CursorUtil.getColumnIndexOrThrow(_cursor, "veryHealthy");
-      final int _cursorIndexOfDairyFree = CursorUtil.getColumnIndexOrThrow(_cursor, "dairyFree");
-      final int _cursorIndexOfVeryPopular = CursorUtil.getColumnIndexOrThrow(_cursor, "veryPopular");
-      final int _cursorIndexOfSustainable = CursorUtil.getColumnIndexOrThrow(_cursor, "sustainable");
-      final int _cursorIndexOfPricePerServing = CursorUtil.getColumnIndexOrThrow(_cursor, "pricePerServing");
-      final int _cursorIndexOfSpoonId = CursorUtil.getColumnIndexOrThrow(_cursor, "spoonId");
-      final int _cursorIndexOfServings = CursorUtil.getColumnIndexOrThrow(_cursor, "servings");
-      final int _cursorIndexOfSourceUrl = CursorUtil.getColumnIndexOrThrow(_cursor, "sourceUrl");
-      final int _cursorIndexOfSummary = CursorUtil.getColumnIndexOrThrow(_cursor, "summary");
-      final int _cursorIndexOfImage = CursorUtil.getColumnIndexOrThrow(_cursor, "image");
-      final int _cursorIndexOfReadyInMinutes = CursorUtil.getColumnIndexOrThrow(_cursor, "readyInMinutes");
-      final int _cursorIndexOfDiets = CursorUtil.getColumnIndexOrThrow(_cursor, "diets");
-      final int _cursorIndexOfDishTypes = CursorUtil.getColumnIndexOrThrow(_cursor, "dishTypes");
-      final int _cursorIndexOfOccasions = CursorUtil.getColumnIndexOrThrow(_cursor, "occasions");
-      final int _cursorIndexOfLikes = CursorUtil.getColumnIndexOrThrow(_cursor, "likes");
-      final int _cursorIndexOfUsedIngredientCount = CursorUtil.getColumnIndexOrThrow(_cursor, "usedIngredientCount");
-      final int _cursorIndexOfCuisines = CursorUtil.getColumnIndexOrThrow(_cursor, "cuisines");
-      final int _cursorIndexOfTimeOfDay = CursorUtil.getColumnIndexOrThrow(_cursor, "timeOfDay");
-      final int _cursorIndexOfComplexity = CursorUtil.getColumnIndexOrThrow(_cursor, "complexity");
-      final Meal _result;
+      final int _cursorIndexOfMethodId = CursorUtil.getColumnIndexOrThrow(_cursor, "methodId");
+      final int _cursorIndexOfMethod = CursorUtil.getColumnIndexOrThrow(_cursor, "method");
+      final Method _result;
       if(_cursor.moveToFirst()) {
-        final long _tmpMealId;
-        _tmpMealId = _cursor.getLong(_cursorIndexOfMealId);
-        final String _tmpTitle;
-        _tmpTitle = _cursor.getString(_cursorIndexOfTitle);
-        final Boolean _tmpCheap;
-        final Integer _tmp;
-        if (_cursor.isNull(_cursorIndexOfCheap)) {
-          _tmp = null;
+        final long _tmpMethodId;
+        _tmpMethodId = _cursor.getLong(_cursorIndexOfMethodId);
+        final String _tmpMethod;
+        if (_cursor.isNull(_cursorIndexOfMethod)) {
+          _tmpMethod = null;
         } else {
-          _tmp = _cursor.getInt(_cursorIndexOfCheap);
+          _tmpMethod = _cursor.getString(_cursorIndexOfMethod);
         }
-        _tmpCheap = _tmp == null ? null : _tmp != 0;
-        final Double _tmpHealthScore;
-        if (_cursor.isNull(_cursorIndexOfHealthScore)) {
-          _tmpHealthScore = null;
-        } else {
-          _tmpHealthScore = _cursor.getDouble(_cursorIndexOfHealthScore);
-        }
-        final Boolean _tmpVegetarian;
-        final Integer _tmp_1;
-        if (_cursor.isNull(_cursorIndexOfVegetarian)) {
-          _tmp_1 = null;
-        } else {
-          _tmp_1 = _cursor.getInt(_cursorIndexOfVegetarian);
-        }
-        _tmpVegetarian = _tmp_1 == null ? null : _tmp_1 != 0;
-        final Boolean _tmpVegan;
-        final Integer _tmp_2;
-        if (_cursor.isNull(_cursorIndexOfVegan)) {
-          _tmp_2 = null;
-        } else {
-          _tmp_2 = _cursor.getInt(_cursorIndexOfVegan);
-        }
-        _tmpVegan = _tmp_2 == null ? null : _tmp_2 != 0;
-        final Boolean _tmpGlutenFree;
-        final Integer _tmp_3;
-        if (_cursor.isNull(_cursorIndexOfGlutenFree)) {
-          _tmp_3 = null;
-        } else {
-          _tmp_3 = _cursor.getInt(_cursorIndexOfGlutenFree);
-        }
-        _tmpGlutenFree = _tmp_3 == null ? null : _tmp_3 != 0;
-        final Boolean _tmpVeryHealthy;
-        final Integer _tmp_4;
-        if (_cursor.isNull(_cursorIndexOfVeryHealthy)) {
-          _tmp_4 = null;
-        } else {
-          _tmp_4 = _cursor.getInt(_cursorIndexOfVeryHealthy);
-        }
-        _tmpVeryHealthy = _tmp_4 == null ? null : _tmp_4 != 0;
-        final Boolean _tmpDairyFree;
-        final Integer _tmp_5;
-        if (_cursor.isNull(_cursorIndexOfDairyFree)) {
-          _tmp_5 = null;
-        } else {
-          _tmp_5 = _cursor.getInt(_cursorIndexOfDairyFree);
-        }
-        _tmpDairyFree = _tmp_5 == null ? null : _tmp_5 != 0;
-        final Boolean _tmpVeryPopular;
-        final Integer _tmp_6;
-        if (_cursor.isNull(_cursorIndexOfVeryPopular)) {
-          _tmp_6 = null;
-        } else {
-          _tmp_6 = _cursor.getInt(_cursorIndexOfVeryPopular);
-        }
-        _tmpVeryPopular = _tmp_6 == null ? null : _tmp_6 != 0;
-        final Boolean _tmpSustainable;
-        final Integer _tmp_7;
-        if (_cursor.isNull(_cursorIndexOfSustainable)) {
-          _tmp_7 = null;
-        } else {
-          _tmp_7 = _cursor.getInt(_cursorIndexOfSustainable);
-        }
-        _tmpSustainable = _tmp_7 == null ? null : _tmp_7 != 0;
-        final Double _tmpPricePerServing;
-        if (_cursor.isNull(_cursorIndexOfPricePerServing)) {
-          _tmpPricePerServing = null;
-        } else {
-          _tmpPricePerServing = _cursor.getDouble(_cursorIndexOfPricePerServing);
-        }
-        final Long _tmpSpoonId;
-        if (_cursor.isNull(_cursorIndexOfSpoonId)) {
-          _tmpSpoonId = null;
-        } else {
-          _tmpSpoonId = _cursor.getLong(_cursorIndexOfSpoonId);
-        }
-        final int _tmpServings;
-        _tmpServings = _cursor.getInt(_cursorIndexOfServings);
-        final String _tmpSourceUrl;
-        _tmpSourceUrl = _cursor.getString(_cursorIndexOfSourceUrl);
-        final String _tmpSummary;
-        _tmpSummary = _cursor.getString(_cursorIndexOfSummary);
-        final String _tmpImage;
-        _tmpImage = _cursor.getString(_cursorIndexOfImage);
-        final int _tmpReadyInMinutes;
-        _tmpReadyInMinutes = _cursor.getInt(_cursorIndexOfReadyInMinutes);
-        final String _tmpDiets;
-        _tmpDiets = _cursor.getString(_cursorIndexOfDiets);
-        final String _tmpDishTypes;
-        _tmpDishTypes = _cursor.getString(_cursorIndexOfDishTypes);
-        final String _tmpOccasions;
-        _tmpOccasions = _cursor.getString(_cursorIndexOfOccasions);
-        final String _tmpLikes;
-        _tmpLikes = _cursor.getString(_cursorIndexOfLikes);
-        final String _tmpUsedIngredientCount;
-        _tmpUsedIngredientCount = _cursor.getString(_cursorIndexOfUsedIngredientCount);
-        final TimeOfDayEnum _tmpTimeOfDay;
-        final int _tmp_8;
-        _tmp_8 = _cursor.getInt(_cursorIndexOfTimeOfDay);
-        _tmpTimeOfDay = Converters.fromIntToTimeOfDay(_tmp_8);
-        final ComplexityEnum _tmpComplexity;
-        final int _tmp_9;
-        _tmp_9 = _cursor.getInt(_cursorIndexOfComplexity);
-        _tmpComplexity = Converters.fromIntToComplexity(_tmp_9);
-        _result = new Meal(_tmpMealId,_tmpSpoonId,_tmpTitle,_tmpSummary,_tmpHealthScore,_tmpPricePerServing,_tmpCheap,_tmpSourceUrl,_tmpVegetarian,_tmpVegan,_tmpGlutenFree,_tmpVeryHealthy,_tmpDairyFree,_tmpVeryPopular,_tmpSustainable,_tmpDiets,_tmpServings,_tmpReadyInMinutes,_tmpImage,_tmpDishTypes,_tmpOccasions,_tmpLikes,_tmpUsedIngredientCount,_tmpTimeOfDay,_tmpComplexity);
-        _result.cuisines = _cursor.getString(_cursorIndexOfCuisines);
+        _result = new Method(_tmpMethodId,_tmpMethod);
       } else {
         _result = null;
       }
@@ -1609,208 +2048,7 @@ public final class MealDao_Impl implements MealDao {
     }
   }
 
-  @Override
-  public List<Meal> GetAll() {
-    final String _sql = "SELECT * FROM meal";
-    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
-    __db.assertNotSuspendingTransaction();
-    __db.beginTransaction();
-    try {
-      final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
-      try {
-        final int _cursorIndexOfMealId = CursorUtil.getColumnIndexOrThrow(_cursor, "mealId");
-        final int _cursorIndexOfTitle = CursorUtil.getColumnIndexOrThrow(_cursor, "title");
-        final int _cursorIndexOfCheap = CursorUtil.getColumnIndexOrThrow(_cursor, "cheap");
-        final int _cursorIndexOfHealthScore = CursorUtil.getColumnIndexOrThrow(_cursor, "healthScore");
-        final int _cursorIndexOfVegetarian = CursorUtil.getColumnIndexOrThrow(_cursor, "vegetarian");
-        final int _cursorIndexOfVegan = CursorUtil.getColumnIndexOrThrow(_cursor, "vegan");
-        final int _cursorIndexOfGlutenFree = CursorUtil.getColumnIndexOrThrow(_cursor, "glutenFree");
-        final int _cursorIndexOfVeryHealthy = CursorUtil.getColumnIndexOrThrow(_cursor, "veryHealthy");
-        final int _cursorIndexOfDairyFree = CursorUtil.getColumnIndexOrThrow(_cursor, "dairyFree");
-        final int _cursorIndexOfVeryPopular = CursorUtil.getColumnIndexOrThrow(_cursor, "veryPopular");
-        final int _cursorIndexOfSustainable = CursorUtil.getColumnIndexOrThrow(_cursor, "sustainable");
-        final int _cursorIndexOfPricePerServing = CursorUtil.getColumnIndexOrThrow(_cursor, "pricePerServing");
-        final int _cursorIndexOfSpoonId = CursorUtil.getColumnIndexOrThrow(_cursor, "spoonId");
-        final int _cursorIndexOfServings = CursorUtil.getColumnIndexOrThrow(_cursor, "servings");
-        final int _cursorIndexOfSourceUrl = CursorUtil.getColumnIndexOrThrow(_cursor, "sourceUrl");
-        final int _cursorIndexOfSummary = CursorUtil.getColumnIndexOrThrow(_cursor, "summary");
-        final int _cursorIndexOfImage = CursorUtil.getColumnIndexOrThrow(_cursor, "image");
-        final int _cursorIndexOfReadyInMinutes = CursorUtil.getColumnIndexOrThrow(_cursor, "readyInMinutes");
-        final int _cursorIndexOfDiets = CursorUtil.getColumnIndexOrThrow(_cursor, "diets");
-        final int _cursorIndexOfDishTypes = CursorUtil.getColumnIndexOrThrow(_cursor, "dishTypes");
-        final int _cursorIndexOfOccasions = CursorUtil.getColumnIndexOrThrow(_cursor, "occasions");
-        final int _cursorIndexOfLikes = CursorUtil.getColumnIndexOrThrow(_cursor, "likes");
-        final int _cursorIndexOfUsedIngredientCount = CursorUtil.getColumnIndexOrThrow(_cursor, "usedIngredientCount");
-        final int _cursorIndexOfCuisines = CursorUtil.getColumnIndexOrThrow(_cursor, "cuisines");
-        final int _cursorIndexOfTimeOfDay = CursorUtil.getColumnIndexOrThrow(_cursor, "timeOfDay");
-        final int _cursorIndexOfComplexity = CursorUtil.getColumnIndexOrThrow(_cursor, "complexity");
-        final List<Meal> _result = new ArrayList<Meal>(_cursor.getCount());
-        while(_cursor.moveToNext()) {
-          final Meal _item;
-          final long _tmpMealId;
-          _tmpMealId = _cursor.getLong(_cursorIndexOfMealId);
-          final String _tmpTitle;
-          _tmpTitle = _cursor.getString(_cursorIndexOfTitle);
-          final Boolean _tmpCheap;
-          final Integer _tmp;
-          if (_cursor.isNull(_cursorIndexOfCheap)) {
-            _tmp = null;
-          } else {
-            _tmp = _cursor.getInt(_cursorIndexOfCheap);
-          }
-          _tmpCheap = _tmp == null ? null : _tmp != 0;
-          final Double _tmpHealthScore;
-          if (_cursor.isNull(_cursorIndexOfHealthScore)) {
-            _tmpHealthScore = null;
-          } else {
-            _tmpHealthScore = _cursor.getDouble(_cursorIndexOfHealthScore);
-          }
-          final Boolean _tmpVegetarian;
-          final Integer _tmp_1;
-          if (_cursor.isNull(_cursorIndexOfVegetarian)) {
-            _tmp_1 = null;
-          } else {
-            _tmp_1 = _cursor.getInt(_cursorIndexOfVegetarian);
-          }
-          _tmpVegetarian = _tmp_1 == null ? null : _tmp_1 != 0;
-          final Boolean _tmpVegan;
-          final Integer _tmp_2;
-          if (_cursor.isNull(_cursorIndexOfVegan)) {
-            _tmp_2 = null;
-          } else {
-            _tmp_2 = _cursor.getInt(_cursorIndexOfVegan);
-          }
-          _tmpVegan = _tmp_2 == null ? null : _tmp_2 != 0;
-          final Boolean _tmpGlutenFree;
-          final Integer _tmp_3;
-          if (_cursor.isNull(_cursorIndexOfGlutenFree)) {
-            _tmp_3 = null;
-          } else {
-            _tmp_3 = _cursor.getInt(_cursorIndexOfGlutenFree);
-          }
-          _tmpGlutenFree = _tmp_3 == null ? null : _tmp_3 != 0;
-          final Boolean _tmpVeryHealthy;
-          final Integer _tmp_4;
-          if (_cursor.isNull(_cursorIndexOfVeryHealthy)) {
-            _tmp_4 = null;
-          } else {
-            _tmp_4 = _cursor.getInt(_cursorIndexOfVeryHealthy);
-          }
-          _tmpVeryHealthy = _tmp_4 == null ? null : _tmp_4 != 0;
-          final Boolean _tmpDairyFree;
-          final Integer _tmp_5;
-          if (_cursor.isNull(_cursorIndexOfDairyFree)) {
-            _tmp_5 = null;
-          } else {
-            _tmp_5 = _cursor.getInt(_cursorIndexOfDairyFree);
-          }
-          _tmpDairyFree = _tmp_5 == null ? null : _tmp_5 != 0;
-          final Boolean _tmpVeryPopular;
-          final Integer _tmp_6;
-          if (_cursor.isNull(_cursorIndexOfVeryPopular)) {
-            _tmp_6 = null;
-          } else {
-            _tmp_6 = _cursor.getInt(_cursorIndexOfVeryPopular);
-          }
-          _tmpVeryPopular = _tmp_6 == null ? null : _tmp_6 != 0;
-          final Boolean _tmpSustainable;
-          final Integer _tmp_7;
-          if (_cursor.isNull(_cursorIndexOfSustainable)) {
-            _tmp_7 = null;
-          } else {
-            _tmp_7 = _cursor.getInt(_cursorIndexOfSustainable);
-          }
-          _tmpSustainable = _tmp_7 == null ? null : _tmp_7 != 0;
-          final Double _tmpPricePerServing;
-          if (_cursor.isNull(_cursorIndexOfPricePerServing)) {
-            _tmpPricePerServing = null;
-          } else {
-            _tmpPricePerServing = _cursor.getDouble(_cursorIndexOfPricePerServing);
-          }
-          final Long _tmpSpoonId;
-          if (_cursor.isNull(_cursorIndexOfSpoonId)) {
-            _tmpSpoonId = null;
-          } else {
-            _tmpSpoonId = _cursor.getLong(_cursorIndexOfSpoonId);
-          }
-          final int _tmpServings;
-          _tmpServings = _cursor.getInt(_cursorIndexOfServings);
-          final String _tmpSourceUrl;
-          _tmpSourceUrl = _cursor.getString(_cursorIndexOfSourceUrl);
-          final String _tmpSummary;
-          _tmpSummary = _cursor.getString(_cursorIndexOfSummary);
-          final String _tmpImage;
-          _tmpImage = _cursor.getString(_cursorIndexOfImage);
-          final int _tmpReadyInMinutes;
-          _tmpReadyInMinutes = _cursor.getInt(_cursorIndexOfReadyInMinutes);
-          final String _tmpDiets;
-          _tmpDiets = _cursor.getString(_cursorIndexOfDiets);
-          final String _tmpDishTypes;
-          _tmpDishTypes = _cursor.getString(_cursorIndexOfDishTypes);
-          final String _tmpOccasions;
-          _tmpOccasions = _cursor.getString(_cursorIndexOfOccasions);
-          final String _tmpLikes;
-          _tmpLikes = _cursor.getString(_cursorIndexOfLikes);
-          final String _tmpUsedIngredientCount;
-          _tmpUsedIngredientCount = _cursor.getString(_cursorIndexOfUsedIngredientCount);
-          final TimeOfDayEnum _tmpTimeOfDay;
-          final int _tmp_8;
-          _tmp_8 = _cursor.getInt(_cursorIndexOfTimeOfDay);
-          _tmpTimeOfDay = Converters.fromIntToTimeOfDay(_tmp_8);
-          final ComplexityEnum _tmpComplexity;
-          final int _tmp_9;
-          _tmp_9 = _cursor.getInt(_cursorIndexOfComplexity);
-          _tmpComplexity = Converters.fromIntToComplexity(_tmp_9);
-          _item = new Meal(_tmpMealId,_tmpSpoonId,_tmpTitle,_tmpSummary,_tmpHealthScore,_tmpPricePerServing,_tmpCheap,_tmpSourceUrl,_tmpVegetarian,_tmpVegan,_tmpGlutenFree,_tmpVeryHealthy,_tmpDairyFree,_tmpVeryPopular,_tmpSustainable,_tmpDiets,_tmpServings,_tmpReadyInMinutes,_tmpImage,_tmpDishTypes,_tmpOccasions,_tmpLikes,_tmpUsedIngredientCount,_tmpTimeOfDay,_tmpComplexity);
-          _item.cuisines = _cursor.getString(_cursorIndexOfCuisines);
-          _result.add(_item);
-        }
-        __db.setTransactionSuccessful();
-        return _result;
-      } finally {
-        _cursor.close();
-        _statement.release();
-      }
-    } finally {
-      __db.endTransaction();
-    }
-  }
-
-  @Override
-  public LiveData<List<Long>> GetIds() {
-    final String _sql = "select mealId from meal";
-    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
-    return __db.getInvalidationTracker().createLiveData(new String[]{"meal"}, true, new Callable<List<Long>>() {
-      @Override
-      public List<Long> call() throws Exception {
-        __db.beginTransaction();
-        try {
-          final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
-          try {
-            final List<Long> _result = new ArrayList<Long>(_cursor.getCount());
-            while(_cursor.moveToNext()) {
-              final Long _item;
-              if (_cursor.isNull(0)) {
-                _item = null;
-              } else {
-                _item = _cursor.getLong(0);
-              }
-              _result.add(_item);
-            }
-            __db.setTransactionSuccessful();
-            return _result;
-          } finally {
-            _cursor.close();
-          }
-        } finally {
-          __db.endTransaction();
-        }
-      }
-
-      @Override
-      protected void finalize() {
-        _statement.release();
-      }
-    });
+  public static List<Class<?>> getRequiredConverters() {
+    return Collections.emptyList();
   }
 }

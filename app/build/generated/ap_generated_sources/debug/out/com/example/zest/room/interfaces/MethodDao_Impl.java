@@ -10,9 +10,12 @@ import androidx.room.util.CursorUtil;
 import androidx.room.util.DBUtil;
 import androidx.sqlite.db.SupportSQLiteStatement;
 import com.example.zest.room.entities.Method;
+import java.lang.Class;
 import java.lang.Override;
 import java.lang.String;
 import java.lang.SuppressWarnings;
+import java.util.Collections;
+import java.util.List;
 
 @SuppressWarnings({"unchecked", "deprecation"})
 public final class MethodDao_Impl implements MethodDao {
@@ -148,7 +151,11 @@ public final class MethodDao_Impl implements MethodDao {
         final long _tmpMethodId;
         _tmpMethodId = _cursor.getLong(_cursorIndexOfMethodId);
         final String _tmpMethod;
-        _tmpMethod = _cursor.getString(_cursorIndexOfMethod);
+        if (_cursor.isNull(_cursorIndexOfMethod)) {
+          _tmpMethod = null;
+        } else {
+          _tmpMethod = _cursor.getString(_cursorIndexOfMethod);
+        }
         _result = new Method(_tmpMethodId,_tmpMethod);
       } else {
         _result = null;
@@ -158,5 +165,9 @@ public final class MethodDao_Impl implements MethodDao {
       _cursor.close();
       _statement.release();
     }
+  }
+
+  public static List<Class<?>> getRequiredConverters() {
+    return Collections.emptyList();
   }
 }

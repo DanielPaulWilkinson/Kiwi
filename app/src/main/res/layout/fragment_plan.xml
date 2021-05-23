@@ -45,6 +45,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
+
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -62,7 +63,7 @@
                         android:layout_marginRight="10dp"
                         app:cardCornerRadius="5dp">
 
-                        <RelativeLayout
+                        <androidx.constraintlayout.widget.ConstraintLayout
                             android:id="@+id/cvPlan"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
@@ -70,28 +71,45 @@
 
                             <TextView
                                 android:id="@+id/tvPlanNameScheduleFragment"
-                                android:layout_width="wrap_content"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentStart="true"
                                 android:layout_alignParentTop="true"
                                 android:layout_marginStart="10dp"
-                                android:layout_marginTop="5dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_toStartOf="@+id/btnViewPlan"
                                 android:fontFamily="?attr/fontFamily"
-                                android:text="Workout Plan"
+                                android:maxLines="1"
+                                android:minLines="1"
+                                android:text="@string/workout_plan"
                                 android:textSize="16sp"
-                                android:textStyle="bold" />
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/btnViewPlan"
+                                app:layout_constraintHorizontal_bias="0.037"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.108" />
 
                             <TextView
                                 android:id="@+id/textView10"
-                                android:layout_width="wrap_content"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_below="@+id/tvPlanNameScheduleFragment"
                                 android:layout_alignParentStart="true"
                                 android:layout_marginStart="10dp"
                                 android:layout_marginTop="5dp"
-                                android:fontFamily="@font/lato"
-                                android:text="A plan desinged for weightloss"
-                                android:textStyle="italic" />
+                                android:layout_marginEnd="10dp"
+                                android:layout_toStartOf="@+id/btnViewPlan"
+                                android:maxLines="2"
+                                android:minLines="1"
+                                android:text="@string/a_plan_desinged_for_weightloss"
+                                android:textStyle="italic"
+                                app:layout_constraintEnd_toStartOf="@+id/btnViewPlan"
+                                app:layout_constraintHorizontal_bias="0.035"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tvPlanNameScheduleFragment" />
 
                             <Button
                                 android:id="@+id/btnViewPlan"
@@ -100,11 +118,14 @@
                                 android:layout_alignParentTop="true"
                                 android:layout_alignParentEnd="true"
                                 android:layout_alignParentBottom="true"
+                                android:layout_marginTop="10dp"
                                 android:layout_marginEnd="10dp"
-                                android:layout_marginBottom="10dp"
-                                android:fontFamily="@font/lato"
-                                android:text="View" />
-                        </RelativeLayout>
+                                android:layout_marginBottom="5dp"
+                                android:text="@string/view"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
@@ -124,7 +145,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/cvViewPlan">
 
-                        <RelativeLayout
+                        <androidx.constraintlayout.widget.ConstraintLayout
                             android:id="@+id/relativeLayout4"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
@@ -136,40 +157,55 @@
                                 android:layout_alignParentTop="true"
                                 android:layout_alignParentEnd="true"
                                 android:layout_alignParentBottom="true"
-                                android:layout_marginTop="0dp"
-                                android:layout_marginEnd="0dp"
-                                android:layout_marginBottom="0dp"
-                                android:contentDescription="TODO"
+                                android:contentDescription="@string/breakfast_image"
                                 android:scaleType="fitXY"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.0"
                                 tools:srcCompat="@drawable/placeholder" />
 
                             <TextView
                                 android:id="@+id/tvBreakfastDesc"
-                                android:layout_width="190dp"
-                                android:layout_height="100dp"
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
                                 android:layout_below="@+id/tvBreakfastName"
                                 android:layout_alignParentStart="true"
                                 android:layout_marginStart="10dp"
                                 android:layout_marginTop="5dp"
                                 android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="5dp"
                                 android:layout_toStartOf="@+id/ivBreakfast"
-                                android:fontFamily="@font/lato"
-                                android:text="Decription" />
+                                android:ellipsize="end"
+                                android:maxLines="5"
+                                android:minLines="3"
+                                android:text="@string/decription"
+                                app:layout_constraintBottom_toTopOf="@+id/btnBreakfastSchedule"
+                                app:layout_constraintEnd_toStartOf="@+id/ivBreakfast"
+                                app:layout_constraintHorizontal_bias="1.0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tvBreakfastName" />
 
                             <TextView
                                 android:id="@+id/tvBreakfastName"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_width="0dp"
+                                android:layout_height="21dp"
                                 android:layout_alignParentStart="true"
                                 android:layout_alignParentTop="true"
                                 android:layout_marginStart="10dp"
-                                android:layout_marginTop="5dp"
+                                android:layout_marginTop="10dp"
                                 android:layout_marginEnd="10dp"
                                 android:layout_toStartOf="@+id/ivBreakfast"
                                 android:fontFamily="@font/lato"
-                                android:text="Meal Name"
+                                android:maxLines="2"
+                                android:minLines="1"
+                                android:text="@string/meal_name"
                                 android:textSize="16sp"
-                                android:textStyle="bold" />
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toStartOf="@+id/ivBreakfast"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
 
                             <Button
                                 android:id="@+id/btnBreakfastSchedule"
@@ -178,10 +214,12 @@
                                 android:layout_below="@+id/tvBreakfastDesc"
                                 android:layout_alignParentStart="true"
                                 android:layout_marginStart="10dp"
-                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
                                 android:fontFamily="@font/lato"
-                                android:text="View" />
-                        </RelativeLayout>
+                                android:text="@string/view"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
@@ -200,7 +238,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/cvBreakfast">
 
-                        <RelativeLayout
+                        <androidx.constraintlayout.widget.ConstraintLayout
                             android:id="@+id/relativeLayout3"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
@@ -211,26 +249,38 @@
                                 android:layout_height="200dp"
                                 android:layout_alignParentTop="true"
                                 android:layout_alignParentEnd="true"
-                                android:contentDescription="TODO"
+                                android:contentDescription="@string/lunch_image"
                                 android:scaleType="fitXY"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
                                 tools:srcCompat="@drawable/placeholder" />
 
                             <TextView
                                 android:id="@+id/tvLunchDesc"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="100dp"
                                 android:layout_below="@+id/tvLunchName"
                                 android:layout_alignParentStart="true"
                                 android:layout_marginStart="10dp"
                                 android:layout_marginTop="5dp"
                                 android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="5dp"
                                 android:layout_toStartOf="@+id/ivLunch"
+                                android:ellipsize="end"
                                 android:fontFamily="@font/lato"
-                                android:text="Decription" />
+                                android:maxLines="5"
+                                android:minLines="3"
+                                android:text="@string/meal_description"
+                                app:layout_constraintBottom_toTopOf="@+id/btnLunchSchedule"
+                                app:layout_constraintEnd_toStartOf="@+id/ivLunch"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tvLunchName" />
 
                             <TextView
                                 android:id="@+id/tvLunchName"
-                                android:layout_width="100dp"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentStart="true"
                                 android:layout_alignParentTop="true"
@@ -238,10 +288,17 @@
                                 android:layout_marginTop="10dp"
                                 android:layout_marginEnd="10dp"
                                 android:layout_toStartOf="@+id/ivLunch"
+                                android:ellipsize="end"
                                 android:fontFamily="@font/lato"
-                                android:text="Meal Name"
+                                android:maxLines="2"
+                                android:minLines="1"
+                                android:text="@string/meal_name"
                                 android:textSize="16sp"
-                                android:textStyle="bold" />
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toStartOf="@+id/ivLunch"
+                                app:layout_constraintHorizontal_bias="0.136"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
 
                             <Button
                                 android:id="@+id/btnLunchSchedule"
@@ -250,10 +307,12 @@
                                 android:layout_below="@+id/tvLunchDesc"
                                 android:layout_alignParentStart="true"
                                 android:layout_marginStart="10dp"
-                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="16dp"
                                 android:fontFamily="@font/lato"
-                                android:text="View" />
-                        </RelativeLayout>
+                                android:text="@string/view"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
@@ -270,7 +329,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/cvLunch">
 
-                        <RelativeLayout
+                        <androidx.constraintlayout.widget.ConstraintLayout
                             android:id="@+id/relativeLayout2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
@@ -281,36 +340,54 @@
                                 android:layout_height="200dp"
                                 android:layout_alignParentTop="true"
                                 android:layout_alignParentEnd="true"
+                                android:contentDescription="@string/dinner_image"
                                 android:scaleType="fitXY"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
                                 tools:srcCompat="@drawable/placeholder" />
 
                             <TextView
                                 android:id="@+id/tvDinnerDesc"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="100dp"
                                 android:layout_below="@+id/tvDinnerName"
                                 android:layout_alignEnd="@+id/tvDinnerName"
                                 android:layout_alignParentStart="true"
                                 android:layout_marginStart="10dp"
-                                android:layout_marginTop="10dp"
+                                android:layout_marginTop="5dp"
                                 android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="5dp"
+                                android:ellipsize="end"
                                 android:fontFamily="@font/lato"
-                                android:text="Decription" />
+                                android:maxLines="5"
+                                android:minLines="3"
+                                android:text="@string/decription"
+                                app:layout_constraintBottom_toTopOf="@+id/btnDinnerSchedule"
+                                app:layout_constraintEnd_toStartOf="@+id/ivDinner"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tvDinnerName" />
 
                             <TextView
                                 android:id="@+id/tvDinnerName"
-                                android:layout_width="100dp"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentStart="true"
                                 android:layout_alignParentTop="true"
                                 android:layout_marginStart="10dp"
-                                android:layout_marginTop="5dp"
+                                android:layout_marginTop="10dp"
                                 android:layout_marginEnd="10dp"
                                 android:layout_toStartOf="@+id/ivDinner"
                                 android:fontFamily="@font/lato"
-                                android:text="Meal Name"
+                                android:maxLines="2"
+                                android:minLines="1"
+                                android:text="@string/meal_name"
                                 android:textSize="16sp"
-                                android:textStyle="bold" />
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toStartOf="@+id/ivDinner"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
 
                             <Button
                                 android:id="@+id/btnDinnerSchedule"
@@ -319,23 +396,31 @@
                                 android:layout_below="@+id/tvDinnerDesc"
                                 android:layout_alignParentStart="true"
                                 android:layout_marginStart="10dp"
-                                android:layout_marginTop="10dp"
-                                android:text="view" />
-                        </RelativeLayout>
+                                android:layout_marginBottom="16dp"
+                                android:text="@string/view"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
                     </androidx.cardview.widget.CardView>
                 </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:foregroundGravity="center_vertical|center|center_horizontal"
+                    >
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentTop="false"
-                        android:layout_alignParentBottom="false"
-                        android:layout_marginTop="50dp"
-                        android:foregroundGravity="center"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
+                        android:foregroundGravity="center_vertical|center|center_horizontal"
                         app:cardCornerRadius="5dp">
 
                         <RelativeLayout
@@ -345,15 +430,13 @@
 
                             <com.google.android.material.button.MaterialButton
                                 android:id="@+id/btnCreatePlan"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_below="@+id/fragmentplanLayout"
-                                android:layout_alignParentStart="true"
+                                android:layout_below="@+id/textView19"
                                 android:layout_alignParentEnd="true"
-                                android:layout_marginStart="10dp"
                                 android:layout_marginTop="10dp"
                                 android:layout_marginEnd="10dp"
-                                android:text="Create">
+                                android:text="@string/create">
 
                             </com.google.android.material.button.MaterialButton>
 
@@ -368,15 +451,26 @@
                                 android:layout_marginTop="10dp"
                                 android:layout_marginEnd="10dp"
                                 android:layout_marginBottom="10dp"
-                                android:text="Oh no, empty day, lets create a new plan!"
-                                android:textAlignment="textStart"></TextView>
+                                android:text="@string/oh_no_you_have_no_plan"
+                                android:textAlignment="textStart"
+                                android:textSize="30sp">
+                            </TextView>
+
+                            <TextView
+                                android:id="@+id/textView19"
+                                android:layout_width="344dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/fragmentplanLayout"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:text="@string/creating_a_meal_plan_will_help_you_remember_which_meals_you_re_having_each_day_it_s_also_super_useful_to_check_which_ingredients_you_will_need_for_the_planned_amount_of_time" />
                         </RelativeLayout>
                     </androidx.cardview.widget.CardView>
 
                 </RelativeLayout>
-
-
-
 
             </ViewSwitcher>
         </RelativeLayout>

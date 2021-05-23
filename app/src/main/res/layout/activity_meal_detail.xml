@@ -81,8 +81,7 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="5dp">
+                    android:layout_height="wrap_content">
 
                     <TextView
                         android:id="@+id/txtDesc"
@@ -90,7 +89,10 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/ViewMealNametxt"
                         android:layout_alignParentStart="true"
+                        android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
                         android:fontFamily="@font/lato"
                         android:textSize="14sp" />
 
@@ -105,12 +107,12 @@
                         android:layout_marginTop="0dp"
                         android:layout_marginEnd="0dp"
                         android:background="?attr/colorPrimary"
-                        android:fontFamily="@font/lato"                        android:textColor="?attr/colorOnPrimary"
-                        android:textSize="15sp"
-                        android:typeface="normal"
+                        android:fontFamily="@font/lato"
                         android:padding="5dp"
                         android:text="General Information"
-                         />
+                        android:textColor="?attr/colorOnPrimary"
+                        android:textSize="15sp"
+                        android:typeface="normal" />
                 </RelativeLayout>
 
             </androidx.cardview.widget.CardView>
@@ -125,8 +127,7 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="5dp">
+                    android:layout_height="match_parent">
 
                     <TextView
                         android:id="@+id/ViewMealNutriantInfo"
@@ -149,18 +150,23 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/rvIngredients"
                         android:layout_alignParentEnd="true"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
                         android:text="TextView"
                         android:textSize="16sp" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rvIngredients"
-                        android:layout_width="match_parent"
+                        android:layout_width="357dp"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/ViewMealNutriantInfo"
-                        android:layout_marginStart="0dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"
-                        android:layout_marginEnd="0dp">
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp">
 
                     </androidx.recyclerview.widget.RecyclerView>
                 </RelativeLayout>
@@ -179,17 +185,17 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="5dp">
+                    android:layout_height="match_parent">
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rvMethod"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_below="@+id/textView8"
-                        android:layout_marginStart="0dp"
+                        android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"
-                        android:layout_marginEnd="0dp" />
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp" />
 
                     <TextView
                         android:id="@+id/textView8"
@@ -199,7 +205,6 @@
                         android:layout_alignParentTop="true"
                         android:layout_alignParentEnd="true"
                         android:layout_marginStart="1dp"
-                        android:layout_marginTop="9dp"
                         android:layout_marginEnd="-1dp"
                         android:background="?attr/colorPrimary"
                         android:fontFamily="@font/lato"

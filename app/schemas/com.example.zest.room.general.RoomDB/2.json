@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 2,
-    "identityHash": "cbfe25d337c0f8d1c9f9271ad3f900b1",
+    "identityHash": "f5a9f5d2b7afff1565ee11749950c4fb",
     "entities": [
       {
         "tableName": "Meal",
@@ -226,7 +226,7 @@
       },
       {
         "tableName": "Ingredients",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`ingredientsId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `spoonId` INTEGER, `name` TEXT, `description` TEXT, `brand` TEXT, `aisle` TEXT, `nameClean` TEXT, `original` TEXT, `consistency` TEXT, `freezable` INTEGER NOT NULL, `microwaveable` INTEGER NOT NULL, `vegan` INTEGER NOT NULL, `glutenFree` INTEGER NOT NULL, `servingSize` REAL, `Units` TEXT, `energy` REAL, `fat` REAL, `ofWhichSaturates` REAL, `fiber` REAL, `protein` REAL, `salt` REAL, `calories` REAL, `sugar` REAL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`ingredientsId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `spoonId` INTEGER, `name` TEXT, `description` TEXT, `brand` TEXT, `aisle` TEXT, `nameClean` TEXT, `original` TEXT, `consistency` TEXT, `freezable` INTEGER NOT NULL, `microwaveable` INTEGER NOT NULL, `vegan` INTEGER NOT NULL, `glutenFree` INTEGER NOT NULL, `servingSize` REAL, `unit` TEXT, `energy` REAL, `fat` REAL, `ofWhichSaturates` REAL, `fiber` REAL, `protein` REAL, `salt` REAL, `calories` REAL, `sugar` REAL)",
         "fields": [
           {
             "fieldPath": "ingredientsId",
@@ -313,8 +313,8 @@
             "notNull": false
           },
           {
-            "fieldPath": "Units",
-            "columnName": "Units",
+            "fieldPath": "unit",
+            "columnName": "unit",
             "affinity": "TEXT",
             "notNull": false
           },
@@ -576,7 +576,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'cbfe25d337c0f8d1c9f9271ad3f900b1')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'f5a9f5d2b7afff1565ee11749950c4fb')"
     ]
   }
 }

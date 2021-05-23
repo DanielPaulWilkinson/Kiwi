@@ -9,10 +9,13 @@ import androidx.room.util.CursorUtil;
 import androidx.room.util.DBUtil;
 import androidx.sqlite.db.SupportSQLiteStatement;
 import com.example.zest.room.entities.MealIngredientsJoin;
+import java.lang.Class;
 import java.lang.Double;
 import java.lang.Override;
 import java.lang.String;
 import java.lang.SuppressWarnings;
+import java.util.Collections;
+import java.util.List;
 
 @SuppressWarnings({"unchecked", "deprecation"})
 public final class MealIngredientsJoinDao_Impl implements MealIngredientsJoinDao {
@@ -169,5 +172,9 @@ public final class MealIngredientsJoinDao_Impl implements MealIngredientsJoinDao
     } finally {
       __db.endTransaction();
     }
+  }
+
+  public static List<Class<?>> getRequiredConverters() {
+    return Collections.emptyList();
   }
 }

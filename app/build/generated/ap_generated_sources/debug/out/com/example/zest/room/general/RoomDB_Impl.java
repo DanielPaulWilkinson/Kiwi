@@ -5,6 +5,7 @@ import androidx.room.InvalidationTracker;
 import androidx.room.RoomOpenHelper;
 import androidx.room.RoomOpenHelper.Delegate;
 import androidx.room.RoomOpenHelper.ValidationResult;
+import androidx.room.migration.Migration;
 import androidx.room.util.DBUtil;
 import androidx.room.util.TableInfo;
 import androidx.room.util.TableInfo.Column;
@@ -28,12 +29,15 @@ import com.example.zest.room.interfaces.MealMethodJoinDao;
 import com.example.zest.room.interfaces.MealMethodJoinDao_Impl;
 import com.example.zest.room.interfaces.MethodDao;
 import com.example.zest.room.interfaces.MethodDao_Impl;
+import java.lang.Class;
 import java.lang.Override;
 import java.lang.String;
 import java.lang.SuppressWarnings;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 @SuppressWarnings({"unchecked", "deprecation"})
@@ -54,25 +58,25 @@ public final class RoomDB_Impl extends RoomDB {
 
   @Override
   protected SupportSQLiteOpenHelper createOpenHelper(DatabaseConfiguration configuration) {
-    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(2) {
+    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(5) {
       @Override
       public void createAllTables(SupportSQLiteDatabase _db) {
-        _db.execSQL("CREATE TABLE IF NOT EXISTS `Meal` (`mealId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `title` TEXT, `cheap` INTEGER, `healthScore` REAL, `vegetarian` INTEGER, `vegan` INTEGER, `glutenFree` INTEGER, `veryHealthy` INTEGER, `dairyFree` INTEGER, `veryPopular` INTEGER, `sustainable` INTEGER, `pricePerServing` REAL, `spoonId` INTEGER, `servings` INTEGER NOT NULL, `sourceUrl` TEXT, `summary` TEXT, `image` TEXT, `readyInMinutes` INTEGER NOT NULL, `diets` TEXT, `dishTypes` TEXT, `occasions` TEXT, `likes` TEXT, `usedIngredientCount` TEXT, `cuisines` TEXT, `timeOfDay` INTEGER, `complexity` INTEGER)");
+        _db.execSQL("CREATE TABLE IF NOT EXISTS `Meal` (`mealId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `title` TEXT, `cheap` INTEGER, `healthScore` REAL, `vegetarian` INTEGER, `vegan` INTEGER, `glutenFree` INTEGER, `veryHealthy` INTEGER, `dairyFree` INTEGER, `veryPopular` INTEGER, `sustainable` INTEGER, `pricePerServing` REAL, `spoonId` INTEGER, `servings` INTEGER NOT NULL, `sourceUrl` TEXT, `summary` TEXT, `image` TEXT, `readyInMinutes` INTEGER NOT NULL, `diets` TEXT, `dishTypes` TEXT, `occasions` TEXT, `likes` TEXT, `usedIngredientCount` TEXT, `cuisines` TEXT, `isSpoonacularMeal` INTEGER, `totalCalories` REAL, `timeOfDay` INTEGER, `complexity` INTEGER)");
         _db.execSQL("CREATE TABLE IF NOT EXISTS `MealIngredientsJoin` (`mealId` INTEGER NOT NULL, `ingredientsId` INTEGER NOT NULL, `amount` REAL NOT NULL, PRIMARY KEY(`mealId`, `ingredientsId`))");
         _db.execSQL("CREATE INDEX IF NOT EXISTS `index_MealIngredientsJoin_mealId` ON `MealIngredientsJoin` (`mealId`)");
         _db.execSQL("CREATE INDEX IF NOT EXISTS `index_MealIngredientsJoin_ingredientsId` ON `MealIngredientsJoin` (`ingredientsId`)");
-        _db.execSQL("CREATE TABLE IF NOT EXISTS `Ingredients` (`ingredientsId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `spoonId` INTEGER, `name` TEXT, `description` TEXT, `brand` TEXT, `aisle` TEXT, `nameClean` TEXT, `original` TEXT, `consistency` TEXT, `freezable` INTEGER NOT NULL, `microwaveable` INTEGER NOT NULL, `vegan` INTEGER NOT NULL, `glutenFree` INTEGER NOT NULL, `servingSize` REAL, `Units` TEXT, `energy` REAL, `fat` REAL, `ofWhichSaturates` REAL, `fiber` REAL, `protein` REAL, `salt` REAL, `calories` REAL, `sugar` REAL)");
+        _db.execSQL("CREATE TABLE IF NOT EXISTS `Ingredients` (`ingredientsId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `spoonId` INTEGER, `name` TEXT, `description` TEXT, `brand` TEXT, `aisle` TEXT, `nameClean` TEXT, `original` TEXT, `consistency` TEXT, `freezable` INTEGER NOT NULL, `microwaveable` INTEGER NOT NULL, `vegan` INTEGER NOT NULL, `glutenFree` INTEGER NOT NULL, `servingSize` REAL, `unit` TEXT, `energy` REAL, `fat` REAL, `ofWhichSaturates` REAL, `fiber` REAL, `protein` REAL, `salt` REAL, `calories` REAL, `sugar` REAL)");
         _db.execSQL("CREATE TABLE IF NOT EXISTS `MealMethodJoin` (`mealId` INTEGER NOT NULL, `methodId` INTEGER NOT NULL, PRIMARY KEY(`mealId`, `methodId`))");
         _db.execSQL("CREATE INDEX IF NOT EXISTS `index_MealMethodJoin_mealId` ON `MealMethodJoin` (`mealId`)");
         _db.execSQL("CREATE INDEX IF NOT EXISTS `index_MealMethodJoin_methodId` ON `MealMethodJoin` (`methodId`)");
         _db.execSQL("CREATE TABLE IF NOT EXISTS `Method` (`methodId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `method` TEXT)");
-        _db.execSQL("CREATE TABLE IF NOT EXISTS `Plan` (`planId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `cost` REAL, `name` TEXT)");
+        _db.execSQL("CREATE TABLE IF NOT EXISTS `Plan` (`planId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `cost` REAL, `name` TEXT, `isGeneratePlanType` INTEGER)");
         _db.execSQL("CREATE TABLE IF NOT EXISTS `PlanDate` (`planDateId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `breakfast` INTEGER NOT NULL, `lunch` INTEGER NOT NULL, `dinner` INTEGER NOT NULL, `snack` INTEGER NOT NULL, `date` INTEGER)");
         _db.execSQL("CREATE TABLE IF NOT EXISTS `PlanDatesJoin` (`planId` INTEGER NOT NULL, `planDateId` INTEGER NOT NULL, PRIMARY KEY(`planId`, `planDateId`))");
         _db.execSQL("CREATE INDEX IF NOT EXISTS `index_PlanDatesJoin_planId` ON `PlanDatesJoin` (`planId`)");
         _db.execSQL("CREATE INDEX IF NOT EXISTS `index_PlanDatesJoin_planDateId` ON `PlanDatesJoin` (`planDateId`)");
         _db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'cbfe25d337c0f8d1c9f9271ad3f900b1')");
+        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'f0cd2695d3684dd25ca4d2a339f656c5')");
       }
 
       @Override
@@ -123,7 +127,7 @@ public final class RoomDB_Impl extends RoomDB {
 
       @Override
       protected RoomOpenHelper.ValidationResult onValidateSchema(SupportSQLiteDatabase _db) {
-        final HashMap<String, TableInfo.Column> _columnsMeal = new HashMap<String, TableInfo.Column>(26);
+        final HashMap<String, TableInfo.Column> _columnsMeal = new HashMap<String, TableInfo.Column>(28);
         _columnsMeal.put("mealId", new TableInfo.Column("mealId", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsMeal.put("title", new TableInfo.Column("title", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsMeal.put("cheap", new TableInfo.Column("cheap", "INTEGER", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
@@ -148,6 +152,8 @@ public final class RoomDB_Impl extends RoomDB {
         _columnsMeal.put("likes", new TableInfo.Column("likes", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsMeal.put("usedIngredientCount", new TableInfo.Column("usedIngredientCount", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsMeal.put("cuisines", new TableInfo.Column("cuisines", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsMeal.put("isSpoonacularMeal", new TableInfo.Column("isSpoonacularMeal", "INTEGER", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsMeal.put("totalCalories", new TableInfo.Column("totalCalories", "REAL", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsMeal.put("timeOfDay", new TableInfo.Column("timeOfDay", "INTEGER", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsMeal.put("complexity", new TableInfo.Column("complexity", "INTEGER", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         final HashSet<TableInfo.ForeignKey> _foreignKeysMeal = new HashSet<TableInfo.ForeignKey>(0);
@@ -189,7 +195,7 @@ public final class RoomDB_Impl extends RoomDB {
         _columnsIngredients.put("vegan", new TableInfo.Column("vegan", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsIngredients.put("glutenFree", new TableInfo.Column("glutenFree", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsIngredients.put("servingSize", new TableInfo.Column("servingSize", "REAL", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
-        _columnsIngredients.put("Units", new TableInfo.Column("Units", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsIngredients.put("unit", new TableInfo.Column("unit", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsIngredients.put("energy", new TableInfo.Column("energy", "REAL", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsIngredients.put("fat", new TableInfo.Column("fat", "REAL", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsIngredients.put("ofWhichSaturates", new TableInfo.Column("ofWhichSaturates", "REAL", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
@@ -233,10 +239,11 @@ public final class RoomDB_Impl extends RoomDB {
                   + " Expected:\n" + _infoMethod + "\n"
                   + " Found:\n" + _existingMethod);
         }
-        final HashMap<String, TableInfo.Column> _columnsPlan = new HashMap<String, TableInfo.Column>(3);
+        final HashMap<String, TableInfo.Column> _columnsPlan = new HashMap<String, TableInfo.Column>(4);
         _columnsPlan.put("planId", new TableInfo.Column("planId", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsPlan.put("cost", new TableInfo.Column("cost", "REAL", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsPlan.put("name", new TableInfo.Column("name", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsPlan.put("isGeneratePlanType", new TableInfo.Column("isGeneratePlanType", "INTEGER", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         final HashSet<TableInfo.ForeignKey> _foreignKeysPlan = new HashSet<TableInfo.ForeignKey>(0);
         final HashSet<TableInfo.Index> _indicesPlan = new HashSet<TableInfo.Index>(0);
         final TableInfo _infoPlan = new TableInfo("Plan", _columnsPlan, _foreignKeysPlan, _indicesPlan);
@@ -278,7 +285,7 @@ public final class RoomDB_Impl extends RoomDB {
         }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "cbfe25d337c0f8d1c9f9271ad3f900b1", "d6afd67862b63f32710bcce14fb3d7b9");
+    }, "f0cd2695d3684dd25ca4d2a339f656c5", "de3c193a025f3d03efda098a9c3a81af");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(configuration.context)
         .name(configuration.name)
         .callback(_openCallback)
@@ -316,6 +323,24 @@ public final class RoomDB_Impl extends RoomDB {
         _db.execSQL("VACUUM");
       }
     }
+  }
+
+  @Override
+  protected Map<Class<?>, List<Class<?>>> getRequiredTypeConverters() {
+    final HashMap<Class<?>, List<Class<?>>> _typeConvertersMap = new HashMap<Class<?>, List<Class<?>>>();
+    _typeConvertersMap.put(MealDao.class, MealDao_Impl.getRequiredConverters());
+    _typeConvertersMap.put(CompletePlanDao.class, CompletePlanDao_Impl.getRequiredConverters());
+    _typeConvertersMap.put(IngredientsDao.class, IngredientsDao_Impl.getRequiredConverters());
+    _typeConvertersMap.put(MethodDao.class, MethodDao_Impl.getRequiredConverters());
+    _typeConvertersMap.put(MealIngredientsJoinDao.class, MealIngredientsJoinDao_Impl.getRequiredConverters());
+    _typeConvertersMap.put(CompleteMealDao.class, CompleteMealDao_Impl.getRequiredConverters());
+    _typeConvertersMap.put(MealMethodJoinDao.class, MealMethodJoinDao_Impl.getRequiredConverters());
+    return _typeConvertersMap;
+  }
+
+  @Override
+  protected List<Migration> getAutoMigrations() {
+    return Arrays.asList();
   }
 
   @Override

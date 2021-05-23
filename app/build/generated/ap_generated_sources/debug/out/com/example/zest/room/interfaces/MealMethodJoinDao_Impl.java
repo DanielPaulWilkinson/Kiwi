@@ -5,9 +5,12 @@ import androidx.room.EntityInsertionAdapter;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteStatement;
 import com.example.zest.room.entities.MealMethodJoin;
+import java.lang.Class;
 import java.lang.Override;
 import java.lang.String;
 import java.lang.SuppressWarnings;
+import java.util.Collections;
+import java.util.List;
 
 @SuppressWarnings({"unchecked", "deprecation"})
 public final class MealMethodJoinDao_Impl implements MealMethodJoinDao {
@@ -95,5 +98,9 @@ public final class MealMethodJoinDao_Impl implements MealMethodJoinDao {
     } finally {
       __db.endTransaction();
     }
+  }
+
+  public static List<Class<?>> getRequiredConverters() {
+    return Collections.emptyList();
   }
 }
